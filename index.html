@@ -2131,8 +2131,7 @@ function computeSeason(){
   G.career = careerOf(G.season.raw, careerYears(gutsValue(), lvOf(Math.max(0, G.star - 100))), topLv, Math.random, new Date().getFullYear());
 }
 function careerForRec(rec){
-  const hasPeak = rec.career && rec.career.tables && rec.career.tables.some(t => t.rows.some(r => r.p));
-  if(rec.career && rec.career.rows && rec.career.trophies && hasPeak) return { rows:rec.career.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]).filter(r => r[0] !== '은퇴 시즌'),
+  if(calcCurrent(rec) && rec.career && rec.career.rows && rec.career.trophies) return { rows:rec.career.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]).filter(r => r[0] !== '은퇴 시즌'),
     awards:(rec.career.awards || []).filter(a => !/원클럽맨/.test(a)), years:rec.career.years, trophies:rec.career.trophies, line:rec.career.line, tables:rec.career.tables || null };
   const se = rec.type === 'two' && rec.two ? seasonTwo(rec.two.pit, rec.two.bat, true) : rec.type === 'pit' ? seasonPit(rec.stats, rec.pos, true) : seasonBat(rec.stats, rec.pos, true);
   const top = rec.type === 'two' ? Math.max(rec.pitTop ? rec.pitTop.value : 0, rec.batTop ? rec.batTop.value : 0) : (rec.top ? rec.top.value : 0);
@@ -2292,8 +2291,11 @@ function careerOf(raw, years, top, rng, debut){
 }
 // 기록 저장용 (Firestore는 중첩 배열을 못 쓰므로 객체 배열로)
 const packSeason = se => ({ rows:se.rows.map(([k, v]) => ({ k, v:String(v) })), awards:se.awards || [] });
+// 성적 계산 버전: 계산식을 바꾸면 숫자를 올려서, 예전에 등록한 선수도 지금 계산식으로 다시 계산되게 함
+const CALC_VER = 4;
+const calcCurrent = rec => rec.calcVer === CALC_VER;
 function seasonFor(rec){
-  if(rec.season && rec.season.rows) return { rows:rec.season.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]), awards:rec.season.awards || [] };
+  if(calcCurrent(rec) && rec.season && rec.season.rows) return { rows:rec.season.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]), awards:rec.season.awards || [] };
   if(rec.type === 'two' && rec.two) return seasonTwo(rec.two.pit, rec.two.bat, true);
   return rec.type === 'pit' ? seasonPit(rec.stats, rec.pos, true) : seasonBat(rec.stats, rec.pos, true);
 }
@@ -2360,7 +2362,7 @@ function finishRun(){
       xp:{...G.xp}, guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2
     };
   }
-  rec.season = packSeason(G.season); rec.line = G.line;
+  rec.season = packSeason(G.season); rec.line = G.line; rec.calcVer = CALC_VER;
   rec.career = { ...packSeason(G.career), years:G.career.years, trophies:G.career.trophies, line:G.career.line, tables:G.career.tables };
   G.record = rec;
   G.reg = null; G.newBest = false; G.firstGrades = [];
