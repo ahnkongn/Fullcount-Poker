@@ -563,8 +563,10 @@ main{ padding:10px 10px 16px; }
   .card{ container-type:inline-size; }
   .card .idx b{ font-size:clamp(11px, 27cqw, 26px); }
   .card .idx i{ font-size:clamp(8px, 18cqw, 15px); }
-  .card .tl{ top:6cqw; left:8cqw; }
-  .card .br{ bottom:6cqw; right:8cqw; }
+  .card::before{ inset:3cqw; border-width:1px; border-radius:4px; }
+  .card .tl{ top:9cqw; left:9.5cqw; }
+  .card .br{ bottom:9cqw; right:9.5cqw; }
+  .card .tag{ top:9cqw; right:8cqw; }
   .card .pip{ font-size:clamp(18px, 46cqw, 52px); }
   .card .st{ font-size:clamp(8px, 16cqw, 12px); padding:2cqw 0 3cqw; }
   .card .tag{ font-size:clamp(8px, 14cqw, 11px); padding:3px 4px; }
@@ -679,6 +681,61 @@ main{ padding:10px 10px 16px; }
 .menu .ctable th{ background:rgba(0,0,0,.35); }
 .menu .ctable td.lead{ color:#ff8a7a; }
 .menu .sg{ background:rgba(0,0,0,.2); box-shadow:inset 0 0 0 1px rgba(255,255,255,.1); }
+
+/* ---------- 튜토리얼 ---------- */
+.how-btn{ margin-top:10px; border:1px solid rgba(255,255,255,.35); background:rgba(0,0,0,.18); color:var(--scoreInk); border-radius:999px; padding:7px 16px; font:inherit; font-size:13px; font-weight:500; }
+.tut-back{ position:fixed; inset:0; z-index:60; background:rgba(5,12,8,.72); display:flex; flex-direction:column; padding:16px; overflow-y:auto; }
+.tut{ position:relative; width:min(380px, 100%); margin:auto; padding:22px 18px 16px; text-align:center; animation:perkIn .35s cubic-bezier(.2,.9,.3,1.2) both; }
+.tut-x{ position:absolute; top:8px; right:8px; width:34px; height:34px; border:0; background:transparent; color:var(--scoreDim); font-size:18px; }
+.tut-icon{ font-size:40px; line-height:1; }
+.tut h3{ font-size:24px; margin:8px 0 10px; color:#fff; }
+.tut-body{ text-align:left; font-size:14px; line-height:1.6; color:var(--scoreInk); min-height:190px; }
+.tut-body p{ margin:8px 0; }
+.tut-body b{ color:var(--strike); }
+.tut-go{ text-align:center; font-family:"Isamanru", sans-serif; font-size:22px; color:#fff; margin-top:16px !important; }
+.tut-grades{ display:flex; flex-wrap:wrap; gap:4px; justify-content:center; margin-top:10px; }
+.tut-grades span{ font-size:11px; font-weight:700; padding:3px 6px; border-radius:3px; background:rgba(255,255,255,.12); }
+.tut-grades .g-LEGEND{ background:linear-gradient(90deg, #ffd23f, #ff5a4e, #7a4fc0); color:#fff; }
+.tut-map{ width:100%; border-collapse:collapse; margin-top:8px; }
+.tut-map th{ font-size:12px; color:var(--scoreDim); font-weight:500; padding:4px; }
+.tut-map td{ padding:6px 4px; text-align:center; border-top:1px solid rgba(255,255,255,.12); }
+.tut-map .sym{ display:inline-grid; place-items:center; width:26px; height:26px; border-radius:4px; background:#fbf8f1; font-size:16px; }
+.tut-hand{ display:flex; justify-content:center; gap:6px; margin:6px 0 10px; }
+.tc{ position:relative; width:46px; height:64px; border-radius:5px; background:#fbf8f1; display:grid; place-items:center; color:#18221c; box-shadow:0 2px 0 rgba(0,0,0,.3); }
+.tc b{ position:absolute; top:3px; left:5px; font-size:13px; } .tc i{ font-style:normal; font-size:22px; }
+.tc.s-H, .tc.s-D{ color:#c8102e; } .tc.s-D{ color:#2b5fb3; } .tc.s-C{ color:#1f7a45; }
+.tc.lk{ box-shadow:0 0 0 3px var(--strike), 0 2px 0 rgba(0,0,0,.3); transform:translateY(-6px); }
+.tc em{ position:absolute; bottom:-18px; left:50%; transform:translateX(-50%); font-style:normal; font-size:10px; color:var(--strike); white-space:nowrap; }
+.tut-ladder{ display:grid; gap:3px; margin:4px 0 6px; }
+.tut-ladder div{ display:flex; justify-content:space-between; padding:4px 10px; border-radius:3px; background:rgba(255,255,255,.06); font-size:13px; }
+.tut-ladder div.hot{ background:rgba(255,210,63,.14); }
+.tut-ladder b{ color:var(--strike); }
+.tut-two{ display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:8px 0; }
+.tut-two div{ display:grid; gap:2px; padding:8px; border-radius:4px; background:rgba(0,0,0,.2); font-size:12px; }
+.tut-two div b{ font-size:14px; }
+.tut-dots{ display:flex; justify-content:center; gap:6px; margin:12px 0 10px; }
+.tut-dots i{ width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.25); }
+.tut-dots i.on{ background:var(--strike); width:18px; border-radius:4px; }
+.tut-nav{ display:grid; grid-template-columns:1fr 2fr; gap:8px; }
+.tut-nav .btn.ghost{ color:var(--scoreInk); }
+.tip{ display:flex; align-items:center; gap:8px; margin-top:8px; padding:8px 10px; border-radius:6px; background:#fff6d6; color:#3a2a00; box-shadow:0 0 0 1px #e8c860; font-size:13px; line-height:1.45; animation:rise .35s ease both; }
+.tip-k{ flex:none; font-size:10px; font-weight:800; padding:2px 5px; border-radius:3px; background:#e0a800; color:#2a1c00; }
+.tip-t{ flex:1; } .tip-t b{ color:#a03a00; }
+.tip-x{ flex:none; border:1px solid #c9a23c; background:#fff; color:#5a4100; border-radius:999px; padding:4px 10px; font:inherit; font-size:12px; font-weight:500; }
+.tip.lucky{ background:linear-gradient(135deg, #fff6c8, #ffd23f); box-shadow:0 0 0 2px #b48f00, 0 0 18px rgba(255,210,63,.6); }
+.tip.lucky .tip-k{ background:#fff; color:#2a1c00; font-size:13px; }
+.bonus-tag{ color:var(--strike); font-weight:700; }
+.jinx-line{ font-family:"Isamanru", sans-serif; font-weight:700; font-size:18px; color:var(--strike) !important; text-align:center; margin:14px 0 !important; }
+.start-actions{ display:grid; gap:10px; margin:16px 0 0; padding-bottom:calc(8px + env(safe-area-inset-bottom, 0px)); }
+.start-actions .btn{ width:100%; min-height:54px; margin:0; }
+.entry.mine{ box-shadow:0 0 0 3px #e0a800, 0 0 14px rgba(224,168,0,.55); background:#fff8dc; position:relative; }
+.me-tag{ color:#fff; background:#e0a800; border-radius:3px; padding:0 5px; font-size:11px; }
+.fc-best{ display:inline-block; margin:6px 0 0; padding:3px 10px; border-radius:999px; background:rgba(255,210,63,.18); box-shadow:inset 0 0 0 1px rgba(255,210,63,.55); font-size:13px; font-weight:500; }
+.fc-best b{ color:var(--strike); }
+.del-btn{ width:100%; margin-top:18px; background:transparent; color:#ff8a7a; border:1px solid rgba(255,138,122,.6); min-height:44px; }
+.muted-s{ font-size:13px; opacity:.8; }
+.menu-help{ display:flex; justify-content:center; gap:14px; margin-top:12px; }
+.menu-help button{ border:0; background:none; color:var(--scoreDim); font:inherit; font-size:13px; text-decoration:underline; text-underline-offset:3px; }
 
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
@@ -1465,7 +1522,7 @@ function perksModal(){
 let G = null;          // 현재 육성
 let view = 'start';    // start | game | result | records
 let setup = { name:'', type:'bat', pos:'' };
-let recTab = 'mine', recPos = '선발', recSide = 'bat';
+let recTab = 'world', recPos = '선발', recSide = 'bat';
 let hall = { runs:0, bestByPos:{}, firsts:{}, recent:[], titles:{}, rev:0 };
 let board = { loading:false, entries:null, error:null, names:{} };
 let cap = { db:null, user:null, uid:null };
@@ -1531,10 +1588,29 @@ function startRun(){
   SFX.play('ability', .3);
   setTimeout(() => { const t = document.querySelector('.perk-table'); if(t) t.scrollIntoView({ block:'end', behavior: reduceMotion() ? 'auto' : 'smooth' }); }, 350);
 }
+// 이스터에그 '신이 버린 사나이': 첫 공 연속 패배(이길 확률 40% 이상 선택만) 5번 → 다음 패에 플러시 파이브
+const JINX_KEY = 'fchl-jinx-v1', JINX_GOAL = 5;
+let jinx = (() => { try{ return JSON.parse(localStorage.getItem(JINX_KEY)) || { streak:0, armed:false }; }catch(e){ return { streak:0, armed:false }; } })();
+const saveJinx = () => { try{ localStorage.setItem(JINX_KEY, JSON.stringify(jinx)); }catch(e){} };
+function jinxFirstPitch(H, won){
+  const safe = (H.side === 'bat' && H.sel.mode === 'square') || (H.side === 'pit' && H.sel.mode === 'avoid' && H.sel.cell !== 5);
+  if(won){ jinx.streak = 0; saveJinx(); return; }
+  if(!safe) return;                                   // 원래 질 확률이 높은 선택은 세지 않음
+  jinx.streak++;
+  if(jinx.streak >= JINX_GOAL){
+    jinx.streak = 0; jinx.armed = true; G.jinxHit = true;
+    modal = { title:'신이 버린 사나이', body:`<p>풀 카운트 승부 첫 공에서 다섯 번 연속으로 졌어요…</p>
+      <p class="jinx-line">하지만 저희는 당신을 버리지 않았습니다.</p>
+      <p>지금 바로 <b>보너스 라운드</b>가 찾아갑니다. 🍀</p>` };
+    SFX.play('unlock', .6);
+  }
+  saveJinx();
+}
 function dealHand(){
   G.deck = runDeck();
   G.hand = Array.from({length:5}, () => G.deck.pop());
   G.locks = [false,false,false,false,false];
+  G.luckyHand = false;
   G.rerolls = REROLLS + (G.rrPerm || 0) + ((G.rrTemp && G.rrTemp.length) ? G.rrTemp.shift() : 0); G.rerollsMax = G.rerolls; G.phase = 'draw'; G.ev = null; G.newAbility = null; G.hilo = null; G.msg = '';
   G.fx.deal = true;
   for(let i = 0; i < 5; i++) SFX.play('card', i*.085);
@@ -1582,9 +1658,10 @@ function bank(mult){
     G.maxJump = Math.max(G.maxJump || 0, up);
     if(gradeOf(G.stats[s]) !== gradeOf(old)) gup.push(s);
   }
-  G.lineScore[G.round] = total;
+  if(G.inBonus) G.bonusGain = (G.bonusGain || 0) + total;      // 보너스 라운드는 라인스코어를 덮어쓰지 않음
+  else G.lineScore[G.round] = total;
   G.nextXp2 = false;
-  if(G.round === RN()) G.lastMult = mult;
+  if(G.round === RN() && !G.inBonus) G.lastMult = mult;
   G.fx.lvl = lvl; G.fx.gup = gup; G.fx.lit = G.round;
   if(total === 0) SFX.play('coin');
   if(mult >= 8 || gup.some(s => G_NAMES.indexOf(gradeOf(G.stats[s])) >= 5)) G.fx.flash = 'gold';
@@ -1597,7 +1674,19 @@ function bank(mult){
   }
   nextRound(1);
 }
+// 보너스 라운드: 라운드를 쓰지 않는 특별한 한 판 (가장 낮은 스탯 문양의 7 다섯 장 = 플러시 파이브)
+function startBonus(){
+  G.inBonus = true; jinx.armed = false; saveJinx();
+  dealHand();
+  const low = SUITS.reduce((a, k) => G.stats[k] < G.stats[a] ? k : a, 'S');
+  G.hand = Array.from({ length:5 }, () => ({ r:7, s:low }));
+  G.locks = [true,true,true,true,true]; G.luckyHand = true;
+  G.fx.flash = 'gold'; SFX.play('unlock');
+  render();
+}
 function nextRound(used){
+  if(jinx.armed && !G.inBonus){ startBonus(); return; }          // 보너스 라운드가 끝나면 원래 순서대로
+  if(G.inBonus){ G.inBonus = false; G.bonusDone = (G.bonusDone || 0) + 1; }
   G.round += used;
   if(G.round > RN()){ finishRun(); return; }
   if(G.round === asAfter() + 1 && !G.allstarDone){
@@ -1835,6 +1924,7 @@ function fcPlay(){
   const H = G.hilo; if(!H || H.state !== 'pick') return;
   const info = fcInfo(H.side, H.sel); if(info.bad) return;
   const j = fcJudge(H.side, H.sel);
+  if(!H.firstDone){ H.firstDone = true; jinxFirstPitch(H, j.res === 'win'); }
   H.last = j; H.lastSel = JSON.parse(JSON.stringify(H.sel));
   SFX.play(j.snd);
   if(j.res === 'win'){
@@ -1869,14 +1959,14 @@ function endHilo(pay, why, quiet){
   if(quiet) return;
   if(pay > 0) SFX.play('coin', .15); else SFX.play('bust', .4);
 }
-function hiloSettle(){ const H = G.hilo; const pay = H.pay; G.hilo = null; if(pay > 0) bank(pay); else hiloBust(); }
+function hiloSettle(){ const H = G.hilo; const pay = H.pay; G.hilo = null; if(pay > 0){ G.maxMult = Math.max(G.maxMult || 0, pay); bank(pay); } else hiloBust(); }
 function hiloContinue(){
   const H = G.hilo; if(!H) return;
   H.state = 'pick'; H.safeNow = false; H.overturned = false;
   G.fx.hiloIn = true; SFX.play('hiloIn'); render();
 }
-function hiloStop(){ const m = G.hilo.mult; G.hilo = null; bank(m); }
-function hiloBust(){ G.lineScore[G.round] = 'X'; nextRound(1); }
+function hiloStop(){ const m = G.hilo.mult; G.hilo = null; if(m > 1) G.maxMult = Math.max(G.maxMult || 0, m); bank(m); }
+function hiloBust(){ if(!G.inBonus) G.lineScore[G.round] = 'X'; nextRound(1); }
 
 /* ---------------- 칭호 ---------------- */
 const isBat = R => R.type === 'bat', isPit = R => R.type === 'pit';
@@ -1901,6 +1991,7 @@ const TITLES = [
   { id:'ironarm', n:'철완', hint:'그가 나오는 날은 불펜이 쉰다', desc:'투수로 스태미너 SSS(Lv 75) 이상', test:R => isPit(R) && R.st.D >= 75 },
   { id:'magic', n:'마구 보유자', hint:'공이 홈플레이트 앞에서 사라진다', desc:'투수로 변화 EX(Lv 85) 이상', test:R => isPit(R) && R.st.C >= 85 },
   { id:'closer_tank', n:'선발 체질 마무리', hint:'1이닝만 던지기엔 너무 튼튼하다', desc:'마무리로 스태미너 S(Lv 55) 이상', test:R => R.pos === '마무리' && R.st.D >= 55 },
+  { id:'jinx', n:'신이 버린 사나이', hint:'아무에게도 일어나지 않았으면 하는 일', desc:'풀 카운트 승부 첫 공에서 다섯 번 연속 패배하기 (이길 확률 40% 이상 선택만). 하지만 저희는 당신을 버리지 않았습니다', test:R => R.jinx, rare:true },
   { id:'zeroerr', n:'무결점 글러브', hint:'한 시즌 동안 공이 한 번도 글러브를 빠져나가지 않았다', desc:'수비 LEGEND(Lv 100)로 전성기 시즌 실책 0개 기록하기', test:R => R.zeroErr, rare:true },
   { id:'luckynum', n:'럭키 넘버', hint:'서른일곱 칸 중 단 하나', desc:'올스타 카지노에서 스트레이트 업(숫자 하나) 당첨', test:R => R.allstar === 'num', rare:true },
   { id:'insured', n:'비디오 판독', hint:'방금 그 판정, 다시 봅시다', desc:'풀 카운트 승부에서 챌린지 신청하기', test:R => R.shieldsUsed >= 1 },
@@ -1943,7 +2034,7 @@ function runSummary(){
     type:G.isTwo ? 'two' : G.type, pos:G.pos, st:G.isTwo ? {} : G.stats,
     pitTop:G.isTwo ? Math.max(...SUITS.map(s => G.two.pit.stats[s])) : 0, batTop:G.isTwo ? Math.max(...SUITS.map(s => G.two.bat.stats[s])) : 0, vals, top:Math.max(...vals), minV:Math.min(...vals),
     hands, handsLog:G.handsLog, hiloUsed:G.hiloUsed, busts:G.busts, pushes:G.pushes,
-    streak:G.bestStreak, rerollsUsed:G.rerollsUsed, lastMult:G.lastMult, awards:G.season.awards, jump:G.maxJump || 0, perks:(G.perks || []).length, revives:G.revives || 0, zeroErr:!!(G.season && G.season.raw && G.season.raw.kind === 'bat' && G.season.raw.err === 0), homers:G.homers || 0, reads:G.reads || 0, maxFouls:G.maxFouls || 0, maxHR:G.maxHR || 0, chances:G.chances || 0, allstar:G.allstarWin, shieldsUsed:G.shieldsUsed || 0, legendPerk:(G.perks || []).some(p => p.t === 'L')
+    streak:G.bestStreak, rerollsUsed:G.rerollsUsed, lastMult:G.lastMult, awards:G.season.awards, jump:G.maxJump || 0, perks:(G.perks || []).length, revives:G.revives || 0, jinx:!!G.jinxHit, zeroErr:!!(G.season && G.season.raw && G.season.raw.kind === 'bat' && G.season.raw.err === 0), homers:G.homers || 0, reads:G.reads || 0, maxFouls:G.maxFouls || 0, maxHR:G.maxHR || 0, chances:G.chances || 0, allstar:G.allstarWin, shieldsUsed:G.shieldsUsed || 0, legendPerk:(G.perks || []).some(p => p.t === 'L')
   };
 }
 let modal = null;
@@ -2024,7 +2115,7 @@ function seasonBat(st, pos, noLuck){
           ['wRC+', wrc], ['실책', pos === '지명타자' ? '수비 출장 없음' : err], ['수비 기여', pos === '지명타자' ? '—' : (drs > 0 ? '+' : '') + drs],
           ['dWAR', dwar == null ? '—' : dwar.toFixed(1)],
           ['WAR', war.toFixed(1)]],
-    awards: aw, war, raw:{ kind:'bat', avg, h, hr, rbi, sb, war, drs, bb, runs, obp, slg, err:pos === '지명타자' ? null : err, posAdj }
+    awards: aw, war, raw:{ kind:'bat', avg, h, hr, rbi, sb, war, drs, bb, runs, obp, slg, err:pos === '지명타자' ? null : err, posAdj, gD, df:pos === '지명타자' ? 0 : df }
   };
 }
 // 야구식 이닝 표기: 아웃 카운트 단위 (예: 4710⅓)
@@ -2163,7 +2254,8 @@ function careerSeasons(raw, N, rng){
         sb:raw.sb * pf * Math.pow(sk, 1.5), drs:(raw.drs || 0) * sk, war:raw.war * sk * pf - (1 - sk) * 1.2,
         bb:(raw.bb || 0) * pf, runs:(raw.runs || 0) * pf * Math.pow(sk, .9),
         obp:obp0 - (obp0 - .300) * Math.max(0, fade), slg:slg0 - (slg0 - .360) * Math.max(0, fade),
-        err:raw.err == null ? null : Math.max(raw.err, 1) * pf * (1 + Math.max(0, fade) * .6),       // 나이 들수록 실책 증가 (실책 0은 전성기 한 해뿐)
+        // 실책: 신인 때는 수비 경험이 부족해 많고, 전성기에 가장 적고, 노쇠하면 다시 늘어남 (전성기 시즌의 실책보다 적어지지는 않음)
+        err:raw.err == null ? null : Math.max(raw.err === 0 ? 1 : raw.err, Math.round(lerp([25,20,15,11,8,6,4,3,2,1], (raw.gD || 0) * (.5 + .5 * sk), -.1) * (raw.df || 1))),
         dwar:raw.posAdj == null ? null : (raw.drs || 0) * sk / 10 + raw.posAdj * pf };
     }
     const era = Math.max(raw.era * .85, .2, raw.era + (7.0 - raw.era) * fade), ip = raw.ip * pf, k = raw.k * pf * Math.pow(sk, .9);
@@ -2292,7 +2384,7 @@ function careerOf(raw, years, top, rng, debut){
 // 기록 저장용 (Firestore는 중첩 배열을 못 쓰므로 객체 배열로)
 const packSeason = se => ({ rows:se.rows.map(([k, v]) => ({ k, v:String(v) })), awards:se.awards || [] });
 // 성적 계산 버전: 계산식을 바꾸면 숫자를 올려서, 예전에 등록한 선수도 지금 계산식으로 다시 계산되게 함
-const CALC_VER = 4;
+const CALC_VER = 5;
 const calcCurrent = rec => rec.calcVer === CALC_VER;
 function seasonFor(rec){
   if(calcCurrent(rec) && rec.season && rec.season.rows) return { rows:rec.season.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]), awards:rec.season.awards || [] };
@@ -2353,13 +2445,13 @@ function finishRun(){
     rec = { name:G.name, pos:TWO_POS, type:'two', stats:{...B}, two:{ pit:{...P}, bat:{...B} },
       pitTop:{ label:STAT_NAMES.pit[pk], value:P[pk] }, batTop:{ label:STAT_NAMES.bat[bk], value:B[bk] },
       top:{ key: low === 'pit' ? pk : bk, label:'투타 중 낮은 쪽', value:Math.min(P[pk], B[bk]) },
-      guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2 };
+      guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2, maxMult:G.maxMult || 0 };
   } else {
     const topKey = topOf(G.stats);
     rec = {
       name:G.name, pos:G.pos, type:G.type, stats:{...G.stats},
       top:{ key:topKey, label:STAT_NAMES[G.type][topKey], value:Math.floor(G.stats[topKey]) },
-      xp:{...G.xp}, guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2
+      xp:{...G.xp}, guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2, maxMult:G.maxMult || 0
     };
   }
   rec.season = packSeason(G.season); rec.line = G.line; rec.calcVer = CALC_VER;
@@ -2547,6 +2639,7 @@ function renderStart(){
       <span class="lamps"><span class="k">O</span>${lamps('o',2,0)}</span>
     </div>
     <p>카드로 키우고, 풀 카운트 승부로 불리고, 전설의 숫자를 찍어라.</p>
+    <button class="how-btn" data-act="tut-open">처음이라면 · 게임 방법 보기 ›</button>
   </section>
   ${saved ? `<section class="resume-card sb" aria-label="진행 중인 육성">
     <div class="rc-top"><div><small>진행 중인 육성</small><b class="disp">${esc(saved.name)}</b><span>${esc(saved.pos)} · ${Math.min(saved.round, saved.isTwo ? TWO_ROUNDS : ROUNDS)}/${saved.isTwo ? TWO_ROUNDS : ROUNDS} 라운드</span></div>
@@ -2613,7 +2706,7 @@ function headerHTML(){
   }).join('');
   return `<div class="board sb compact">
     <div class="bd-row1">
-      <div class="who disp"><small>${esc(G.pos)}${G.isTwo ? ` · <span class="side-tag ${G.cur}">${SIDE_NAME[G.cur]}</span>` : ''}</small>${esc(G.name)}</div>
+      <div class="who disp"><small>${esc(G.pos)}${G.isTwo ? ` · <span class="side-tag ${G.cur}">${SIDE_NAME[G.cur]}</span>` : ''}${G.inBonus ? ' · <span class="bonus-tag">🍀 보너스 라운드</span>' : ''}</small>${esc(G.name)}</div>
       <div class="bd-btns"><button class="gear" data-act="deck">덱 ${deckSize()}</button><button class="gear" data-act="perks">보상 ${(G.perks || []).length}</button><button class="gear" data-act="menu" aria-haspopup="dialog">설정</button></div>
     </div>
     <div class="bd-row2">
@@ -2622,7 +2715,7 @@ function headerHTML(){
       <span class="nextp">보상까지 ${PERK_EVERY - (totLv() % PERK_EVERY)}Lv</span>
     </div>
     <div class="linescore" style="grid-template-columns:repeat(${RN()}, 1fr)" aria-label="라운드별 오른 레벨">${cells}</div>
-  </div>`;
+  </div>${tipHTML()}`;
 }
 function statsHTML(prev){
   const other = G.isTwo ? (G.cur === 'pit' ? 'bat' : 'pit') : null;
@@ -2711,6 +2804,75 @@ function renderPerk(){
       <span class="pt">${PERK_TIER[c.t].n}</span><b>${esc(perkText(c, 'n'))}</b><span class="pd">${esc(perkText(c, 'd'))}</span></button>`).join('')}</div>
   </div>`;
 }
+/* ---------------- 튜토리얼: 게임 방법 슬라이드 + 첫 플레이 팁 ---------------- */
+const TUT_KEY = 'fchl-tut-v1', TIPS_KEY = 'fchl-tips-v1';
+let tut = null;                                         // 보고 있는 슬라이드 번호 (null = 닫힘)
+let tipsSeen = (() => { try{ return JSON.parse(localStorage.getItem(TIPS_KEY)) || {}; }catch(e){ return {}; } })();
+const saveTips = () => { try{ localStorage.setItem(TIPS_KEY, JSON.stringify(tipsSeen)); }catch(e){} };
+const tutCard = (r, s, sym) => `<span class="tc s-${s}"><b>${r}</b><i>${sym}</i></span>`;
+const TUT = [
+  { icon:'🎯', t:'전설의 선수를 키워라',
+    b:`<p>카드 다섯 장으로 포커 족보를 만들어 야구 선수를 키우는 게임이에요. <b>10라운드</b> 동안 경험치를 모아 스탯 레벨을 올리고, 최고 등급 <b>LEGEND</b>에 도전하세요.</p>
+       <div class="tut-grades">${['E','D','C','B','A','S','SS','SSS','EX','LEGEND'].map(g => `<span class="g-${g}">${g}</span>`).join('')}</div>` },
+  { icon:'🃏', t:'문양마다 키우는 스탯이 달라요',
+    b:`<p>족보에 쓰인 카드의 <b>문양 스탯</b>이 경험치를 받아요. 원하는 스탯의 문양을 모아 보세요.</p>
+       <table class="tut-map"><tr><th></th><th>타자</th><th>투수</th></tr>
+       ${SUITS.map(x => `<tr><td><span class="sym s-${x}">${SUIT_CH[x]}</span></td><td>${STAT_NAMES.bat[x]}</td><td>${STAT_NAMES.pit[x]}</td></tr>`).join('')}</table>` },
+  { icon:'🔒', t:'잠그고, 바꾸고, 확정',
+    b:`<div class="tut-hand">${tutCard(7,'S','♠')}${tutCard(7,'H','♥')}<span class="tc lk s-D"><b>3</b><i>♦</i><em>잠금</em></span>${tutCard(9,'C','♣')}${tutCard(2,'H','♥')}</div>
+       <p>카드를 누르면 <b>잠겨요</b>. <b>리롤</b>을 누르면 잠기지 않은 카드만 새로 뽑아요. 리롤은 라운드마다 <b>2번</b>, 마음에 들면 <b>이 패로 확정</b>!</p>` },
+  { icon:'📈', t:'족보가 클수록 크게 자라요',
+    b:`<div class="tut-ladder">${[['원페어','×1'],['투페어','×1.5'],['트리플','×2.5'],['풀하우스','×4'],['스트레이트','×5'],['플러시','×8'],['포카드','×10'],['스트레이트 플러시','×50']].map(([n, m], i) => `<div class="${i >= 3 ? 'hot' : ''}"><span>${n}</span><b>${m}</b></div>`).join('')}</div>
+       <p>풀하우스 이상이면 <b>특수능력</b>도 얻어요. 자세한 족보는 게임 중 <b>족보표 보기</b>에서 확인할 수 있어요.</p>` },
+  { icon:'⚾', t:'풀 카운트 승부',
+    b:`<p><b>풀하우스 이상</b>을 만들면 승부 기회가 열려요. 이기면 그 라운드 경험치가 몇 배로 불고, 지면 사라져요.</p>
+       <div class="tut-two"><div><b>타자</b><span>네모 타격 44% · ×2.5</span><span>한 점 타격 11% · ×10</span></div>
+       <div><b>투수</b><span>피해서 던지기 · ×1.5~2.2</span><span>노림수 간파 11% · ×10</span></div></div>
+       <p>이기면 이어가거나 멈출 수 있어요. <b>3연승</b>하면 득점권에서 배율이 확보되고, <b>챌린지</b>로 진 판정을 뒤집을 수 있어요.</p>` },
+  { icon:'🎁', t:'보상 카드와 올스타',
+    b:`<p>스탯 레벨 합계가 <b>25</b> 오를 때마다 <b>보상 카드</b>를 하나 골라요. 덱에 원하는 문양을 더하거나 족보 배율을 올려 줘요.</p>
+       <p>5라운드가 끝나면 <b>올스타 카지노</b>! 룰렛 한 번으로 챌린지나 귀한 보상 카드를 노려요. 꽝이어도 잃는 건 없어요.</p>` },
+  { icon:'🏆', t:'은퇴 후엔 기록으로',
+    b:`<p>육성이 끝나면 <b>전성기 시즌</b>과 <b>통산 성적</b>, 트로피가 나와요. 선수를 등록하면 명예의 전당과 랭킹에 오르고, 다양한 <b>칭호</b>를 모을 수 있어요.</p>
+       <p class="tut-go">그럼, 플레이볼!</p>` }
+];
+function tutHTML(){
+  if(tut == null) return '';
+  const c = TUT[tut], last = tut === TUT.length - 1;
+  return `<div class="tut-back" data-act="tut-close">
+    <div class="tut sb" role="dialog" aria-modal="true" aria-labelledby="tut-t" data-act="noop">
+      <button class="tut-x" data-act="tut-close" aria-label="닫기">✕</button>
+      <div class="tut-icon" aria-hidden="true">${c.icon}</div>
+      <h3 class="disp" id="tut-t">${c.t}</h3>
+      <div class="tut-body">${c.b}</div>
+      <div class="tut-dots" aria-label="${tut + 1} / ${TUT.length}">${TUT.map((_, i) => `<i class="${i === tut ? 'on' : ''}"></i>`).join('')}</div>
+      <div class="tut-nav">
+        <button class="btn ghost" data-act="tut-prev" ${tut === 0 ? 'disabled' : ''}>이전</button>
+        <button class="btn amber" data-act="${last ? 'tut-close' : 'tut-next'}">${last ? '시작하기' : '다음'}</button>
+      </div>
+    </div>
+  </div>`;
+}
+// 첫 플레이 팁: 단계별로 한 번씩
+function tipHTML(){
+  if(!G) return '';
+  if(G.phase === 'draw' && G.luckyHand) return `<div class="tip lucky" role="note"><span class="tip-k">🍀</span><span class="tip-t"><b>보너스 라운드!</b> 저희는 당신을 버리지 않았습니다. 라운드를 쓰지 않는 특별한 한 판, 럭키 세븐 플러시 파이브를 확정하세요!</span></div>`;
+  let key = null, txt = '';
+  const side = G.type === 'pit' ? 'pit' : 'bat';
+  if(G.phase === 'draw'){ key = 'draw'; txt = '카드를 눌러 <b>잠그고</b>, <b>리롤</b>로 나머지를 바꿔 족보를 만들어요. 마음에 들면 <b>이 패로 확정</b>!'; }
+  else if(G.phase === 'result' && G.ev){
+    if(FC_BIG.includes(G.ev.key)){ key = 'result-fc'; txt = '풀하우스 이상! <b>풀 카운트 승부</b>로 이번 라운드 경험치를 몇 배로 불릴 수 있어요. 지면 사라지니 신중하게.'; }
+    else { key = 'result'; txt = '족보에 쓰인 카드의 <b>문양 스탯</b>이 경험치를 받아요. <b>경험치 받기</b>를 누르면 레벨이 올라요.'; }
+  }
+  else if(G.phase === 'hilo'){ key = 'hilo-' + side; txt = side === 'bat'
+    ? '존을 눌러 노림수를 정해요. <b>네모 타격</b>은 자주 맞히고(×2.5), <b>한 점 타격</b>은 홈런 한 방(×10)!'
+    : '<b>피해서 던지기</b>는 타자의 네모 스윙을 피할 칸을, <b>노림수 간파</b>는 타자가 노린 칸을 맞혀 ×10을 노려요.'; }
+  else if(G.phase === 'perk'){ key = 'perk'; txt = '<b>보상 카드</b>를 하나 골라요. 덱에 카드를 더하거나 족보 배율을 올려서 다음 라운드부터 효과가 있어요.'; }
+  else if(G.phase === 'allstar'){ key = 'allstar'; txt = '베팅 종류를 고르고 <b>돌리기</b>! 맞히기 어려울수록 보상이 커요. 꽝이어도 잃는 건 없어요.'; }
+  else if(G.phase === 'side'){ key = 'side'; txt = '이도류는 매 라운드 <b>마운드</b>(투수 덱)와 <b>타석</b>(타자 덱) 중 하나를 골라요. 각각 6번까지 설 수 있어요.'; }
+  if(!key || tipsSeen[key]) return '';
+  return `<div class="tip" role="note"><span class="tip-k">TIP</span><span class="tip-t">${txt}</span><button class="tip-x" data-act="tip-x" data-v="${key}">알겠어요</button></div>`;
+}
 function menuHTML(){
   if(!G.menu) return '';
   return `<div class="menu-back" data-act="menu-close">
@@ -2723,6 +2885,7 @@ function menuHTML(){
         <button class="btn ghost" data-act="quit">처음 화면으로</button>
         <button class="btn ghost" data-act="menu-close">계속하기</button>
       </div>
+      <div class="menu-help"><button data-act="tut-open">게임 방법 보기</button><button data-act="tips-reset">도움말 다시 켜기</button></div>
     </div>
   </div>`;
 }
@@ -2953,6 +3116,7 @@ function renderResult(){
     <p class="tap-hint">항목 이름을 누르면 설명을 볼 수 있어요</p>
     ${G.isTwo ? `<div class="two-radar"><div><h4 class="disp">투수 · 최고 ${esc(r.pitTop.label)} Lv ${fmt(r.pitTop.value)}</h4>${radarSVG(axesFor('pit', G.two.pit.stats, r.guts, r.star))}</div><div><h4 class="disp">타자 · 최고 ${esc(r.batTop.label)} Lv ${fmt(r.batTop.value)}</h4>${radarSVG(axesFor('bat', G.two.bat.stats, r.guts, r.star))}</div></div>` : radarSVG(axes)}
     <p class="oneliner">“${esc(G.line)}”</p>
+    ${G.maxMult > 1 ? `<p style="text-align:center;margin:0"><span class="fc-best">⚾ 풀 카운트 최고 <b>${fmtM(G.maxMult)}</b></span></p>` : ''}
     ${G.season.awards.length ? `<div class="awards">${G.season.awards.map(a => `<span>${a}</span>`).join('')}</div>` : ''}
 
     <h3 class="sec-title disp">전성기 시즌 (144경기)</h3>
@@ -2977,15 +3141,46 @@ function renderResult(){
 function entryHTML(rank, r, sub, src, key){
   const tag = src ? 'button' : 'div';
   const attrs = src ? ` data-act="player" data-src="${src}" data-v="${esc(key)}" aria-label="${esc(r.name)} 선수 스탯 보기"` : '';
-  return `<${tag} class="entry"${attrs}><span class="rk disp">${rank}</span>
+  const mine = r.owner && cap.uid && r.owner === cap.uid;
+  return `<${tag} class="entry${mine ? ' mine' : ''}"${attrs}><span class="rk disp">${rank}</span>
     <div><div class="nm">${esc(r.name)}</div><div class="sub">${sub}${src ? ' <span class="go">· 스탯 보기</span>' : ''}</div></div>
     <div class="big">Lv ${fmt(r.top.value)}<div>${gradeTag(r.top.value)}</div></div></${tag}>`;
 }
+// 풀 카운트 승부에서 가장 크게 불린 배율 (옛 기록엔 없음)
+const fcBestHTML = rec => rec.maxMult == null ? '' : `<p style="margin:0 0 6px"><span class="fc-best">⚾ 풀 카운트 최고 ${rec.maxMult > 1 ? `<b>${fmtM(rec.maxMult)}</b>` : '승부 없음'}</span></p>`;
 function pmSeason(rec, se){
   return `${rec.line ? `<p class="pm-line">“${esc(rec.line)}”</p>` : ''}
     ${se.awards && se.awards.length ? `<div class="pm-tags pm-aw">${se.awards.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}
     <div class="pm-sec">전성기 시즌 (144경기)</div><div class="pm-season">${seasonTable(se)}</div>
     <div class="pm-season">${careerHTML(careerForRec(rec), rec.guts, rec.star)}</div>`;
+}
+// 내가 등록한 선수인지 (포지션 최고 기록 또는 최근 등록 목록에 있는지)
+const myRec = rec => !!rec && ((hall.bestByPos[rec.pos] && hall.bestByPos[rec.pos].ts === rec.ts) || (hall.recent || []).some(r => r.ts === rec.ts && r.name === rec.name));
+const delBtn = rec => myRec(rec) && rec.ts ? `<button class="btn del-btn" data-act="del-player" data-v="${rec.ts}">이 선수 삭제</button>` : '';
+let delTarget = null;
+function askDelete(ts){
+  const rec = (hall.recent || []).find(r => r.ts === ts) || Object.values(hall.bestByPos).find(r => r && r.ts === ts);
+  if(!rec) return;
+  delTarget = ts;
+  modal = { title:'선수를 삭제할까요?', back:modal, body:`<p><b>${esc(rec.name)}</b> (${esc(rec.pos)}) 선수의 기록을 지워요. 지운 기록은 되돌릴 수 없어요.</p>
+    <p class="muted-s">이 선수가 포지션 최고 기록이었다면, 최근 등록한 같은 포지션 선수 중 다음으로 좋은 선수가 자리를 이어받아요. 이미 얻은 칭호와 등급 도감은 그대로 남아요.</p>
+    <div class="menu-actions"><button class="btn red" data-act="del-confirm">삭제</button><button class="btn ghost" data-act="modal-close">취소</button></div>` };
+  render();
+}
+function deletePlayer(){
+  const ts = delTarget; delTarget = null; if(ts == null) return;
+  const rec = (hall.recent || []).find(r => r.ts === ts) || Object.values(hall.bestByPos).find(r => r && r.ts === ts);
+  hall.recent = (hall.recent || []).filter(r => r.ts !== ts);
+  if(rec && hall.bestByPos[rec.pos] && hall.bestByPos[rec.pos].ts === ts){
+    // 같은 포지션의 다음 최고 선수로 교체
+    const next = hall.recent.filter(r => r.pos === rec.pos).sort((a, b) => (b.top ? b.top.value : 0) - (a.top ? a.top.value : 0))[0];
+    if(next) hall.bestByPos[rec.pos] = next; else delete hall.bestByPos[rec.pos];
+  }
+  hall.runs = Math.max(0, (hall.runs || 1) - 1);
+  saveHall();
+  if(board.entries) board.entries = board.entries.filter(r => !(r.owner === cap.uid && r.ts === ts));
+  modal = null; SFX.play('click'); render();
+  if(recTab === 'world' && typeof loadBoard === 'function') loadBoard();
 }
 function openPlayer(rec){
   if(!rec || !rec.stats) return;
@@ -2994,20 +3189,22 @@ function openPlayer(rec){
     const part = k => `<div class="pm-sec">${k === 'pit' ? '투수' : '타자'}</div>${radarSVG(axesFor(k, rec.two[k], rec.guts || 1, rec.star || 1))}
       <div class="pm-stats">${SUITS.map(s => `<div data-act="stat-info" data-v="${k}:${s}"><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${STAT_NAMES[k][s]}</span><b>Lv ${fmt(rec.two[k][s])}</b>${gradeTag(rec.two[k][s])}</div>`).join('')}</div>`;
     const se2 = seasonFor(rec);
-    modal = { title:rec.name, body:`<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>${pmSeason(rec, se2)}${part('pit')}${part('bat')}
-      ${titles2.length ? `<div class="pm-sec">칭호</div><div class="pm-tags">${titles2.map(t => `<span>${esc(t.n)}</span>`).join('')}</div>` : ''}` };
+    modal = { title:rec.name, body:`<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>${fcBestHTML(rec)}${pmSeason(rec, se2)}${part('pit')}${part('bat')}
+      ${titles2.length ? `<div class="pm-sec">칭호</div><div class="pm-tags">${titles2.map(t => `<span>${esc(t.n)}</span>`).join('')}</div>` : ''}${delBtn(rec)}` };
     render(); return;
   }
   const names = STAT_NAMES[rec.type] || STAT_NAMES.bat;
   const axes = axesFor(rec.type === 'pit' ? 'pit' : 'bat', rec.stats, rec.guts || 1, rec.star || 1);
   const titles = (rec.titles || []).map(id => TITLE_BY_ID[id]).filter(Boolean);
   const body = `<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>
+    ${fcBestHTML(rec)}
     ${pmSeason(rec, seasonFor(rec))}
     <div class="pm-sec">능력치 · 이름을 누르면 설명</div>
     ${radarSVG(axes)}
     <div class="pm-stats">${SUITS.map(s => `<div data-act="stat-info" data-v="${rec.type === 'pit' ? 'pit' : 'bat'}:${s}"><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${names[s]}</span><b>Lv ${fmt(rec.stats[s])}</b>${gradeTag(rec.stats[s])}</div>`).join('')}</div>
     ${titles.length ? `<div class="pm-sec">칭호</div><div class="pm-tags">${titles.map(t => `<span>${esc(t.n)}</span>`).join('')}</div>` : ''}
-    ${rec.abilities && rec.abilities.length ? `<div class="pm-sec">특수능력</div><div class="pm-tags">${rec.abilities.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}`;
+    ${rec.abilities && rec.abilities.length ? `<div class="pm-sec">특수능력</div><div class="pm-tags">${rec.abilities.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}
+    ${delBtn(rec)}`;
   modal = { title:rec.name, body };
   render();
 }
@@ -3023,12 +3220,6 @@ function renderRecords(){
         : `<button class="tchip locked" data-act="title" data-v="${t.id}" aria-label="얻지 못한 칭호, 힌트 보기">???</button>`).join('')}</div>
       <p class="note">얻지 못한 칭호를 누르면 힌트를 볼 수 있어요.</p>`;
   } else if(recTab === 'mine'){
-    const firsts = G_NAMES.slice(5).map(g => {
-      const f = hall.firsts[g];
-      return `<div class="entry"><span class="grade g-${g}">${g}</span>
-        <div><div class="nm">${f ? esc(f.name) + ' · ' + esc(f.pos) : '아직 달성하지 못했어요'}</div>
-        <div class="sub">${f ? new Date(f.ts).toLocaleDateString('ko-KR') + ' 첫 달성' : `가장 높은 스탯이 Lv ${G_BOUNDS[G_NAMES.indexOf(g)]} 이상`}</div></div><span></span></div>`;
-    }).join('');
     const sideTabs = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>`;
     const byPos = [...POSITIONS[recSide], TWO_POS].map(p => {
       const r = hall.bestByPos[p];
@@ -3036,11 +3227,10 @@ function renderRecords(){
                : `<div class="entry"><span></span><div><div class="nm">${p}</div><div class="sub">아직 키운 선수가 없어요</div></div><span></span></div>`;
     }).join('');
     body = `<p class="muted" style="margin:0">지금까지 ${hall.runs}명을 등록했어요.</p>
-      <h3 class="sec-title disp">등급 도감</h3><div class="list">${firsts}</div>
       <h3 class="sec-title disp">포지션별 최고 선수</h3>${sideTabs}<div class="list">${byPos}</div>`;
   } else {
     let list;
-    if(board.error === 'none') list = `<p class="empty">랭킹은 Firebase를 연결하면 보여요. 내 기록은 이 기기에 저장됩니다.</p>`;
+    if(board.error === 'none') list = `<p class="empty">랭킹은 Firebase를 연결하면 보여요. 내 기록은 이 기기에 저장됩니다.</p><button class="btn ghost" style="margin-top:10px" data-act="tab" data-v="mine">내 명예의 전당 보기</button>`;
     else if(board.error === 'fail') list = `<p class="empty">랭킹을 불러오지 못했어요. 잠시 후 다시 열어 주세요.</p>`;
     else if(board.loading || !board.entries) list = `<p class="empty">랭킹을 불러오는 중…</p>`;
     else {
@@ -3051,7 +3241,7 @@ function renderRecords(){
       board.rows = rows;
       list = rows.length ? rows.map((r, i) => { const sv = sideVal(r);
           return entryHTML(i + 1, { ...r, top:{ value:sv.value, label:sv.label } },
-            `<span class="pos-tag">${esc(r.pos)}</span> ${esc(sv.label)}${r.owner === cap.uid ? ' · 내 선수' : ''}`, 'world', i); }).join('')
+            `<span class="pos-tag">${esc(r.pos)}</span> ${esc(sv.label)}${r.owner === cap.uid ? ' · <b class="me-tag">내 선수</b>' : ''}`, 'world', i); }).join('')
         : `<p class="empty">${recSide === 'bat' ? '타자' : '투수'} 기록이 아직 없어요. 첫 번째 기록의 주인이 되어 보세요.</p>`;
     }
     body = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>
@@ -3060,9 +3250,9 @@ function renderRecords(){
   }
   return `<div class="topbar"><h2 class="disp" style="font-size:28px">기록과 랭킹</h2><button class="link" data-act="home">처음 화면</button></div>
     <div class="tabs" role="group">
+      <button data-act="tab" data-v="world" aria-pressed="${recTab==='world'}">전체 랭킹</button>
       <button data-act="tab" data-v="mine" aria-pressed="${recTab==='mine'}">명예의 전당</button>
       <button data-act="tab" data-v="titles" aria-pressed="${recTab==='titles'}">칭호 도감</button>
-      <button data-act="tab" data-v="world" aria-pressed="${recTab==='world'}">전체 랭킹</button>
     </div>${body}`;
 }
 
@@ -3180,9 +3370,10 @@ function render(){
       <h2 class="disp">올스타 브레이크</h2>
       <p>ALL-STAR CASINO OPEN</p>
     </div>
-    <span class="as-skip">화면을 누르면 건너뛸어요</span>
+    <span class="as-skip">화면을 누르면 건너뛰어요</span>
   </div>`;
   if(view === 'game' && G && G.fx.flash) html += `<div class="flash ${G.fx.flash}" aria-hidden="true"></div>`;
+  html += tutHTML();
   const chipsEl = app.querySelector && app.querySelector('.chips');
   const chipsX = chipsEl ? chipsEl.scrollLeft : 0;
   const pageY = window.scrollY;
@@ -3277,6 +3468,8 @@ document.addEventListener('click', e => {
     case 'sound': modal = { title:'소리 설정', body:`<div class="sound-box" style="margin:10px 0 0">${soundHTML()}</div>` }; render(); break;
     case 'player': openPlayer(b.dataset.src === 'mine' ? hall.bestByPos[v] : (board.rows || [])[+v]); break;
     case 'reg-yes': registerRun(); break;
+    case 'del-player': askDelete(+v); break;
+    case 'del-confirm': deletePlayer(); break;
     case 'reg-no': G.reg = 'no'; render(); break;
     case 'title': openTitle(v); break;
     case 'title-run': openTitle(v, 'run'); break;
@@ -3291,6 +3484,13 @@ document.addEventListener('click', e => {
     case 'settle': hiloSettle(); break;
     case 'spin': spinWheel(); break;
     case 'skip-spin': skipSpin(); break;
+    case 'tut-open': if(G) G.menu = false; tut = 0; render(); break;
+    case 'tut-next': tut = Math.min(TUT.length - 1, tut + 1); render(); break;
+    case 'tut-prev': tut = Math.max(0, tut - 1); render(); break;
+    case 'tut-close': tut = null; try{ localStorage.setItem(TUT_KEY, '1'); }catch(e){} render(); break;
+    case 'noop': break;
+    case 'tip-x': tipsSeen[v] = 1; saveTips(); render(); break;
+    case 'tips-reset': tipsSeen = {}; saveTips(); if(G) G.menu = false; render(); break;
     case 'ct-view': { const [id, i] = v.split(':');
       document.querySelectorAll(`[data-ctg="${id}"]`).forEach(el => { el.hidden = el.dataset.cti !== i; });
       document.querySelectorAll(`[data-ctb="${id}"]`).forEach(el => el.classList.toggle('on', el.dataset.v === v)); break; }
@@ -3322,6 +3522,7 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape' && G && G.menu && view === 'game'){ G.menu = false; render(); }
 });
 try{ window.speechSynthesis && speechSynthesis.getVoices(); }catch(e){}
+try{ if(!localStorage.getItem(TUT_KEY)) setTimeout(() => { if(view === 'start' && tut == null){ tut = 0; render(); } }, 1600); }catch(e){}
 loadLocal();
 render();
 initCaps();
