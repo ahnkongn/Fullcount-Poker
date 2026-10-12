@@ -285,8 +285,10 @@ button.entry .go{ color:var(--muted); font-size:13px; }
 .note{ font-size:13px; color:var(--muted); margin-top:12px; }
 
 .gear{ background:transparent; border:2px solid var(--scoreEdge); color:var(--scoreInk); border-radius:4px; padding:3px 10px; font-weight:800; font-size:13px; }
-.menu-back{ position:fixed; inset:0; z-index:20; background:rgba(5,12,8,.6); display:grid; place-items:center; padding:16px; }
-.menu{ width:min(400px, 100%); padding:22px 18px 18px; }
+.menu-back{ position:fixed; inset:0; z-index:20; background:rgba(5,12,8,.6); display:flex; flex-direction:column; padding:16px;
+  padding-top:calc(16px + env(safe-area-inset-top, 0px)); padding-bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+  overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.menu{ width:min(400px, 100%); padding:22px 18px 18px; margin:auto; flex:none; }
 .menu h3{ font-size:28px; }
 .menu p{ color:var(--scoreDim); margin:8px 0 16px; font-size:14px; }
 .menu .btn{ width:100%; }
@@ -640,13 +642,43 @@ main{ padding:10px 10px 16px; }
 .season td:last-child{ overflow-wrap:anywhere; }
 .trophies{ display:grid; grid-template-columns:repeat(auto-fill, minmax(92px, 1fr)); gap:6px; margin:4px 0 10px; }
 .tro{ display:grid; justify-items:center; gap:2px; padding:8px 4px 7px; border-radius:6px; background:var(--score); color:var(--scoreInk); text-align:center; box-shadow:inset 0 0 0 1px var(--scoreEdge); }
-.tro b{ font-family:"Isamanru", sans-serif; font-size:24px; line-height:1; color:var(--strike); }
+.tro b{ font-family:"Isamanru", sans-serif; font-weight:500; font-size:24px; line-height:1; color:var(--strike); }
 .tro b::before{ content:"🏆"; font-size:14px; margin-right:3px; vertical-align:3px; }
 .tro span{ font-size:12px; line-height:1.25; }
 .tro.gold{ background:linear-gradient(135deg, #fff6c8, #ffd23f); color:#2a1c00; box-shadow:0 0 0 2px #b48f00; }
 .tro.gold b{ color:#7a4b00; }
 .menu .tro{ box-shadow:inset 0 0 0 1px rgba(255,255,255,.25); background:rgba(0,0,0,.25); }
 .menu .tro.gold{ background:linear-gradient(135deg, #fff6c8, #ffd23f); }
+
+.sgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(92px, 1fr)); gap:6px; }
+.sg{ display:grid; gap:2px; padding:7px 9px 8px; border-radius:5px; background:rgba(120,130,120,.12); box-shadow:inset 0 0 0 1px rgba(120,130,120,.18); min-width:0; }
+.sg small{ font-size:11px; opacity:.72; white-space:nowrap; }
+.sg b{ font-family:"Isamanru", sans-serif; font-weight:500; font-size:18px; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sg.w{ grid-column:span 2; }
+.sg-sec{ grid-column:1 / -1; font-weight:700; font-size:13px; opacity:.8; margin-top:4px; padding-bottom:3px; border-bottom:2px solid rgba(120,130,120,.3); }
+.ct-head{ margin:14px 0 6px; font-weight:700; font-size:14px; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.ct-tabs{ display:inline-flex; border-radius:999px; overflow:hidden; box-shadow:inset 0 0 0 1px rgba(120,130,120,.4); }
+.ct-tabs button{ border:0; background:transparent; color:inherit; font:inherit; font-size:12px; font-weight:500; padding:4px 12px; }
+.ct-tabs button.on{ background:var(--strike); color:#231c00; }
+.ct-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:5px; box-shadow:inset 0 0 0 1px rgba(120,130,120,.25); }
+.ctable{ border-collapse:collapse; width:100%; font-size:11px; white-space:nowrap; font-variant-numeric:tabular-nums; letter-spacing:-.02em; font-weight:500; }
+.ctable th{ background:var(--score); color:var(--scoreInk); font-weight:500; padding:5px 3px; text-align:center; font-size:11px; }
+.ctable td{ padding:4px 2px; text-align:right; border-top:1px solid rgba(120,130,120,.18); }
+.ctable td.yr{ text-align:center; opacity:.65; padding-left:4px; }
+.ctable tr.peak td{ background:rgba(255,210,63,.16) !important; }
+.ctable tr.peak td.yr{ opacity:1; color:var(--strike); }
+.ctable td:first-child{ text-align:center; opacity:.75; }
+.ctable tbody tr:nth-child(even) td{ background:rgba(120,130,120,.07); }
+.ctable td.lead{ color:#d0202e; font-weight:700; }
+
+.ctable td.aw{ text-align:left; white-space:nowrap; line-height:1; padding-right:4px; }
+.bd{ display:inline-grid; place-items:center; width:15px; height:15px; font-style:normal; font-size:9.5px; font-weight:500; line-height:1; margin:0 1px 0 0; border-radius:3px; color:#fff; background:#6b7a70; letter-spacing:0; vertical-align:middle; }
+.bd.mvp{ background:#d0202e; } .bd.gg{ background:#e0a800; color:#2a1c00; } .bd.ks{ background:#2b5fb3; } .bd.as{ background:#7d8494; } .bd.roy{ background:#7a4fc0; }
+.ct-legend{ margin:6px 0 0; font-size:11px; line-height:1.7; opacity:.85; }
+.ct-legend b{ color:#d0202e; } .menu .ct-legend b{ color:#ff8a7a; }
+.menu .ctable th{ background:rgba(0,0,0,.35); }
+.menu .ctable td.lead{ color:#ff8a7a; }
+.menu .sg{ background:rgba(0,0,0,.2); box-shadow:inset 0 0 0 1px rgba(255,255,255,.1); }
 
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
@@ -1869,6 +1901,7 @@ const TITLES = [
   { id:'ironarm', n:'철완', hint:'그가 나오는 날은 불펜이 쉰다', desc:'투수로 스태미너 SSS(Lv 75) 이상', test:R => isPit(R) && R.st.D >= 75 },
   { id:'magic', n:'마구 보유자', hint:'공이 홈플레이트 앞에서 사라진다', desc:'투수로 변화 EX(Lv 85) 이상', test:R => isPit(R) && R.st.C >= 85 },
   { id:'closer_tank', n:'선발 체질 마무리', hint:'1이닝만 던지기엔 너무 튼튼하다', desc:'마무리로 스태미너 S(Lv 55) 이상', test:R => R.pos === '마무리' && R.st.D >= 55 },
+  { id:'zeroerr', n:'무결점 글러브', hint:'한 시즌 동안 공이 한 번도 글러브를 빠져나가지 않았다', desc:'수비 LEGEND(Lv 100)로 전성기 시즌 실책 0개 기록하기', test:R => R.zeroErr, rare:true },
   { id:'luckynum', n:'럭키 넘버', hint:'서른일곱 칸 중 단 하나', desc:'올스타 카지노에서 스트레이트 업(숫자 하나) 당첨', test:R => R.allstar === 'num', rare:true },
   { id:'insured', n:'비디오 판독', hint:'방금 그 판정, 다시 봅시다', desc:'풀 카운트 승부에서 챌린지 신청하기', test:R => R.shieldsUsed >= 1 },
   { id:'safe8', n:'득점권 찬스', hint:'세 번 이기면 마음이 놓인다', desc:'한 번의 풀 카운트 승부에서 3연승으로 득점권 도착', test:R => R.streak >= 3 },
@@ -1891,9 +1924,9 @@ const TITLES = [
   { id:'highcard', n:'족보 없는 인생', hint:'아무것도 맞지 않는 날이 여러 번', desc:'한 육성에서 하이카드로 3번 확정', test:R => R.hands.HighCard >= 3 },
   { id:'noreroll', n:'주어진 대로', hint:'처음 받은 패에 늘 만족하는 사람', desc:'리롤을 한 번도 쓰지 않고 육성 마치기', test:R => R.rerollsUsed === 0 },
   { id:'opener', n:'개막전 대박', hint:'시작부터 남다르다', desc:'1라운드에 플러시 이상의 큰 족보(포카드·스트레이트 플러시 등) 만들기', test:R => ['Flush','FourKind','StraightFlush','FiveKind','FlushHouse','FlushFive'].includes(R.handsLog[0]) },
-  { id:'avg400', n:'4할 타자', hint:'꿈의 타율', desc:'시즌 예상 성적에서 타율 4할 이상', test:R => R.awards.includes('4할 타자') },
-  { id:'hrking', n:'신기록 제조기', hint:'한 시즌 홈런 기록을 갈아치워라', desc:'시즌 예상 성적에서 홈런 73개 이상', test:R => R.awards.includes('단일 시즌 홈런 신기록') },
-  { id:'fifty', n:'50-50', hint:'담장도 넘기고 베이스도 훔치고', desc:'시즌 예상 성적에서 홈런 50개, 도루 50개 이상', test:R => R.awards.includes('50-50 클럽') },
+  { id:'avg400', n:'4할 타자', hint:'꿈의 타율', desc:'전성기 시즌에서 타율 4할 이상', test:R => R.awards.includes('4할 타자') },
+  { id:'hrking', n:'신기록 제조기', hint:'한 시즌 홈런 기록을 갈아치워라', desc:'전성기 시즌에서 홈런 73개 이상', test:R => R.awards.includes('단일 시즌 홈런 신기록') },
+  { id:'fifty', n:'50-50', hint:'담장도 넘기고 베이스도 훔치고', desc:'전성기 시즌에서 홈런 50개, 도루 50개 이상', test:R => R.awards.includes('50-50 클럽') },
   { id:'twoA', n:'투타 겸업', hint:'마운드에서도, 타석에서도', desc:'이도류로 투수·타자 최고 스탯을 모두 A(Lv 45) 이상 만들기', test:R => R.type === 'two' && R.pitTop >= 45 && R.batTop >= 45 },
   { id:'twoLegend', n:'리얼 이도류', hint:'전설이 마운드와 타석에 동시에', desc:'이도류로 투수·타자 모두 LEGEND(Lv 100) 스탯 만들기', test:R => R.type === 'two' && R.pitTop >= 100 && R.batTop >= 100, rare:true },
   { id:'perk5', n:'준비된 자', hint:'준비는 다다익선', desc:'한 육성에서 보상 카드 5장 이상 고르기', test:R => R.perks >= 5 },
@@ -1910,7 +1943,7 @@ function runSummary(){
     type:G.isTwo ? 'two' : G.type, pos:G.pos, st:G.isTwo ? {} : G.stats,
     pitTop:G.isTwo ? Math.max(...SUITS.map(s => G.two.pit.stats[s])) : 0, batTop:G.isTwo ? Math.max(...SUITS.map(s => G.two.bat.stats[s])) : 0, vals, top:Math.max(...vals), minV:Math.min(...vals),
     hands, handsLog:G.handsLog, hiloUsed:G.hiloUsed, busts:G.busts, pushes:G.pushes,
-    streak:G.bestStreak, rerollsUsed:G.rerollsUsed, lastMult:G.lastMult, awards:G.season.awards, jump:G.maxJump || 0, perks:(G.perks || []).length, revives:G.revives || 0, homers:G.homers || 0, reads:G.reads || 0, maxFouls:G.maxFouls || 0, maxHR:G.maxHR || 0, chances:G.chances || 0, allstar:G.allstarWin, shieldsUsed:G.shieldsUsed || 0, legendPerk:(G.perks || []).some(p => p.t === 'L')
+    streak:G.bestStreak, rerollsUsed:G.rerollsUsed, lastMult:G.lastMult, awards:G.season.awards, jump:G.maxJump || 0, perks:(G.perks || []).length, revives:G.revives || 0, zeroErr:!!(G.season && G.season.raw && G.season.raw.kind === 'bat' && G.season.raw.err === 0), homers:G.homers || 0, reads:G.reads || 0, maxFouls:G.maxFouls || 0, maxHR:G.maxHR || 0, chances:G.chances || 0, allstar:G.allstarWin, shieldsUsed:G.shieldsUsed || 0, legendPerk:(G.perks || []).some(p => p.t === 'L')
   };
 }
 let modal = null;
@@ -1960,7 +1993,7 @@ function seasonBat(st, pos, noLuck){
   let hr = Math.round(lerp([0,5,10,18,26,36,45,55,65,75], gP, 10) * L());
   const sb = Math.round(lerp([0,3,8,15,25,40,55,70,90,110], gR, 12) * L());
   const df = DEF_FACTOR[pos];
-  const err = pos === '지명타자' ? 0 : Math.max(0, Math.round(lerp([25,20,14,9,5,2,0,0,0,0], gD, 0) * df * L()));
+  const err = pos === '지명타자' ? 0 : st.D >= 100 ? 0 : Math.max(1, Math.round(lerp([25,20,15,11,8,6,4,3,2,1], gD, -.1) * df * L()));
   const drs = pos === '지명타자' ? 0 : Math.round(lerp([-15,-8,-3,3,7,10,15,20,30,40], gD, 8) * df);
   const PA = 620;
   const bb = Math.round(35 + gC*4 + gP*4);
@@ -1970,6 +2003,10 @@ function seasonBat(st, pos, noLuck){
   const d2 = Math.round((h - hr) * .2), d3 = Math.round(Math.min(15, sb/10));
   const obp = (h + bb) / PA, slg = (h + d2 + 2*d3 + 3*hr) / ab, ops = obp + slg;
   const rbi = Math.round(hr*1.7 + (h-hr)*.28);
+  const runs = Math.round(hr + (h - hr) * .3 + bb * .3 + sb * .25);            // 득점
+  const wrc = Math.round(100 * (obp / .330 + slg / .400 - 1));                     // wRC+ (리그 평균 = 100)
+  const posAdj = pos === '지명타자' ? null : POS_ADJ[pos] * .8;
+  const dwar = posAdj == null ? null : drs / 10 + posAdj;                          // 수비 WAR
   // 평균(OPS .720) 대비 공격 득점 + 대체 선수 대비 기본값 2승 + 수비·주루·포지션 보정. 10점 = 1승
   const war = (ops - .720) * PA * .019 + 1.6 + drs/12 + sb*.02 + POS_ADJ[pos];
   const aw = [];
@@ -1982,11 +2019,12 @@ function seasonBat(st, pos, noLuck){
   if(drs >= 15) aw.push('골든글러브');
   if(war >= 8) aw.push('MVP');
   return {
-    rows:[['타율', avg.toFixed(3).replace(/^0/,'')], ['홈런', hr], ['타점', rbi], ['도루', sb],
+    rows:[['타율', avg.toFixed(3).replace(/^0/,'')], ['안타', h], ['홈런', hr], ['타점', rbi], ['득점', runs], ['도루', sb], ['볼넷', bb],
           ['출루율 / 장타율', obp.toFixed(3).replace(/^0/,'') + ' / ' + slg.toFixed(3).replace(/^0/,'')], ['OPS', ops.toFixed(3)],
-          ['실책', pos === '지명타자' ? '수비 출장 없음' : err], ['수비 기여', pos === '지명타자' ? '—' : (drs > 0 ? '+' : '') + drs],
+          ['wRC+', wrc], ['실책', pos === '지명타자' ? '수비 출장 없음' : err], ['수비 기여', pos === '지명타자' ? '—' : (drs > 0 ? '+' : '') + drs],
+          ['dWAR', dwar == null ? '—' : dwar.toFixed(1)],
           ['WAR', war.toFixed(1)]],
-    awards: aw, war, raw:{ kind:'bat', avg, h, hr, rbi, sb, war, drs }
+    awards: aw, war, raw:{ kind:'bat', avg, h, hr, rbi, sb, war, drs, bb, runs, obp, slg, err:pos === '지명타자' ? null : err, posAdj }
   };
 }
 // 야구식 이닝 표기: 아웃 카운트 단위 (예: 4710⅓)
@@ -2002,6 +2040,9 @@ function seasonPit(st, pos, noLuck){
   const era = Math.max(.3, ((h9 + bb9*1.2)*.45 - 1) * 1.12);  // C급 선발 ≈ 6점대
   const whip = (h9 + bb9) / 9;
   const k9 = 3 + whiff*.22 + Math.max(0, velo-140)*.08;
+  const hr9 = clamp((1.7 - (velo - 135) * .022 - (whiff - 15) * .014) * L(), .05, 2.4);   // 9이닝당 피홈런
+  // 이닝 → 피안타·피홈런·볼넷 개수
+  const pitchCounts = ip => ({ ha:Math.round(h9 * ip / 9), hra:Math.round(hr9 * ip / 9), bb:Math.round(bb9 * ip / 9) });
   const aw = []; let rows; let war; let raw;
   const ra9 = era * 1.08;                     // 비자책점 포함 9이닝당 실점
   if(pos === '선발'){
@@ -2020,28 +2061,36 @@ function seasonPit(st, pos, noLuck){
     if(era <= 2.8) aw.push('평균자책점 1위'); if(era < 1 && ip >= 150) aw.push('0점대 신화');
     if(k >= 200) aw.push('탈삼진왕'); if(w >= 18) aw.push('다승왕'); if(w >= 25) aw.push('25승 투수');
     if(war >= 7) aw.push('최우수 투수상');
-    raw = { kind:'sp', w, l, era, ip, k, war, cg };
+    const pc = pitchCounts(ip);
+    raw = { kind:'sp', w, l, era, ip, k, war, cg, whip, ...pc };
     const ipTxt = ipFmt(ip);
     rows = [['최고 구속', velo + 'km/h'], ['승-패', w + '승 ' + l + '패'], ['평균자책점', era.toFixed(2)], ['선발 등판', gs + '경기' + (cg ? ' · 완투 ' + cg : '')], ['이닝', ipTxt],
-            ['탈삼진', k], ['9이닝당 볼넷', bb9.toFixed(1)], ['WHIP', whip.toFixed(2)], ['헛스윙률', Math.round(whiff) + '%'], ['WAR', war.toFixed(1)]];
+            ['탈삼진', k], ['볼넷', pc.bb], ['피안타', pc.ha], ['피홈런', pc.hra], ['WHIP', whip.toFixed(2)], ['ERA+', Math.min(999, Math.round(100 * 5.8 / Math.max(era, .1)))], ['헛스윙률', Math.round(whiff) + '%'], ['WAR', war.toFixed(1)]];
   } else {
     const closer = pos === '마무리';
-    const ip = clamp((closer ? 50 : 55) + ipS*.12, 40, 95);
+    // 등판 경기 수: 스태미너(연투 능력) + 감독의 신뢰(평균자책점). 35~88경기
+    const g = clamp(Math.round(((closer ? 40 : 42) + gI * 4.2 + (6.2 - era) * 1.5) * L()), 35, 88);
+    // 경기당 이닝: 스태미너가 좋을수록 1이닝 이상 길게. 중계 최대 110이닝, 마무리 최대 100이닝
+    const ip = Math.min(closer ? 100 : 110, g * (closer ? .95 + gI * .025 : .88 + gI * .042));
     const k = Math.round(k9 * ip / 9);
     war = (7.0 - ra9) * ip / 9 / 11 * (closer ? 1.8 : 1.4);    // 접전 상황 등판 가중치
-    rows = [['최고 구속', velo + 'km/h'], ['평균자책점', era.toFixed(2)], ['이닝', ipFmt(ip)], ['탈삼진', k],
-            ['9이닝당 볼넷', bb9.toFixed(1)], ['WHIP', whip.toFixed(2)], ['헛스윙률', Math.round(whiff) + '%']];
+    // 불펜 승패: 동점·역전 상황 등판에서 결정. 잘 던질수록 승이 많고 패가 적음
+    const w = Math.round(g * clamp((closer ? .025 : .035) + (6.2 - era) * (closer ? .009 : .011), .01, .12) * L());
+    const l = Math.round(g * clamp(.015 + era * .009, .01, .1));
+    const pc = pitchCounts(ip);
+    rows = [['최고 구속', velo + 'km/h'], ['승-패', w + '승 ' + l + '패'], ['평균자책점', era.toFixed(2)], ['등판', g + '경기'], ['이닝', ipFmt(ip)], ['탈삼진', k],
+            ['볼넷', pc.bb], ['피안타', pc.ha], ['피홈런', pc.hra], ['WHIP', whip.toFixed(2)], ['ERA+', Math.min(999, Math.round(100 * 5.8 / Math.max(era, .1)))], ['헛스윙률', Math.round(whiff) + '%']];
     if(closer){
-      const sv = Math.round(clamp(20 + (6.2-era)*6, 4, 62)), bs = Math.round(clamp(1 + era*1.1, 0, 15));
-      rows.splice(1, 0, ['세이브', sv + ' (블론 ' + bs + ')']); raw = { kind:'cl', sv, era, ip, k, war };
+      const sv = Math.round(g * clamp(.25 + (6.2 - era) * .06, .05, .72) * L()), bs = Math.round(clamp(1 + era * 1.1, 0, 15));
+      rows.splice(1, 0, ['세이브', sv + ' (블론 ' + bs + ')']); raw = { kind:'cl', sv, era, ip, k, war, w, l, whip, ...pc };
       if(sv >= 40) aw.push('구원왕');
     } else {
-      const hd = Math.round(clamp(12 + (6.2-era)*4.5, 2, 50));
-      rows.splice(1, 0, ['홀드', hd]); raw = { kind:'su', hd, era, ip, k, war };
-      if(hd >= 30) aw.push('홀드왕');
+      const hd = Math.round(g * clamp(.12 + (6.2 - era) * .075, .02, .55) * L());     // 등판 경기 중 홀드 비율
+      rows.splice(1, 0, ['홀드', hd]); raw = { kind:'su', hd, era, ip, k, war, w, l, whip, ...pc };
+      if(hd >= 32) aw.push('홀드왕');
     }
     if(era <= 2) aw.push('철벽 불펜');
-    if(war >= 3) aw.push('최우수 구원투수');
+    if(war >= 4) aw.push('최우수 구원투수');
     rows.push(['WAR', war.toFixed(1)]);
   }
   if(raw) raw.war = war;
@@ -2079,13 +2128,15 @@ function seasonTwo(pitSt, batSt, noLuck){
 function computeSeason(){
   G.season = G.isTwo ? seasonTwo(G.two.pit.stats, G.two.bat.stats) : G.type === 'bat' ? seasonBat(G.stats, G.pos) : seasonPit(G.stats, G.pos);
   const topLv = G.isTwo ? Math.max(...SUITS.map(k => G.two.pit.stats[k]), ...SUITS.map(k => G.two.bat.stats[k])) : Math.max(...SUITS.map(k => G.stats[k]));
-  G.career = careerOf(G.season.raw, careerYears(gutsValue(), lvOf(Math.max(0, G.star - 100))), topLv, Math.random);
+  G.career = careerOf(G.season.raw, careerYears(gutsValue(), lvOf(Math.max(0, G.star - 100))), topLv, Math.random, new Date().getFullYear());
 }
 function careerForRec(rec){
-  if(rec.career && rec.career.rows && rec.career.trophies) return { rows:rec.career.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]), awards:rec.career.awards || [], years:rec.career.years, trophies:rec.career.trophies, line:rec.career.line };
+  const hasPeak = rec.career && rec.career.tables && rec.career.tables.some(t => t.rows.some(r => r.p));
+  if(rec.career && rec.career.rows && rec.career.trophies && hasPeak) return { rows:rec.career.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]).filter(r => r[0] !== '은퇴 시즌'),
+    awards:(rec.career.awards || []).filter(a => !/원클럽맨/.test(a)), years:rec.career.years, trophies:rec.career.trophies, line:rec.career.line, tables:rec.career.tables || null };
   const se = rec.type === 'two' && rec.two ? seasonTwo(rec.two.pit, rec.two.bat, true) : rec.type === 'pit' ? seasonPit(rec.stats, rec.pos, true) : seasonBat(rec.stats, rec.pos, true);
   const top = rec.type === 'two' ? Math.max(rec.pitTop ? rec.pitTop.value : 0, rec.batTop ? rec.batTop.value : 0) : (rec.top ? rec.top.value : 0);
-  return careerOf(se.raw, careerYears(rec.guts, rec.star), top, seededRng(rec.ts || 7));
+  return careerOf(se.raw, careerYears(rec.guts, rec.star), top, seededRng(rec.ts || 7), rec.ts ? new Date(rec.ts).getFullYear() : null);
 }
 // 커리어 곡선: 데뷔(기량 55%) → 전성기(100%) → 은퇴 시즌(약 28%)
 function careerCurve(N){
@@ -2096,18 +2147,32 @@ function careerCurve(N){
 }
 // 시즌별 기록 펼치기
 function careerSeasons(raw, N, rng){
-  return careerCurve(N).map(sk0 => {
-    const sk = rng ? clamp(sk0 * (.8 + rng() * .4), .15, 1.2) : sk0;      // 해마다 ±20% 컨디션 (부상·슬럼프·커리어하이)
+  const peakIdx = Math.round((N - 1) * .4);           // 곡선의 전성기 구간 한가운데
+  return careerCurve(N).map((sk0, idx) => {
+    // 전성기 시즌: '전성기 시즌' 성적과 똑같은 기록
+    if(idx === peakIdx) return raw.kind === 'bat'
+      ? { peak:true, sk:1, avg:raw.avg, h:raw.h, hr:raw.hr, rbi:raw.rbi, sb:raw.sb, drs:raw.drs || 0, war:raw.war, bb:raw.bb || 0, runs:raw.runs || 0, obp:raw.obp || raw.avg + .06, slg:raw.slg || raw.avg * 1.5,
+          err:raw.err, dwar:raw.posAdj == null ? null : (raw.drs || 0) / 10 + raw.posAdj }
+      : { peak:true, sk:1, era:raw.era, ip:raw.ip, k:raw.k, war:raw.war, w:raw.w, l:raw.l, cg:raw.cg, sv:raw.sv, hd:raw.hd, whip:raw.whip || 1.3, bb:raw.bb || 0, ha:raw.ha || 0, hra:raw.hra || 0 };
+    const sk = rng ? clamp(sk0 * (.8 + rng() * .25), .15, .98) : Math.min(sk0, .98);   // 해마다 컨디션 (전성기는 넘지 않음)
     const pf = .55 + .45 * sk;                      // 출장 비중
-    const fade = Math.min(1, (1 - sk) * 1.25);       // 리그 평균 이하로 끌려 내려가는 정도 (은퇴 시즌 ≈ 0.9)
+    const fade = clamp((1 - sk) * 1.25, -.08, 1);     // 리그 평균 쪽으로 끌려가는 정도 (은퇴 시즌 ≈ 0.9, 커리어 하이는 조금만 더 좋아짐)
     if(raw.kind === 'bat'){
-      const avg = raw.avg - (raw.avg - .240) * fade;
+      const avg = clamp(raw.avg - (raw.avg - .240) * fade, .150, .480);
+      const obp0 = raw.obp || raw.avg + .06, slg0 = raw.slg || raw.avg * 1.5;
       return { sk, avg, ab:raw.h / raw.avg * pf, h:raw.h * pf * avg / raw.avg, hr:raw.hr * pf * Math.pow(sk, 1.2), rbi:raw.rbi * pf * Math.pow(sk, .8),
-        sb:raw.sb * pf * Math.pow(sk, 1.5), drs:(raw.drs || 0) * sk, war:raw.war * sk * pf - (1 - sk) * 1.2 };
+        sb:raw.sb * pf * Math.pow(sk, 1.5), drs:(raw.drs || 0) * sk, war:raw.war * sk * pf - (1 - sk) * 1.2,
+        bb:(raw.bb || 0) * pf, runs:(raw.runs || 0) * pf * Math.pow(sk, .9),
+        obp:obp0 - (obp0 - .300) * Math.max(0, fade), slg:slg0 - (slg0 - .360) * Math.max(0, fade),
+        err:raw.err == null ? null : Math.max(raw.err, 1) * pf * (1 + Math.max(0, fade) * .6),       // 나이 들수록 실책 증가 (실책 0은 전성기 한 해뿐)
+        dwar:raw.posAdj == null ? null : (raw.drs || 0) * sk / 10 + raw.posAdj * pf };
     }
-    const era = raw.era + (7.0 - raw.era) * fade, ip = raw.ip * pf, k = raw.k * pf * Math.pow(sk, .9);
+    const era = Math.max(raw.era * .85, .2, raw.era + (7.0 - raw.era) * fade), ip = raw.ip * pf, k = raw.k * pf * Math.pow(sk, .9);
     const lev = raw.kind === 'cl' ? 1.8 : raw.kind === 'su' ? 1.4 : 1;
-    const o = { sk, era, ip, k, war:(7.0 - era * 1.08) * ip / 99 * lev };     // 시즌 성적과 같은 기준
+    const whip0 = raw.whip || 1.3, whip = whip0 + (1.65 - whip0) * Math.max(0, fade);
+    const o = { sk, era, ip, k, war:(7.0 - era * 1.08) * ip / 99 * lev, whip,     // 시즌 성적과 같은 기준
+      bb:(raw.bb || 0) * pf * (whip / whip0), ha:(raw.ha || 0) * pf * (whip / whip0), hra:(raw.hra || 0) * pf * (1 + Math.max(0, fade)) };
+    if(raw.kind !== 'sp' && raw.w != null){ o.w = raw.w * pf * (.6 + .4 * sk); o.l = raw.l * pf * (1 + Math.max(0, fade) * .5); }
     if(raw.kind === 'sp'){
       const dec = (raw.w + raw.l) * pf, wr = Math.min(raw.w / Math.max(1, raw.w + raw.l), clamp(.5 + (6.2 - era) * .085, .12, .97));
       o.w = dec * wr; o.l = dec - o.w; o.cg = (raw.cg || 0) * pf * sk;
@@ -2121,45 +2186,61 @@ function careerSeasons(raw, N, rng){
 const careerYears = (guts, star) => clamp(Math.round(3 + ((guts || 1) + (star || 1)) / 7), 3, 24);
 // 시드가 있는 난수 (예전 기록을 열 때마다 같은 결과)
 function seededRng(seed){ let a = (seed >>> 0) || 1; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-function careerOf(raw, years, top, rng){
+function careerOf(raw, years, top, rng, debut){
   // 수상은 확률로: rng가 있으면 시즌마다 추첨, 없으면 기대값(50% 이상이면 수상)
   const chance = p => rng ? (rng() < p ? 1 : 0) : (p >= .5 ? 1 : 0);
-  const draw = (arr, pf) => arr.reduce((a, o) => a + chance(clamp(pf(o), 0, .95)), 0);
+  // 시즌마다 1위 여부를 기록하고 횟수를 돌려줌
+  const lead = (arr, key, pf) => arr.reduce((a, o) => { const w = chance(clamp(pf(o), 0, .95)); o['L_' + key] = w; return a + w; }, 0);
   const n = x => Math.round(x).toLocaleString('ko-KR');
   const sum = (arr, k) => arr.reduce((a, o) => a + (o[k] || 0), 0);
-  const cnt = (arr, f) => arr.filter(f).length;
-  const rows = [], aw = [], tro = {};
-  const add = (k, v) => { v = Math.round(v); if(v > 0) tro[k] = (tro[k] || 0) + v; };
-  let warBySeason = Array(years).fill(0), lastTxt = [];
+  const avgTxt = x => x.toFixed(3).replace(/^0/, '');
+  const rows = [], aw = [], tro = {}, sides = [];
+  const add = (k, v) => { if(v > 0) tro[k] = (tro[k] || 0) + v; };
+  const warBySeason = Array(years).fill(0);
   const bat = r => {
     const S = careerSeasons(r, years, rng);
     const h = sum(S, 'h'), hr = sum(S, 'hr'), rbi = sum(S, 'rbi'), sb = sum(S, 'sb'), ab = S.reduce((a, o) => a + o.h / o.avg, 0);
-    rows.push(['통산 타율', (h / ab).toFixed(3).replace(/^0/, '')], ['안타', n(h)], ['홈런', n(hr)], ['타점', n(rbi)], ['도루', n(sb)]);
+    const pa = S.reduce((a, o) => a + o.h / o.avg + o.bb, 0);
+    const ops = S.reduce((a, o) => a + (o.obp + o.slg) * (o.h / o.avg + o.bb), 0) / pa;
+    const wrcOf = o => Math.round(100 * (o.obp / .330 + o.slg / .400 - 1));
+    const wrc = Math.round(S.reduce((a, o) => a + wrcOf(o) * (o.h / o.avg + o.bb), 0) / pa);
+    const fielder = S[0].dwar != null;
+    rows.push(['통산 타율', avgTxt(h / ab)], ['안타', n(h)], ['홈런', n(hr)], ['타점', n(rbi)], ['득점', n(sum(S, 'runs'))], ['도루', n(sb)], ['볼넷', n(sum(S, 'bb'))], ['통산 OPS', ops.toFixed(3)], ['wRC+', wrc]);
+    if(fielder) rows.push(['실책', n(sum(S, 'err'))], ['통산 dWAR', sum(S, 'dwar').toFixed(1)]);
     if(h >= 4257) aw.push('통산 최다 안타 신기록'); else if(h >= 3000) aw.push('3000안타 클럽');
     if(hr >= 763) aw.push('통산 홈런 신기록'); else if(hr >= 500) aw.push('500홈런 클럽');
     if(sb >= 1407) aw.push('통산 도루 신기록'); else if(sb >= 500) aw.push('500도루 클럽');
-    add('타격왕', draw(S, o => (o.avg - .315) / .05)); add('홈런왕', draw(S, o => (o.hr - 28) / 22)); add('도루왕', draw(S, o => (o.sb - 32) / 28));
-    const L = S[S.length - 1]; lastTxt.push(`타율 ${L.avg.toFixed(3).replace(/^0/, '')} · 홈런 ${n(L.hr)}`);
+    add('타격왕', lead(S, 'avg', o => (o.avg - .315) / .05)); add('홈런왕', lead(S, 'hr', o => (o.hr - 28) / 22)); add('도루왕', lead(S, 'sb', o => (o.sb - 32) / 28));
     S.forEach((o, i) => warBySeason[i] += o.war);
+    sides.push({ title:'타격', S, cols:['타율','안타','홈런','타점','도루','OPS','WAR'],
+      cell:o => [[avgTxt(o.avg), o.L_avg], [n(o.h)], [n(o.hr), o.L_hr], [n(o.rbi)], [n(o.sb), o.L_sb], [(o.obp + o.slg).toFixed(3).replace(/^0/, '')], [o.war.toFixed(1)]],
+      detail:{ cols:['wRC+','득점','볼넷', ...(fielder ? ['실책','dWAR'] : []),'WAR'],
+        cell:o => [[String(wrcOf(o))], [n(o.runs)], [n(o.bb)], ...(fielder ? [[n(o.err)], [o.dwar.toFixed(1)]] : []), [o.war.toFixed(1)]] } });
   };
   const pit = r => {
     const S = careerSeasons(r, years, rng), ip = sum(S, 'ip'), k = sum(S, 'k'), era = S.reduce((a, o) => a + o.era * o.ip, 0) / ip;
-    const L = S[S.length - 1];
+    const eraPlus = e => Math.min(999, Math.round(100 * 5.8 / Math.max(e, .1)));      // ERA+ (리그 평균 = 100)
+    const pitDetail = { cols:['ERA+','삼진','볼넷','피안타','피홈런','WAR'],
+      cell:o => [[String(eraPlus(o.era))], [n(o.k)], [n(o.bb)], [n(o.ha)], [n(o.hra)], [o.war.toFixed(1)]] };
+    const whip = S.reduce((a, o) => a + o.whip * o.ip, 0) / ip, extra = [['볼넷', n(sum(S, 'bb'))], ['피안타', n(sum(S, 'ha'))], ['피홈런', n(sum(S, 'hra'))], ['통산 WHIP', whip.toFixed(2)], ['ERA+', eraPlus(era)]];
     if(r.kind === 'sp'){
       const w = sum(S, 'w'), l = sum(S, 'l');
       rows.push(['통산 승-패', n(w) + '승 ' + n(l) + '패'], ['평균자책점', era.toFixed(2)], ['이닝', ipFmt(ip)], ['탈삼진', n(k)]);
       const cg = sum(S, 'cg'); if(cg >= 1) rows.push(['완투', n(cg)]);
+      rows.push(...extra);
       if(w >= 511) aw.push('통산 최다승 신기록'); else if(w >= 300) aw.push('300승 클럽');
       if(k >= 5714) aw.push('통산 탈삼진 신기록'); else if(k >= 3000) aw.push('3000탈삼진 클럽');
-      add('다승왕', draw(S, o => (o.w - 13) / 7)); add('탈삼진왕', draw(S, o => (o.k - 170) / 90)); add('평균자책점왕', draw(S, o => o.ip >= 120 ? (3.6 - o.era) / 1.4 : 0));
-      lastTxt.push(`${n(L.w)}승 ${n(L.l)}패 · 평균자책점 ${L.era.toFixed(2)}`);
+      add('다승왕', lead(S, 'w', o => (o.w - 13) / 7)); add('탈삼진왕', lead(S, 'k', o => (o.k - 170) / 90)); add('평균자책점왕', lead(S, 'era', o => o.ip >= 120 ? (3.6 - o.era) / 1.4 : 0));
+      sides.push({ title:'투구', S, cols:['승','패','ERA','이닝','삼진','WHIP','WAR'],
+        cell:o => [[n(o.w), o.L_w], [n(o.l)], [o.era.toFixed(2), o.L_era], [ipFmt(o.ip)], [n(o.k), o.L_k], [o.whip.toFixed(2)], [o.war.toFixed(1)]], detail:pitDetail });
     } else {
-      const sv = sum(S, 'sv'), hd = sum(S, 'hd');
-      rows.push(r.kind === 'cl' ? ['통산 세이브', n(sv)] : ['통산 홀드', n(hd)], ['평균자책점', era.toFixed(2)], ['이닝', ipFmt(ip)], ['탈삼진', n(k)]);
+      const cl = r.kind === 'cl', sv = sum(S, 'sv'), hd = sum(S, 'hd');
+      rows.push(cl ? ['통산 세이브', n(sv)] : ['통산 홀드', n(hd)], ['통산 승-패', n(sum(S, 'w')) + '승 ' + n(sum(S, 'l')) + '패'], ['평균자책점', era.toFixed(2)], ['이닝', ipFmt(ip)], ['탈삼진', n(k)], ...extra);
       if(sv >= 653) aw.push('통산 세이브 신기록'); else if(sv >= 400) aw.push('400세이브 클럽');
       if(hd >= 300) aw.push('300홀드 클럽');
-      add('구원왕', draw(S, o => ((o.sv || 0) - 28) / 18)); add('홀드왕', draw(S, o => ((o.hd || 0) - 18) / 18));
-      lastTxt.push(`${r.kind === 'cl' ? '세이브 ' + n(L.sv) : '홀드 ' + n(L.hd)} · 평균자책점 ${L.era.toFixed(2)}`);
+      if(cl) add('구원왕', lead(S, 'sv', o => ((o.sv || 0) - 28) / 18)); else add('홀드왕', lead(S, 'hd', o => ((o.hd || 0) - 18) / 18));
+      sides.push({ title:'투구', S, detail:pitDetail, cols:[cl ? '세이브' : '홀드','승','패','ERA','이닝','WHIP','WAR'],
+        cell:o => [[n(cl ? o.sv : o.hd), cl ? o.L_sv : o.L_hd], [n(o.w || 0)], [n(o.l || 0)], [o.era.toFixed(2)], [ipFmt(o.ip)], [o.whip.toFixed(2)], [o.war.toFixed(1)]] });
     }
     S.forEach((o, i) => warBySeason[i] += o.war);
   };
@@ -2167,21 +2248,31 @@ function careerOf(raw, years, top, rng){
   else if(raw.kind === 'bat') bat(raw); else pit(raw);
   const war = warBySeason.reduce((a, b) => a + b, 0);
   rows.push(['통산 WAR', war.toFixed(1)]);
-  rows.push(['은퇴 시즌', lastTxt.join(' / ') + ` · WAR ${warBySeason[years - 1].toFixed(1)}`]);
-  // 트로피: 시즌별 WAR로 기대 횟수를 모아 반올림
+  // 트로피: 시즌마다 추첨해서 어느 해에 받았는지도 남김
+  const yearAw = Array.from({ length:years }, () => []);
   const T = {};
-  if((top || 0) >= 65 && chance(.8)) T['신인왕'] = 1;                                   // SS급 이상만, 80%
-  const acc = f => warBySeason.reduce((a, w) => a + chance(f(w)), 0);
-  T['리그 MVP'] = acc(w => clamp((w - 7) / 3, 0, 1));
-  T['한국시리즈 우승'] = acc(w => clamp(.08 + w * .035, .05, .55));
-  T['골든글러브'] = acc(w => clamp((w - 3.5) / 2.5, 0, 1));
+  if((top || 0) >= 65 && chance(.8)){ T['신인왕'] = 1; yearAw[0].push('신인왕'); }      // SS급 이상만, 80%
+  const acc = (name, short, f) => { let c = 0; warBySeason.forEach((w, i) => { if(chance(f(w))){ c++; yearAw[i].push(short); } }); if(c) T[name] = c; };
+  acc('리그 MVP', 'MVP', w => clamp((w - 7) / 3, 0, 1));
+  acc('한국시리즈 우승', '우승', w => clamp(.08 + w * .035, .05, .55));
+  acc('골든글러브', 'GG', w => clamp((w - 3.5) / 2.5, 0, 1));
   Object.entries(tro).forEach(([k, v]) => T[k] = v);
-  T['올스타'] = acc(w => clamp((w - 2) / 2, 0, 1));
+  acc('올스타', '올스타', w => clamp((w - 2) / 2, 0, 1));
   const trophies = Object.entries(T).filter(([, c]) => c > 0).map(([n, c]) => ({ n, c }));
   const reliever = raw.kind === 'cl' || raw.kind === 'su', hofLine = reliever ? 30 : 60;
   if(war >= hofLine * 1.7) aw.unshift('만장일치 명예의 전당'); else if(war >= hofLine) aw.unshift('명예의 전당 헌액');
   if(war >= hofLine * 1.15 || (years >= 15 && war >= hofLine * .8)) aw.push('영구결번');
-  if(years >= 20) aw.push(years + '년 원클럽맨');
+  // 연도별 기록표 (Firestore 저장용: 행은 { v:[값...], h:[1위 여부...] })
+  const y0 = debut || new Date().getFullYear();
+  const tables = [];
+  sides.forEach((sd, k) => {
+    const last = k === sides.length - 1;
+    tables.push({ title:sd.title, view:'기본', cols:['연도', ...sd.cols, ...(last ? ['수상'] : [])],
+      rows:sd.S.map((o, i) => { const c = sd.cell(o);
+        return { v:[String(y0 + i), ...c.map(x => x[0]), ...(last ? [yearAw[i].join(' · ')] : [])], h:[0, ...c.map(x => x[1] ? 1 : 0), ...(last ? [0] : [])], p:o.peak ? 1 : 0 }; }) });
+    if(sd.detail) tables.push({ title:sd.title, view:'세부', cols:['연도', ...sd.detail.cols],
+      rows:sd.S.map((o, i) => { const c = sd.detail.cell(o); return { v:[String(y0 + i), ...c.map(x => x[0])], h:[0, ...c.map(() => 0)], p:o.peak ? 1 : 0 }; }) });
+  });
   // 한줄평: 조건에 맞는 문장 중 하나
   const tc = k => T[k] || 0, lines = [];
   if(aw.includes('만장일치 명예의 전당')) lines.push('투표용지에 그의 이름이 빠질 수는 없었다', '야구 교과서의 한 장을 통째로 차지했다');
@@ -2190,14 +2281,14 @@ function careerOf(raw, years, top, rng){
   if(tc('한국시리즈 우승') >= 6) lines.push('우승 반지를 끼울 손가락이 모자랐다');
   else if(tc('한국시리즈 우승') >= 3) lines.push('가을만 되면 눈빛이 달라지는 남자');
   if(tc('한국시리즈 우승') >= 1 && !tc('리그 MVP')) lines.push('우승 반지를 낀 묵묵한 조연');
-  if(years >= 20) lines.push('한 팀에서 ' + years + '년, 걸어 다니는 프랜차이즈');
+  if(years >= 20) lines.push(years + '년 동안 그라운드를 지킨 철인');
   if(aw.includes('영구결번') && !aw.includes('만장일치 명예의 전당')) lines.push('그의 등번호는 아무도 달 수 없다');
   if(tc('리그 MVP') >= 3 && warBySeason[years - 1] < 1) lines.push('마지막 시즌은 조용했지만 아무도 그를 잊지 않았다');
   if(war < 0) lines.push('기록보다 야구를 사랑한 마음이 더 컸다');
   else if(years <= 4 && war < 5) lines.push('짧게 머물다 간 이름, 그래도 한 번은 빛났다');
   if(!lines.length) lines.push(war >= 30 ? '꾸준함으로 기억될 이름' : '팬들 기억 한구석에 남은 성실한 선수');
   const line = lines[rng ? Math.floor(rng() * lines.length) : 0];
-  return { rows, awards:aw, trophies, years, war, line };
+  return { rows, awards:aw, trophies, years, war, line, tables };
 }
 // 기록 저장용 (Firestore는 중첩 배열을 못 쓰므로 객체 배열로)
 const packSeason = se => ({ rows:se.rows.map(([k, v]) => ({ k, v:String(v) })), awards:se.awards || [] });
@@ -2213,9 +2304,37 @@ function careerHTML(c, guts, star){
     ${c.awards.length ? `<div class="awards car-aw">${c.awards.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}
     ${c.trophies && c.trophies.length ? `<div class="trophies" aria-label="트로피">${c.trophies.map(t => `<div class="tro ${t.n === '리그 MVP' || t.n === '한국시리즈 우승' ? 'gold' : ''}"><b>${t.c}</b><span>${esc(t.n)}</span></div>`).join('')}</div>`
       : '<p class="car-note">트로피 없이 조용히 유니폼을 벗었어요</p>'}
-    ${seasonTable(c)}`;
+    ${seasonTable(c)}
+    ${careerTables(c.tables)}`;
 }
+const AW_BADGE = { '신인왕':['신','roy'], 'MVP':['M','mvp'], '우승':['우','ks'], 'GG':['G','gg'], '올스타':['올','as'] };
+function careerTables(tables){
+  if(!tables || !tables.length) return '';
+  const cell = (t, r, v, i) => {
+    if(i === 0) return `<td class="yr">${r.p ? '★' : ''}’${String(v).slice(-2)}</td>`;
+    if(t.cols[i] === '수상') return `<td class="aw">${String(v).split(' · ').filter(Boolean).map(a => { const b = AW_BADGE[a] || [a, '']; return `<i class="bd ${b[1]}">${b[0]}</i>`; }).join('')}</td>`;
+    return `<td class="${r.h && r.h[i] ? 'lead' : ''}">${esc(v)}</td>`;
+  };
+  const groups = [];
+  tables.forEach(t => { const g = groups.find(x => x.title === t.title); if(g) g.list.push(t); else groups.push({ title:t.title, list:[t] }); });
+  const table = t => `<div class="ct-wrap"><table class="ctable"><thead><tr>${t.cols.map(c => `<th>${c === '연도' ? '' : c}</th>`).join('')}</tr></thead>
+    <tbody>${t.rows.map(r => `<tr class="${r.p ? 'peak' : ''}">${r.v.map((v, i) => cell(t, r, v, i)).join('')}</tr>`).join('')}</tbody></table></div>`;
+  return groups.map(g => { const id = 'ct' + (++careerTables.n);
+    return `<div class="ct-head"><span>연도별 기록${groups.length > 1 ? ' · ' + g.title : ''}</span>
+      ${g.list.length > 1 ? `<span class="ct-tabs">${g.list.map((t, i) => `<button class="${i ? '' : 'on'}" data-act="ct-view" data-v="${id}:${i}" data-ctb="${id}">${t.view}</button>`).join('')}</span>` : ''}</div>
+      ${g.list.map((t, i) => `<div data-ctg="${id}" data-cti="${i}" ${i ? 'hidden' : ''}>${table(t)}</div>`).join('')}`; }).join('')
+    + `<p class="ct-legend">★ 전성기 시즌 · <b>빨간 숫자</b> 리그 1위 · <i class="bd mvp">M</i> MVP · <i class="bd ks">우</i> 한국시리즈 우승 · <i class="bd gg">G</i> 골든글러브 · <i class="bd as">올</i> 올스타 · <i class="bd roy">신</i> 신인왕</p>`;
+}
+careerTables.n = 0;
 function seasonTable(se){
+  let h = '<div class="sgrid">';
+  se.rows.forEach(([k, v]) => {
+    if(k[0] === '§'){ h += `<div class="sg-sec">${k.slice(1)}</div>`; return; }
+    h += `<div class="sg ${String(v).length > 6 ? 'w' : ''}"><small>${k}</small><b>${v}</b></div>`;
+  });
+  return h + '</div>';
+}
+function seasonTableOld(se){
   return `<table class="season"><tbody>${se.rows.map(([k, v]) => k[0] === '§' ? `<tr class="sep"><td colspan="2">${k.slice(1)}</td></tr>` : `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>`;
 }
 function gutsValue(){ return 1 + 10 * G.bestStreak; }
@@ -2242,7 +2361,7 @@ function finishRun(){
     };
   }
   rec.season = packSeason(G.season); rec.line = G.line;
-  rec.career = { ...packSeason(G.career), years:G.career.years, trophies:G.career.trophies, line:G.career.line };
+  rec.career = { ...packSeason(G.career), years:G.career.years, trophies:G.career.trophies, line:G.career.line, tables:G.career.tables };
   G.record = rec;
   G.reg = null; G.newBest = false; G.firstGrades = [];
   const R = runSummary();
@@ -2834,8 +2953,8 @@ function renderResult(){
     <p class="oneliner">“${esc(G.line)}”</p>
     ${G.season.awards.length ? `<div class="awards">${G.season.awards.map(a => `<span>${a}</span>`).join('')}</div>` : ''}
 
-    <h3 class="sec-title disp">시즌 예상 성적 (144경기)</h3>
-    <table class="season"><tbody>${G.season.rows.map(([k, v]) => k[0] === '§' ? `<tr class="sep"><td colspan="2">${k.slice(1)}</td></tr>` : `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>
+    <h3 class="sec-title disp">전성기 시즌 (144경기)</h3>
+    ${seasonTable(G.season)}
     ${careerHTML(G.career, G.record.guts, G.record.star)}
 
     <h3 class="sec-title disp">스탯</h3>
@@ -2863,7 +2982,7 @@ function entryHTML(rank, r, sub, src, key){
 function pmSeason(rec, se){
   return `${rec.line ? `<p class="pm-line">“${esc(rec.line)}”</p>` : ''}
     ${se.awards && se.awards.length ? `<div class="pm-tags pm-aw">${se.awards.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}
-    <div class="pm-sec">시즌 예상 성적 (144경기)</div><div class="pm-season">${seasonTable(se)}</div>
+    <div class="pm-sec">전성기 시즌 (144경기)</div><div class="pm-season">${seasonTable(se)}</div>
     <div class="pm-season">${careerHTML(careerForRec(rec), rec.guts, rec.star)}</div>`;
 }
 function openPlayer(rec){
@@ -3170,6 +3289,9 @@ document.addEventListener('click', e => {
     case 'settle': hiloSettle(); break;
     case 'spin': spinWheel(); break;
     case 'skip-spin': skipSpin(); break;
+    case 'ct-view': { const [id, i] = v.split(':');
+      document.querySelectorAll(`[data-ctg="${id}"]`).forEach(el => { el.hidden = el.dataset.cti !== i; });
+      document.querySelectorAll(`[data-ctb="${id}"]`).forEach(el => el.classList.toggle('on', el.dataset.v === v)); break; }
     case 'bet-tab': G.allstar.tab = v; render(); break;
     case 'as-skip': { const o = document.querySelector('.as-intro'); if(o) o.remove(); const c = document.querySelector('.casino.rise'); if(c){ c.style.animationDelay = '0s'; c.scrollIntoView({ block:'start' }); } break; }
     case 'bet': { const [t, k] = v.split(':'); G.allstar.bet = { type:t, k: t === 'even' ? k : +k }; render(); break; }
