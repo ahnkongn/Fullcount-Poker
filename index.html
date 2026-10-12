@@ -441,6 +441,134 @@ button.entry .go{ color:var(--muted); font-size:13px; }
 .rw-stage.landed .vig{ opacity:1; }
 .rw-stage.landed .stage-bet{ opacity:0; }
 
+/* ---------- 한 화면 레이아웃 (압축) ---------- */
+.board.compact{ padding:8px 10px 9px !important; }
+.bd-row1{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+.bd-row1 .who{ font-size:20px; line-height:1.15; min-width:0; overflow-wrap:anywhere; }
+.bd-row1 .who small{ font-size:12px; margin-bottom:1px; }
+.bd-btns{ display:flex; gap:5px; flex:none; }
+.bd-btns .gear{ padding:3px 8px; font-size:12px; white-space:nowrap; }
+.bd-row2{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 14px; margin-top:6px; font-size:12px; color:var(--scoreDim); }
+.bd-row2 .lamp{ width:12px; height:12px; }
+.bd-row2 .nextp{ font-size:12px; }
+.board.compact .linescore{ margin-top:7px; gap:2px; }
+.board.compact .linescore .h{ font-size:10px; line-height:1.2; }
+.board.compact .linescore .c{ min-height:22px; font-size:clamp(10px, 3vw, 13px); }
+
+.stats{ margin-top:8px; padding:2px 10px; }
+.stat{ grid-template-columns:20px 56px 1fr auto 46px; gap:4px 8px; padding:6px 0; }
+.stat .suit{ grid-column:1; grid-row:1; font-size:18px; }
+.stat .nm{ grid-column:2; grid-row:1; font-size:14px; white-space:nowrap; }
+.stat .xpbar{ grid-column:3; grid-row:1; height:6px; }
+.stat .val{ grid-column:4; grid-row:1; font-size:19px; white-space:nowrap; }
+.stat .val .add{ font-size:12px; margin-left:3px; }
+.stat > .grade{ grid-column:5; grid-row:1; min-width:46px; font-size:13px; padding:2px 4px; }
+.stat .xptxt{ display:none; }
+.other-side{ padding:5px 0 3px; }
+
+.table{ margin-top:8px; padding:10px 10px 12px; }
+.handname{ font-size:24px; min-height:30px; }
+.handname.big{ font-size:28px; }
+.handline .detail{ font-size:13px; }
+.hint{ margin:0 0 8px; font-size:12px; }
+.preview{ margin:2px 0 8px; min-height:24px; gap:4px; }
+.preview span{ font-size:12px; padding:2px 7px 2px 3px; }
+.cards{ gap:6px; }
+.table .actions, .hilo .actions{ margin-top:10px; gap:8px; }
+.table .btn, .hilo .btn{ min-height:46px; padding:10px 12px; }
+.ladder-btn{ padding:2px 0 0; font-size:13px; }
+.gains{ grid-template-columns:1fr 1fr; gap:6px; margin-top:8px; }
+.gain{ flex-direction:column; align-items:flex-start; gap:2px; padding:6px 9px; }
+.gain b{ font-size:16px; }
+.ability-pop{ margin-top:6px; font-size:14px; }
+
+.hilo{ margin-top:8px; padding:10px 12px 12px; }
+.steps{ margin-bottom:4px; }
+.steps span{ min-width:24px; height:24px; font-size:11px; }
+.mult{ font-size:clamp(52px, 17vw, 82px); }
+.mult-cap{ font-size:12px; margin-top:2px; }
+.secured{ margin-top:4px; font-size:13px; }
+.duel{ margin:8px auto 2px; max-width:230px; gap:10px; }
+.msg{ margin-top:6px; min-height:0; font-size:13px; }
+.pot{ grid-template-columns:1fr 1fr; gap:4px 10px; margin-top:6px; }
+.pot div{ display:grid; gap:0; padding:4px 2px; }
+.pot b{ font-size:15px; }
+.pot .nx{ font-size:11px; }
+
+.perks{ gap:8px; }
+.perk{ padding:10px 12px 10px 10px; }
+.perk b{ font-size:16px; }
+.perk .pd{ font-size:13px; }
+.side-btn{ padding:12px; gap:6px; }
+.sb-top b{ font-size:22px; }
+
+.casino{ margin-top:8px; padding:18px 12px 18px; }
+.cs-title{ font-size:clamp(26px, 8.4vw, 36px); white-space:nowrap; }
+.cs-sub{ font-size:12px; margin-top:4px; }
+.rw-wrap{ width:min(250px, 31vh, 72%); margin:10px auto 4px; }
+.bets{ gap:8px; margin-top:6px; }
+.bet-tabs{ display:grid; grid-template-columns:repeat(4, 1fr); gap:4px; }
+.bet-tabs button{ border:1px solid rgba(247,244,236,.35); background:rgba(0,0,0,.2); color:var(--scoreInk); border-radius:3px; padding:6px 2px; font:inherit; font-size:12px; font-weight:700; line-height:1.2; }
+.bet-tabs button small{ display:block; font-weight:500; font-size:11px; color:var(--scoreDim); }
+.bet-tabs button.on{ background:var(--strike); color:#231c00; border-color:var(--strike); }
+.bet-tabs button.on small{ color:#5a4500; }
+.bets .bet-h{ margin:0; justify-content:center; }
+.bets .bet-h span{ text-align:center; color:var(--strike); font-weight:700; }
+.bt-row.three{ grid-template-columns:repeat(3, 1fr); }
+.bt{ min-height:36px; padding:6px 2px; }
+.bt.n{ min-height:30px; padding:4px 0; }
+.casino .actions{ margin-top:10px; }
+.stage-skip{ position:absolute; top:calc(14px + env(safe-area-inset-top, 0px)); right:14px; z-index:4; border:1px solid rgba(247,244,236,.5); background:rgba(0,0,0,.35);
+  color:var(--scoreInk); border-radius:999px; padding:7px 14px; font:inherit; font-size:13px; font-weight:700; }
+
+main{ padding:10px 10px 16px; }
+.btn.two-line{ display:grid; place-content:center; line-height:1.2; }
+.btn.two-line small{ font-size:11px; font-weight:500; opacity:.8; }
+.cs-title{ font-size:clamp(22px, 7.2vw, 30px) !important; }
+.rw-wrap{ width:min(220px, 27vh, 66%) !important; margin:8px auto 2px !important; }
+.casino{ padding:16px 12px 16px !important; }
+.bulbs.top{ top:5px; } .bulbs.bottom{ bottom:5px; }
+.stat{ padding:5px 0; }
+.perk{ padding:8px 10px 8px 8px; }
+.perk .pt{ min-width:44px; font-size:12px; }
+.perk b{ font-size:15px; }
+.perk .pd{ font-size:12px; line-height:1.35; }
+.perk-table .hint, .side-table .hint{ margin-bottom:6px; }
+
+.bets .bt-grid{ grid-template-columns:repeat(10, 1fr); gap:3px; }
+.bets .bt.n{ min-height:30px; font-size:12px; }
+@media (max-height:780px){
+  .cs-sub{ display:none; }
+  .casino .bulbs{ display:none; }
+  .casino{ padding:12px 10px 12px !important; }
+}
+
+[data-act="stat-info"]{ cursor:pointer; }
+.stats .stat[data-act="stat-info"]:hover .nm{ text-decoration:underline; }
+.radar .ax-link{ cursor:pointer; text-decoration:underline; text-decoration-style:dotted; }
+.tap-hint{ text-align:center; font-size:12px; color:var(--muted); margin:10px 0 -4px; }
+.side-tabs{ margin:8px 0 10px; }
+.pos-tag{ display:inline-block; padding:0 6px; border-radius:3px; background:var(--score); color:var(--scoreInk); font-size:12px; font-weight:700; margin-right:2px; }
+.pm-line{ margin:8px 0 2px !important; font-weight:700; color:var(--scoreInk) !important; text-align:center; }
+.pm-aw{ justify-content:center; margin-top:6px; }
+.pm-aw span{ border-color:var(--strike) !important; color:var(--strike); }
+.pm-season .season td{ border-bottom-color:var(--scoreEdge); color:var(--scoreInk); padding:6px 4px; }
+.pm-season .season tr.sep td{ color:var(--strike) !important; border-bottom-color:var(--scoreEdge); }
+.pm-stats div[data-act]{ cursor:pointer; }
+
+/* ---------- 카드 내부 크기: 화면이 아니라 카드 너비 기준 (작은 카드에서 숫자·문양 겹침 방지) ---------- */
+@supports (container-type: inline-size){
+  .card{ container-type:inline-size; }
+  .card .idx b{ font-size:clamp(11px, 27cqw, 26px); }
+  .card .idx i{ font-size:clamp(8px, 18cqw, 15px); }
+  .card .tl{ top:6cqw; left:8cqw; }
+  .card .br{ bottom:6cqw; right:8cqw; }
+  .card .pip{ font-size:clamp(18px, 46cqw, 52px); }
+  .card .st{ font-size:clamp(8px, 16cqw, 12px); padding:2cqw 0 3cqw; }
+  .card .tag{ font-size:clamp(8px, 14cqw, 11px); padding:3px 4px; }
+  .card.has-st .tag{ bottom:calc(clamp(8px, 16cqw, 12px) + 5cqw + 4px); }
+}
+
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
 .g-logo{ width:18px; height:18px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:12px; color:#fff;
@@ -719,8 +847,6 @@ button.entry .go{ color:var(--muted); font-size:13px; }
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-// ▼ Firebase 콘솔 > 프로젝트 설정 > 내 앱(웹 앱)의 firebaseConfig 값을 그대로 붙여 넣으세요.
-//   비워 두면 구글 로그인 없이 이 기기에만 저장되는 모드로 동작합니다.
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCTd-r0-wdvgQoUs-zM-UXjoFQhttjWZKU",
   authDomain: "full-count-highlow.firebaseapp.com",
@@ -1102,7 +1228,7 @@ function perksModal(){
 let G = null;          // 현재 육성
 let view = 'start';    // start | game | result | records
 let setup = { name:'', type:'bat', pos:'' };
-let recTab = 'mine', recPos = '선발';
+let recTab = 'mine', recPos = '선발', recSide = 'bat';
 let hall = { runs:0, bestByPos:{}, firsts:{}, recent:[], titles:{}, rev:0 };
 let board = { loading:false, entries:null, error:null, names:{} };
 let cap = { db:null, user:null, uid:null };
@@ -1281,22 +1407,32 @@ function spinWheel(){
   const n = Math.floor(Math.random() * 37), idx = WHEEL_ORDER.indexOf(n), th = 360 / 37;
   A.n = n; A.win = betWins(A.bet, n); A.state = 'spinning';
   A.rot = 360 * 5 + ((360 - idx * th) % 360);
+  const id = A.spinId = (A.spinId || 0) + 1;
+  const alive = () => G && G.allstar && G.allstar.spinId === id && G.allstar.state === 'spinning';
   G.fx.spin = true; render();
   const dur = reduceMotion() ? 50 : 7500, SLOW = 5000;
   if(!reduceMotion()){
-    // 슬로우 모션 구간: 카메라를 공이 들어갈 위쪽으로 당기고 심장 박동
-    setTimeout(() => { const st = document.querySelector('.rw-stage'); if(st) st.classList.add('slowmo'); }, SLOW);
-    let t = 0, gap = 38; while(t < dur - 700){ SFX.play('tick', t / 1000); t += gap; gap *= t > SLOW ? 1.16 : 1.055; }
-    for(let h = SLOW + 200; h < dur - 200; h += 560) SFX.play('heart', h / 1000);
-    SFX.play('card', (dur - 250) / 1000);
+    let t = 0, gap = 38;
+    while(t < dur - 700){ const tt = t; setTimeout(() => { if(alive()) SFX.play('tick'); }, tt); t += gap; gap *= t > SLOW ? 1.16 : 1.055; }
+    for(let h = SLOW + 200; h < dur - 200; h += 560) setTimeout(() => { if(alive()) SFX.play('heart'); }, h);
+    setTimeout(() => { if(alive()) SFX.play('card'); }, dur - 250);
+    setTimeout(() => { if(alive()){ const st = document.querySelector('.rw-stage'); if(st) st.classList.add('slowmo'); } }, SLOW);
   }
-  setTimeout(() => {
-    if(!G || !G.allstar || G.allstar.state !== 'spinning') return;
-    G.allstar.state = 'done'; G.fx.asReveal = true;
-    if(G.allstar.win){ SFX.play('hiloIn', .1); SFX.play(G.allstar.bet.type === 'num' ? 'unlock' : 'finish', 1.3); G.fx.win = 4; }
-    else { SFX.play('hiloIn', .1); SFX.play('push', 1.3); }
-    if(view === 'game') render();
-  }, dur + 200);
+  setTimeout(() => { if(alive()) finishSpin(true); }, dur + 200);
+}
+function finishSpin(reveal){
+  const A = G.allstar; A.state = 'done'; G.fx.asReveal = !!reveal;
+  const d = reveal ? 1.3 : 0;
+  if(reveal) SFX.play('hiloIn', .1);
+  if(A.win){ SFX.play(A.bet.type === 'num' ? 'unlock' : 'finish', d); G.fx.win = 4; if(!reveal) G.fx.flash = 'gold'; }
+  else SFX.play('push', d);
+  if(view === 'game') render();
+}
+// 건너뛰기: 회전 중이면 즉시 결과로, 결과 연출 중이면 연출만 닫기
+function skipSpin(){
+  const A = G && G.allstar; if(!A) return;
+  if(A.state === 'spinning'){ A.spinId++; finishSpin(false); return; }
+  document.querySelectorAll('.rw-stage, .as-pop').forEach(el => el.remove());
 }
 function claimAllstar(){
   const A = G.allstar; if(!A || A.state !== 'done') return;
@@ -1371,14 +1507,12 @@ function renderAllstar(){
     ${result}
     ${A.state === 'ready' ? `
     <div class="bets">
-      <div class="bet-g"><div class="bet-h"><b>이븐 머니</b><span>${(BET_TYPES.even.p*100).toFixed(1)}% · ${BET_TYPES.even.reward}</span></div>
-        <div class="bt-row six">${pick('even','red','빨강','r')}${pick('even','black','검정','b')}${pick('even','odd','홀')}${pick('even','even','짝')}${pick('even','low','1~18')}${pick('even','high','19~36')}</div></div>
-      <div class="bet-g"><div class="bet-h"><b>다즌</b><span>${(BET_TYPES.dozen.p*100).toFixed(1)}% · ${BET_TYPES.dozen.reward}</span></div>
-        <div class="bt-row three">${pick('dozen',1,'1~12')}${pick('dozen',2,'13~24')}${pick('dozen',3,'25~36')}</div></div>
-      <div class="bet-g"><div class="bet-h"><b>식스 라인</b><span>${(BET_TYPES.line.p*100).toFixed(1)}% · ${BET_TYPES.line.reward}</span></div>
-        <div class="bt-row six">${[1,2,3,4,5,6].map(k => pick('line', k, `${(k-1)*6+1}~${k*6}`)).join('')}</div></div>
-      <div class="bet-g"><div class="bet-h"><b>스트레이트 업</b><span>${(BET_TYPES.num.p*100).toFixed(1)}% · ${BET_TYPES.num.reward}</span></div>
-        <div class="bt-grid">${nums}</div></div>
+      <div class="bet-tabs" role="tablist">${['even','dozen','line','num'].map(t => `<button class="${(A.tab || 'even') === t ? 'on' : ''}" data-act="bet-tab" data-v="${t}" role="tab" aria-selected="${(A.tab || 'even') === t}">${{ even:'이븐 머니', dozen:'다즌', line:'식스 라인', num:'숫자 하나' }[t]}<small>${(BET_TYPES[t].p*100).toFixed(1)}%</small></button>`).join('')}</div>
+      <div class="bet-h"><span>당첨 시 ${BET_TYPES[A.tab || 'even'].reward}</span></div>
+      ${(A.tab || 'even') === 'even' ? `<div class="bt-row three">${pick('even','red','빨강','r')}${pick('even','black','검정','b')}${pick('even','odd','홀')}${pick('even','even','짝')}${pick('even','low','1~18')}${pick('even','high','19~36')}</div>` : ''}
+      ${(A.tab || 'even') === 'dozen' ? `<div class="bt-row three">${pick('dozen',1,'1~12')}${pick('dozen',2,'13~24')}${pick('dozen',3,'25~36')}</div>` : ''}
+      ${(A.tab || 'even') === 'line' ? `<div class="bt-row three">${[1,2,3,4,5,6].map(k => pick('line', k, `${(k-1)*6+1}~${k*6}`)).join('')}</div>` : ''}
+      ${(A.tab || 'even') === 'num' ? `<div class="bt-grid">${nums}</div>` : ''}
     </div>` : ''}
     <div class="actions">
       ${A.state === 'ready' ? `<button class="btn gold-btn" data-act="spin" ${b ? '' : 'disabled'}>${b ? `${betLabel(b)}에 걸고 돌리기` : '먼저 베팅할 곳을 고르세요'}</button>` : ''}
@@ -1570,8 +1704,8 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const DEF_FACTOR = { '포수':1.4,'유격수':1.3,'중견수':1.2,'2루수':1.1,'3루수':1,'우익수':.9,'좌익수':.8,'1루수':.6,'지명타자':0 };
 const POS_ADJ = { '포수':1.5,'유격수':1.5,'중견수':1,'2루수':.8,'3루수':.5,'우익수':0,'좌익수':0,'1루수':-.8,'지명타자':-1.5 };
 
-function seasonBat(st, pos){
-  const L = () => 1 + (Math.random()*0.14 - 0.07);
+function seasonBat(st, pos, noLuck){
+  const L = () => noLuck ? 1 : 1 + (Math.random()*0.14 - 0.07);
   const gC = gpos(st.H), gP = gpos(st.S), gD = gpos(st.D), gR = gpos(st.C);
   const avg = clamp(lerp([.190,.225,.255,.280,.300,.330,.345,.365,.390,.420], gC, .02) * L(), .150, .600);
   let hr = Math.round(lerp([0,5,10,18,26,36,45,55,65,75], gP, 10) * L());
@@ -1605,8 +1739,8 @@ function seasonBat(st, pos){
     awards: aw, war
   };
 }
-function seasonPit(st, pos){
-  const L = () => 1 + (Math.random()*0.14 - 0.07);
+function seasonPit(st, pos, noLuck){
+  const L = () => noLuck ? 1 : 1 + (Math.random()*0.14 - 0.07);
   const gV = gpos(st.S), gB = gpos(st.H), gI = gpos(st.D), gW = gpos(st.C);
   const velo = Math.round(lerp([128,136,141,146,151,156,160,163,166,170], gV, 2.5));
   const bb9 = Math.max(0, lerp([7,5.9,4.4,3.4,2.7,1.9,1.4,.9,.5,.2], gB, -.05) * L());
@@ -1673,15 +1807,25 @@ function oneLiner(){
   if(G.type === 'pit' && top[0] === 'S' && low[0] === 'H' && low[1] < 32) line = '공은 빠른데 어디로 갈지는 아무도 모른다';
   return line;
 }
+function seasonTwo(pitSt, batSt, noLuck){
+  const b = seasonBat(batSt, '지명타자', noLuck), p = seasonPit(pitSt, '선발', noLuck);
+  const war = b.war + p.war, aw = [...b.awards, ...p.awards];
+  if(war >= 9) aw.unshift('투타 겸업 MVP');
+  return { rows:[['§타격', ''], ...b.rows.filter(r => r[0] !== '실책' && r[0] !== '수비 기여' && r[0] !== 'WAR'), ['§투구', ''], ...p.rows.filter(r => r[0] !== 'WAR'), ['§합계', ''], ['합산 WAR', war.toFixed(1)]], awards:aw, war };
+}
 function computeSeason(){
-  if(G.isTwo){
-    const b = seasonBat(G.two.bat.stats, '지명타자'), p = seasonPit(G.two.pit.stats, '선발');
-    const war = b.war + p.war, aw = [...b.awards, ...p.awards];
-    if(war >= 9) aw.unshift('투타 겸업 MVP');
-    G.season = { rows:[['§타격', ''], ...b.rows.filter(r => r[0] !== '실책' && r[0] !== '수비 기여' && r[0] !== 'WAR'), ['§투구', ''], ...p.rows.filter(r => r[0] !== 'WAR'), ['§합계', ''], ['합산 WAR', war.toFixed(1)]], awards:aw, war };
-    return;
-  }
+  if(G.isTwo){ G.season = seasonTwo(G.two.pit.stats, G.two.bat.stats); return; }
   G.season = G.type === 'bat' ? seasonBat(G.stats, G.pos) : seasonPit(G.stats, G.pos);
+}
+// 기록 저장용 (Firestore는 중첩 배열을 못 쓰므로 객체 배열로)
+const packSeason = se => ({ rows:se.rows.map(([k, v]) => ({ k, v:String(v) })), awards:se.awards || [] });
+function seasonFor(rec){
+  if(rec.season && rec.season.rows) return { rows:rec.season.rows.map(o => Array.isArray(o) ? o : [o.k, o.v]), awards:rec.season.awards || [] };
+  if(rec.type === 'two' && rec.two) return seasonTwo(rec.two.pit, rec.two.bat, true);
+  return rec.type === 'pit' ? seasonPit(rec.stats, rec.pos, true) : seasonBat(rec.stats, rec.pos, true);
+}
+function seasonTable(se){
+  return `<table class="season"><tbody>${se.rows.map(([k, v]) => k[0] === '§' ? `<tr class="sep"><td colspan="2">${k.slice(1)}</td></tr>` : `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>`;
 }
 function gutsValue(){ return 1 + 10 * G.bestStreak; }
 
@@ -1706,6 +1850,7 @@ function finishRun(){
       xp:{...G.xp}, guts:gutsValue(), star:lvOf(Math.max(0, G.star - 100)), abilities:G.abilities.map(a => a.n), ts:Date.now(), lv:2
     };
   }
+  rec.season = packSeason(G.season); rec.line = G.line;
   G.record = rec;
   G.reg = null; G.newBest = false; G.firstGrades = [];
   const R = runSummary();
@@ -1953,16 +2098,16 @@ function headerHTML(){
     const sd = G.isTwo && G.sideLog ? G.sideLog[r] : null;
     return `<div><div class="h">${r}${sd ? `<i class="sd ${sd}">${sd === 'pit' ? '투' : '타'}</i>` : ''}</div><div class="${cls}">${txt}</div></div>`;
   }).join('');
-  return `<div class="board sb">
-    <div class="board-top">
+  return `<div class="board sb compact">
+    <div class="bd-row1">
       <div class="who disp"><small>${esc(G.pos)}${G.isTwo ? ` · <span class="side-tag ${G.cur}">${SIDE_NAME[G.cur]}</span>` : ''}</small>${esc(G.name)}</div>
-      <div class="board-lamps">
-        <span style="display:flex;gap:6px"><button class="gear" data-act="deck">덱 ${deckSize()}</button><button class="gear" data-act="perks">보상 ${(G.perks || []).length}</button><button class="gear" data-act="menu" aria-haspopup="dialog">설정</button></span>
-        <div class="nextp">다음 보상까지 ${PERK_EVERY - (totLv() % PERK_EVERY)}레벨</div>
-        <div>리롤 <span class="lamps">${lamps('b',Math.max(G.rerollsMax || REROLLS, G.rerolls),G.rerolls)}</span></div>
-        <div>하이로우 <span class="lamps">${lamps('s',Math.max(HILO_CHANCES, G.hiloLeft),G.hiloLeft)}</span></div>
-        ${G.shields ? `<div class="nextp">실패 방지권 ${G.shields}장</div>` : ''}
-      </div>
+      <div class="bd-btns"><button class="gear" data-act="deck">덱 ${deckSize()}</button><button class="gear" data-act="perks">보상 ${(G.perks || []).length}</button><button class="gear" data-act="menu" aria-haspopup="dialog">설정</button></div>
+    </div>
+    <div class="bd-row2">
+      <span>리롤 <span class="lamps">${lamps('b',Math.max(G.rerollsMax || REROLLS, G.rerolls),G.rerolls)}</span></span>
+      <span>하이로우 <span class="lamps">${lamps('s',Math.max(HILO_CHANCES, G.hiloLeft),G.hiloLeft)}</span></span>
+      ${G.shields ? `<span class="nextp">방지권 ${G.shields}</span>` : ''}
+      <span class="nextp">보상까지 ${PERK_EVERY - (totLv() % PERK_EVERY)}Lv</span>
     </div>
     <div class="linescore" style="grid-template-columns:repeat(${RN()}, 1fr)" aria-label="라운드별 오른 레벨">${cells}</div>
   </div>`;
@@ -1977,7 +2122,7 @@ function statsHTML(prev){
     const need = Math.ceil(xpAt(G.stats[s] + 1) - G.xp[s]);
     const pv = prev && prev[s];
     const g = a ? gradeTag(L0) : gradeTag(G.stats[s]);
-    return `<div class="stat"${a ? ` data-lv-from="${a[0]}" data-lv-to="${a[1]}"` : ''}>
+    return `<div class="stat" data-act="stat-info" data-v="${G.type}:${s}"${a ? ` data-lv-from="${a[0]}" data-lv-to="${a[1]}"` : ''}>
       <span class="suit s-${s}" aria-hidden="true">${SUIT_CH[s]}</span>
       <span class="nm">${STAT_NAMES[G.type][s]}</span>
       <span class="val"><small>Lv</small><span class="lvn">${fmt(L0)}</span>${pv && pv.to > pv.from ? `<span class="add">→ ${fmt(pv.to)}</span>` : ''}</span>
@@ -1989,9 +2134,9 @@ function statsHTML(prev){
 }
 
 function renderGame(){
-  if(G.phase === 'hilo') return headerHTML() + statsHTML() + renderHilo() + menuHTML();
+  if(G.phase === 'hilo') return headerHTML() + renderHilo() + menuHTML();
   if(G.phase === 'perk' && G.offer) return headerHTML() + statsHTML() + renderPerk() + menuHTML();
-  if(G.phase === 'allstar' && G.allstar) return headerHTML() + statsHTML() + renderAllstar() + menuHTML();
+  if(G.phase === 'allstar' && G.allstar) return headerHTML() + renderAllstar() + menuHTML();
   if(G.phase === 'side') return headerHTML() + statsHTML() + renderSide() + menuHTML();
   const ev = G.phase === 'result' ? G.ev : null;
   const gains = ev ? previewGain(1) : null;
@@ -2031,10 +2176,10 @@ function renderGame(){
     const keys = Object.keys(gains);
     table += `<div class="gains">${keys.map((s, j) => { const g = gains[s]; return `<div class="gain ${fx.reveal ? 'rise' : ''}" style="--d:${250 + j*90}ms"><span><span class="sym s-${s}">${SUIT_CH[s]}</span> ${STAT_NAMES[G.type][s]}<span class="gx">+${fmt(g.xp)} XP</span></span><b>${g.to > g.from ? `Lv ${fmt(g.from)} → <span ${fx.reveal ? `data-from="${g.from}" data-to="${g.to}" data-delay="${300 + j*90}"` : ''}>${fmt(fx.reveal ? g.from : g.to)}</span>` : '<span class="gx">경험치만 쌓여요</span>'}</b></div>`; }).join('')}</div>`;
     if(G.newAbility) table += `<div class="ability-pop">특수능력 획득: ${esc(G.newAbility.n)}</div>`;
-    table += `<div class="actions">
-      <button class="btn amber" data-act="hilo" ${G.hiloLeft<=0?'disabled':''}>하이로우 도전 — 전부 2배 아니면 전부 잃기 (남은 ${G.hiloLeft}회)</button>
+    table += `<div class="actions"><div class="row">
+      <button class="btn amber two-line" data-act="hilo" ${G.hiloLeft<=0?'disabled':''}>하이로우 도전<small>2배 아니면 0 · 남은 ${G.hiloLeft}회</small></button>
       <button class="btn chalk" data-act="take">경험치 받기</button>
-    </div>`;
+    </div></div>`;
   }
   table += `</div>`;
   return headerHTML() + statsHTML(gains) + table + menuHTML();
@@ -2229,7 +2374,7 @@ function radarSVG(axes){
   axes.forEach((a, i) => {
     const [x, y] = pt(i, 1.27);
     const anchor = Math.abs(x - cx) < 4 ? 'middle' : x < cx ? 'end' : 'start';
-    s += `<text x="${x}" y="${y - 6}" text-anchor="${anchor}" font-size="13" font-weight="700" fill="currentColor">${a.label}</text>`;
+    s += `<text x="${x}" y="${y - 6}" text-anchor="${anchor}" font-size="13" font-weight="700" fill="currentColor" ${a.info ? `data-act="stat-info" data-v="${a.info}" class="ax-link"` : ''}>${a.label}${a.info ? ' ⓘ' : ''}</text>`;
     s += `<text x="${x}" y="${y + 10}" text-anchor="${anchor}" font-size="12" fill="currentColor" fill-opacity=".65">${gradeOf(a.value)} · Lv ${fmt(a.value)}</text>`;
   });
   const [lx, ly] = pt(0, .6); s += `<text x="${lx + 6}" y="${ly + 4}" font-size="10" fill="currentColor" fill-opacity=".5">S</text>`;
@@ -2239,10 +2384,31 @@ function radarSVG(axes){
 
 function axesFor(type, st, guts, star){
   const n = STAT_NAMES[type];
-  return [{ label:n.S, value:st.S }, { label:n.H, value:st.H }, { label:'배짱', value:guts }, { label:n.D, value:st.D }, { label:n.C, value:st.C }, { label:'스타성', value:star }];
+  return [{ label:n.S, value:st.S, info:type + ':S' }, { label:n.H, value:st.H, info:type + ':H' }, { label:'배짱', value:guts, info:'guts' },
+          { label:n.D, value:st.D, info:type + ':D' }, { label:n.C, value:st.C, info:type + ':C' }, { label:'스타성', value:star, info:'star' }];
+}
+const STAT_DESC = {
+  'bat:S':'장타력이에요. 홈런 수와 장타율을 좌우해요. 높을수록 담장을 넘기는 타구가 늘어납니다.',
+  'bat:H':'공을 정확히 맞히는 능력이에요. 타율과 출루율을 좌우하고, 볼넷도 조금 늘어나요.',
+  'bat:D':'포구와 송구 능력이에요. 실책 수와 수비 기여(WAR)에 반영돼요. 유격수·포수·중견수처럼 수비가 중요한 포지션일수록 크게 작용하고, 지명타자는 반영되지 않아요.',
+  'bat:C':'발 빠르기예요. 도루 수와 추가 진루에 반영되고, 득점과 WAR에도 조금 보탬이 돼요.',
+  'pit:S':'공의 힘이에요. 최고 구속을 정하고, 피안타를 줄이고 탈삼진을 늘려요.',
+  'pit:H':'원하는 곳에 던지는 능력이에요. 9이닝당 볼넷을 줄여서 평균자책점과 WHIP를 낮춰요.',
+  'pit:D':'얼마나 오래 던질 수 있는지예요. 선발은 시즌 이닝과 승수, 불펜은 소화 이닝에 반영돼요.',
+  'pit:C':'변화구의 위력이에요. 헛스윙률과 탈삼진을 늘리고 피안타를 줄여요.',
+  guts:'하이로우를 얼마나 과감하게 성공시켰는지를 보여 주는 기록이에요. 한 번의 하이로우에서 연속으로 성공한 최대 횟수로 정해지고, 연속 1번마다 10레벨씩 올라가요(4연속이면 Lv 41). 시즌 성적에는 영향을 주지 않아요.',
+  star:'이 선수가 얼마나 화제를 모았는지를 보여 주는 스타성이에요. 육성 중에 스트레이트 이상의 큰 족보를 만들 때마다 쌓이고, 플러시·풀하우스·포카드·스트레이트 플러시처럼 귀한 족보일수록 많이 올라요. 시즌 성적에는 영향을 주지 않아요.'
+};
+function openStatInfo(key){
+  const [type, sk] = key.split(':');
+  let title, body = STAT_DESC[key] || '';
+  if(sk){ title = `${SUIT_CH[sk]} ${STAT_NAMES[type][sk]}`; body = `<p>${body}</p><div class="kv"><div><small>올리는 방법</small>${SUIT_CH[sk]} 문양 카드로 족보를 만들면 경험치가 쌓여요</div><div><small>구분</small>${type === 'pit' ? '투수' : '타자'} 스탯</div></div>`; }
+  else { title = key === 'guts' ? '배짱' : '스타성'; body = `<p>${body}</p>`; }
+  modal = { title, body, back:modal };
+  render();
 }
 function statRows(type, st){
-  return `<div class="stats" style="margin-top:0">${SUITS.map(s => `<div class="stat">
+  return `<div class="stats" style="margin-top:0">${SUITS.map(s => `<div class="stat" data-act="stat-info" data-v="${type}:${s}">
       <span class="suit s-${s}" aria-hidden="true">${SUIT_CH[s]}</span><span class="nm">${STAT_NAMES[type][s]}</span>
       <span class="val"><small>Lv</small>${fmt(st[s])}</span>${gradeTag(st[s])}</div>`).join('')}</div>`;
 }
@@ -2277,13 +2443,13 @@ function renderResult(){
     </div>
     ${G.grandslam ? `<div class="gslam">${burstHTML(70, '40%')}<small>비밀 보상 해금</small><b class="disp">그랜드슬램</b><span>모든 칭호 ${TITLES.length}종을 모았어요!</span><em>이제부터 모든 육성에서 하이로우 기회가 한 번 더 주어져요</em></div>` : ''}
     ${reg}
+    <p class="tap-hint">항목 이름을 누르면 설명을 볼 수 있어요</p>
     ${G.isTwo ? `<div class="two-radar"><div><h4 class="disp">투수 · 최고 ${esc(r.pitTop.label)} Lv ${fmt(r.pitTop.value)}</h4>${radarSVG(axesFor('pit', G.two.pit.stats, r.guts, r.star))}</div><div><h4 class="disp">타자 · 최고 ${esc(r.batTop.label)} Lv ${fmt(r.batTop.value)}</h4>${radarSVG(axesFor('bat', G.two.bat.stats, r.guts, r.star))}</div></div>` : radarSVG(axes)}
     <p class="oneliner">“${esc(G.line)}”</p>
     ${G.season.awards.length ? `<div class="awards">${G.season.awards.map(a => `<span>${a}</span>`).join('')}</div>` : ''}
 
     <h3 class="sec-title disp">시즌 예상 성적 (144경기)</h3>
     <table class="season"><tbody>${G.season.rows.map(([k, v]) => k[0] === '§' ? `<tr class="sep"><td colspan="2">${k.slice(1)}</td></tr>` : `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>
-    <button class="btn ghost" style="margin-top:12px;width:100%" data-act="resim">시즌 다시 돌려보기</button>
 
     <h3 class="sec-title disp">스탯</h3>
     ${G.isTwo ? `<h4 class="two-h">투수</h4>${statRows('pit', G.two.pit.stats)}<h4 class="two-h">타자</h4>${statRows('bat', G.two.bat.stats)}` : statRows(G.type, G.stats)}
@@ -2307,25 +2473,30 @@ function entryHTML(rank, r, sub, src, key){
     <div><div class="nm">${esc(r.name)}</div><div class="sub">${sub}${src ? ' <span class="go">· 스탯 보기</span>' : ''}</div></div>
     <div class="big">Lv ${fmt(r.top.value)}<div>${gradeTag(r.top.value)}</div></div></${tag}>`;
 }
+function pmSeason(rec, se){
+  return `${rec.line ? `<p class="pm-line">“${esc(rec.line)}”</p>` : ''}
+    ${se.awards && se.awards.length ? `<div class="pm-tags pm-aw">${se.awards.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}
+    <div class="pm-sec">시즌 예상 성적 (144경기)</div><div class="pm-season">${seasonTable(se)}</div>`;
+}
 function openPlayer(rec){
   if(!rec || !rec.stats) return;
   if(rec.type === 'two' && rec.two){
     const titles2 = (rec.titles || []).map(id => TITLE_BY_ID[id]).filter(Boolean);
     const part = k => `<div class="pm-sec">${k === 'pit' ? '투수' : '타자'}</div>${radarSVG(axesFor(k, rec.two[k], rec.guts || 1, rec.star || 1))}
-      <div class="pm-stats">${SUITS.map(s => `<div><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${STAT_NAMES[k][s]}</span><b>Lv ${fmt(rec.two[k][s])}</b>${gradeTag(rec.two[k][s])}</div>`).join('')}</div>`;
-    modal = { title:rec.name, body:`<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>${part('pit')}${part('bat')}
+      <div class="pm-stats">${SUITS.map(s => `<div data-act="stat-info" data-v="${k}:${s}"><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${STAT_NAMES[k][s]}</span><b>Lv ${fmt(rec.two[k][s])}</b>${gradeTag(rec.two[k][s])}</div>`).join('')}</div>`;
+    const se2 = seasonFor(rec);
+    modal = { title:rec.name, body:`<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>${pmSeason(rec, se2)}${part('pit')}${part('bat')}
       ${titles2.length ? `<div class="pm-sec">칭호</div><div class="pm-tags">${titles2.map(t => `<span>${esc(t.n)}</span>`).join('')}</div>` : ''}` };
     render(); return;
   }
   const names = STAT_NAMES[rec.type] || STAT_NAMES.bat;
-  const axes = [
-    { label:names.S, value:rec.stats.S }, { label:names.H, value:rec.stats.H }, { label:'배짱', value:rec.guts || 100 },
-    { label:names.D, value:rec.stats.D }, { label:names.C, value:rec.stats.C }, { label:'스타성', value:rec.star || 100 }
-  ];
+  const axes = axesFor(rec.type === 'pit' ? 'pit' : 'bat', rec.stats, rec.guts || 1, rec.star || 1);
   const titles = (rec.titles || []).map(id => TITLE_BY_ID[id]).filter(Boolean);
   const body = `<p class="pm-sub">${esc(rec.pos)}${rec.ts ? ' · ' + new Date(rec.ts).toLocaleDateString('ko-KR') : ''}</p>
+    ${pmSeason(rec, seasonFor(rec))}
+    <div class="pm-sec">능력치 · 이름을 누르면 설명</div>
     ${radarSVG(axes)}
-    <div class="pm-stats">${SUITS.map(s => `<div><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${names[s]}</span><b>Lv ${fmt(rec.stats[s])}</b>${gradeTag(rec.stats[s])}</div>`).join('')}</div>
+    <div class="pm-stats">${SUITS.map(s => `<div data-act="stat-info" data-v="${rec.type === 'pit' ? 'pit' : 'bat'}:${s}"><span class="sym s-${s}">${SUIT_CH[s]}</span><span>${names[s]}</span><b>Lv ${fmt(rec.stats[s])}</b>${gradeTag(rec.stats[s])}</div>`).join('')}</div>
     ${titles.length ? `<div class="pm-sec">칭호</div><div class="pm-tags">${titles.map(t => `<span>${esc(t.n)}</span>`).join('')}</div>` : ''}
     ${rec.abilities && rec.abilities.length ? `<div class="pm-sec">특수능력</div><div class="pm-tags">${rec.abilities.map(a => `<span>${esc(a)}</span>`).join('')}</div>` : ''}`;
   modal = { title:rec.name, body };
@@ -2349,28 +2520,33 @@ function renderRecords(){
         <div><div class="nm">${f ? esc(f.name) + ' · ' + esc(f.pos) : '아직 달성하지 못했어요'}</div>
         <div class="sub">${f ? new Date(f.ts).toLocaleDateString('ko-KR') + ' 첫 달성' : `가장 높은 스탯이 Lv ${G_BOUNDS[G_NAMES.indexOf(g)]} 이상`}</div></div><span></span></div>`;
     }).join('');
-    const byPos = ALL_POS.map(p => {
+    const sideTabs = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>`;
+    const byPos = [...POSITIONS[recSide], TWO_POS].map(p => {
       const r = hall.bestByPos[p];
       return r ? entryHTML('', r, `${esc(p)} · ${esc(r.top.label)} Lv ${fmt(r.top.value)}`, 'mine', p)
                : `<div class="entry"><span></span><div><div class="nm">${p}</div><div class="sub">아직 키운 선수가 없어요</div></div><span></span></div>`;
     }).join('');
     body = `<p class="muted" style="margin:0">지금까지 ${hall.runs}명을 등록했어요.</p>
       <h3 class="sec-title disp">등급 도감</h3><div class="list">${firsts}</div>
-      <h3 class="sec-title disp">포지션별 최고 선수</h3><div class="list">${byPos}</div>`;
+      <h3 class="sec-title disp">포지션별 최고 선수</h3>${sideTabs}<div class="list">${byPos}</div>`;
   } else {
     let list;
     if(board.error === 'none') list = `<p class="empty">랭킹은 Firebase를 연결하면 보여요. 내 기록은 이 기기에 저장됩니다.</p>`;
     else if(board.error === 'fail') list = `<p class="empty">랭킹을 불러오지 못했어요. 잠시 후 다시 열어 주세요.</p>`;
     else if(board.loading || !board.entries) list = `<p class="empty">랭킹을 불러오는 중…</p>`;
     else {
-      const rows = board.entries.filter(e => e.pos === recPos).sort((a, b) => b.top.value - a.top.value).slice(0, 20);
+      // 이도류는 타자 탭에선 타자 최고 스탯, 투수 탭에선 투수 최고 스탯으로 함께 겨뤄요
+      const sideVal = e => e.type === 'two' ? (recSide === 'bat' ? e.batTop : e.pitTop) : e.top;
+      const rows = board.entries.filter(e => e.type === recSide || (e.type === 'two' && e.batTop && e.pitTop))
+        .sort((a, b) => sideVal(b).value - sideVal(a).value).slice(0, 30);
       board.rows = rows;
-      list = rows.length ? rows.map((r, i) => entryHTML(i + 1, r,
-          `${esc(r.pos)} · ${esc(r.top.label)}${r.owner === cap.uid ? ' · 내 선수' : ''}`, 'world', i)).join('')
-        : `<p class="empty">${recPos}에 등록된 기록이 아직 없어요. 첫 번째 기록의 주인이 되어 보세요.</p>`;
+      list = rows.length ? rows.map((r, i) => { const sv = sideVal(r);
+          return entryHTML(i + 1, { ...r, top:{ value:sv.value, label:sv.label } },
+            `<span class="pos-tag">${esc(r.pos)}</span> ${esc(sv.label)}${r.owner === cap.uid ? ' · 내 선수' : ''}`, 'world', i); }).join('')
+        : `<p class="empty">${recSide === 'bat' ? '타자' : '투수'} 기록이 아직 없어요. 첫 번째 기록의 주인이 되어 보세요.</p>`;
     }
-    body = `<div class="chips" role="group" aria-label="포지션">${ALL_POS.map(p => `<button data-act="rpos" data-v="${p}" aria-pressed="${recPos===p}">${p}</button>`).join('')}</div>
-      <p class="muted" style="margin:6px 0 0;font-size:14px">포지션별로 가장 높은 단일 스탯을 찍은 선수</p>
+    body = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>
+      <p class="muted" style="margin:0;font-size:14px">가장 높은 단일 스탯 순위 · 이도류는 양쪽 모두에 올라가요</p>
       <div class="list">${list}</div>`;
   }
   return `<div class="topbar"><h2 class="disp" style="font-size:28px">기록과 랭킹</h2><button class="link" data-act="home">처음 화면</button></div>
@@ -2467,6 +2643,7 @@ function render(){
   if(view === 'game' && G && G.allstar && ((G.allstar.state === 'spinning' && G.fx.spin) || (G.allstar.state === 'done' && G.fx.asReveal))){
     const A = G.allstar, spinning = A.state === 'spinning';
     html += `<div class="rw-stage ${spinning ? '' : 'landed'}" aria-hidden="true">
+      <button class="stage-skip" data-act="skip-spin">건너뛰기 ›</button>
       <div class="stage-bet"><small>올스타 카지노</small><b>${betLabel(A.bet)}</b><span>${(BET_TYPES[A.bet.type].p*100).toFixed(1)}% · ${BET_TYPES[A.bet.type].reward}</span></div>
       <div class="stage-wrap"><div class="rw-pointer"></div>${wheelSVG(A, spinning)}</div>
       <div class="vig"></div>
@@ -2594,27 +2771,30 @@ document.addEventListener('click', e => {
     case 'title': openTitle(v); break;
     case 'title-run': openTitle(v, 'run'); break;
     case 'abil': openAbility(+v); break;
+    case 'stat-info': openStatInfo(v); break;
     case 'perk': pickPerk(+v); break;
     case 'perks': perksModal(); break;
     case 'deck': deckModal(); break;
-    case 'modal-close': if(e.target === b || b.tagName === 'BUTTON'){ modal = null; render(); } break;
+    case 'modal-close': if(e.target === b || b.tagName === 'BUTTON'){ modal = modal && modal.back ? modal.back : null; render(); } break;
     case 'stop': hiloStop(); break;
     case 'bust': hiloBust(); break;
     case 'settle': hiloSettle(); break;
     case 'rev-odd': reviveGuess('odd'); break;
     case 'spin': spinWheel(); break;
+    case 'skip-spin': skipSpin(); break;
+    case 'bet-tab': G.allstar.tab = v; render(); break;
     case 'as-skip': { const o = document.querySelector('.as-intro'); if(o) o.remove(); const c = document.querySelector('.casino.rise'); if(c){ c.style.animationDelay = '0s'; c.scrollIntoView({ block:'start' }); } break; }
     case 'bet': { const [t, k] = v.split(':'); G.allstar.bet = { type:t, k: t === 'even' ? k : +k }; render(); break; }
     case 'shield-use': useShield(); break;
     case 'shield-skip': skipShield(); break;
     case 'claim': claimAllstar(); break;
     case 'rev-even': reviveGuess('even'); break;
-    case 'resim': computeSeason(); G.line = oneLiner(); render(); break;
     case 'again': setup.name = G.name; setup.type = G.isTwo ? 'two' : G.type; setup.pos = G.pos; startRun(); window.scrollTo(0, 0); break;
     case 'home': view = 'start'; render(); window.scrollTo(0, 0); break;
     case 'records': view = 'records'; if(recTab === 'world') loadBoard(); render(); window.scrollTo(0, 0); break;
     case 'tab': recTab = v; if(v === 'world') loadBoard(); else render(); break;
     case 'rpos': recPos = v; render(); break;
+    case 'rside': recSide = v; render(); break;
   }
 });
 
@@ -2627,7 +2807,7 @@ document.addEventListener('input', e => {
   if(k === 'sfx' && performance.now() - volTickAt > 120){ volTickAt = performance.now(); SFX.play('tick'); }
 });
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape' && modal){ modal = null; render(); return; }
+  if(e.key === 'Escape' && modal){ modal = modal.back || null; render(); return; }
   if(e.key === 'Escape' && G && G.menu && view === 'game'){ G.menu = false; render(); }
 });
 loadLocal();
