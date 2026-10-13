@@ -740,7 +740,12 @@ main{ padding:10px 10px 16px; }
 .tc2[aria-pressed="true"]{ background:var(--strike); color:#231c00; border-color:var(--strike); box-shadow:0 2px 0 #b48f00; }
 .tc2.locked{ opacity:.55; }
 .tier-desc{ margin:8px 0 0; font-size:13px; color:var(--muted); line-height:1.5; }
+.tier-rw{ list-style:none; margin:10px 0 0; padding:0; display:grid; gap:5px; }
+.tier-rw li{ display:flex; justify-content:space-between; gap:10px; padding:7px 11px; border:1px dashed var(--line); border-radius:10px; font-size:12px; opacity:.72; }
+.tier-rw li b{ white-space:nowrap; } .tier-rw li span{ text-align:right; color:var(--muted); }
+.tier-rw li.on{ opacity:1; border-style:solid; border-color:#e0a800; background:rgba(224,168,0,.12); } .tier-rw li.on span{ color:#e0a800; font-weight:700; }
 .tier-next{ display:block; margin-top:3px; font-size:12px; opacity:.85; }
+.tip.hint .tip-k{ font-size:16px; }
 .bad-pop{ color:#ffb4a8 !important; }
 .tier-tag{ background:#7b40c4; color:#fff; border-radius:999px; padding:0 8px; font-size:11px; font-weight:800; margin-left:4px; }
 .guard-chip{ background:rgba(255,210,63,.2) !important; color:var(--strike) !important; box-shadow:inset 0 0 0 1px rgba(255,210,63,.6); }
@@ -1105,6 +1110,39 @@ html[data-ui="v2"] .lvup-ov span{ color:var(--strike); -webkit-text-stroke:0; fi
 .rv-fame{ margin:6px 0 0; font-weight:700; font-size:14px; color:var(--strike); }
 .rv-nav{ display:flex; gap:10px; justify-content:center; }
 .tname-in{ width:100%; margin-top:8px; padding:12px; border-radius:10px; border:2px solid rgba(255,255,255,.3); background:rgba(0,0,0,.25); color:#fff; font:inherit; font-size:18px; text-align:center; }
+
+/* ---- 첫 화면 하단 메뉴: 구단·기록 화면과 같은 입체 타일 ---- */
+.navrow{ display:grid; grid-template-columns:1.3fr 1fr .85fr; gap:8px; margin-top:10px; }
+.navtile{ display:grid; gap:1px; justify-items:center; align-content:center; min-height:52px; padding:8px 6px 9px; border:1px solid var(--line); border-radius:12px; background:var(--panel); color:var(--ink); font:inherit; box-shadow:0 3px 0 rgba(0,0,0,.16); transition:translate .1s, box-shadow .1s, border-color .15s; }
+.navtile b{ font-family:'BlackHan', "Isamanru", sans-serif; font-weight:400; font-size:15px; line-height:1.2; white-space:nowrap; }
+.navtile small{ font-size:11px; color:var(--muted); font-weight:700; }
+.navtile:active{ translate:0 2px; box-shadow:0 1px 0 rgba(0,0,0,.16); }
+@media (hover:hover){ .navtile:hover{ border-color:var(--strike); } }
+/* ---- 기록과 랭킹 · 칭호 도감 · 설정: 구단 화면과 같은 구조 ---- */
+.rsum{ display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; padding:12px 8px; margin:10px 0 12px; text-align:center; }
+.rsum small{ display:block; opacity:.75; font-size:11px; margin-bottom:2px; } .rsum b{ font-size:19px; line-height:1.2; }
+.tprog{ margin:4px 0 12px; }
+.tprog .bar{ height:12px; border-radius:99px; background:rgba(127,127,127,.25); } .tprog .bar i{ background:var(--strike); border-radius:inherit; }
+.tprog b{ font-size:15px; white-space:nowrap; }
+.ttiles{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:6px; }
+.ttile{ position:relative; display:flex; align-items:center; justify-content:space-between; gap:6px; width:100%; text-align:left; padding:12px 12px 12px 17px; border:1px solid var(--line); border-radius:12px; background:var(--panel); color:inherit; font:inherit; font-weight:800; font-size:14px; line-height:1.25; box-shadow:0 3px 0 rgba(0,0,0,.12); overflow:hidden; }
+.ttile::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--strike); }
+.ttile.rare{ background:linear-gradient(0deg, rgba(123,64,196,.16), rgba(123,64,196,.16)), var(--panel); } .ttile.rare::before{ background:#7b40c4; }
+.ttile i{ font-style:normal; color:#e0a800; flex:none; }
+.tlocked{ display:grid; grid-template-columns:repeat(8, 1fr); gap:5px; }
+.ttile.locked{ justify-content:center; padding:8px 0; border-radius:8px; border-style:dashed; box-shadow:none; opacity:.7; font-size:13px; }
+.ttile.locked::before{ display:none; }
+@media (hover:hover){ .ttile:not(.locked):hover{ border-color:var(--strike); } .ttile.locked:hover{ opacity:1; } }
+.set-h{ font-size:17px; margin:14px 0 8px; }
+.set-card{ background:rgba(0,0,0,.24); border-radius:12px; padding:2px 14px 14px; box-shadow:0 3px 0 rgba(0,0,0,.25); }
+.set-card .vol:first-child{ margin-top:10px; }
+.set-card .acct-set{ margin:0; padding:12px 0 0; border-top:0; }
+.set-note{ margin:0 0 14px !important; }
+.vol input[type=range]{ -webkit-appearance:none; appearance:none; background:transparent; height:30px; margin:0; }
+.vol input[type=range]::-webkit-slider-runnable-track{ height:10px; border-radius:99px; background:rgba(255,255,255,.2); }
+.vol input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:26px; height:26px; margin-top:-8px; border-radius:50%; background:var(--strike); border:0; box-shadow:0 3px 0 #b48f00, 0 0 0 3px rgba(255,255,255,.9); }
+.vol input[type=range]::-moz-range-track{ height:10px; border-radius:99px; background:rgba(255,255,255,.2); }
+.vol input[type=range]::-moz-range-thumb{ width:24px; height:24px; border-radius:50%; background:var(--strike); border:0; box-shadow:0 3px 0 #b48f00, 0 0 0 3px rgba(255,255,255,.9); }
 
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
@@ -1748,15 +1786,15 @@ const UI_KEY = 'fchl-ui';
 let uiMode = 'v2';
 document.documentElement.dataset.ui = uiMode;
 function setUI(m){ uiMode = m === 'classic' ? 'classic' : 'v2'; document.documentElement.dataset.ui = uiMode; try{ localStorage.setItem(UI_KEY, uiMode); }catch(e){} if(modal && modal.sound) modal.body = soundModalBody(); render(); }
-const soundModalBody = () => `<div class="sound-box" style="margin:10px 0 0">${soundHTML()}</div>`;
+const soundModalBody = () => `<div class="set-body">${soundHTML()}</div>`;
 // 계정(로그인) 영역: 설정 창에서도 로그인/로그아웃 (Firebase를 연결한 배포본에서만 보임)
 function accountSettingsHTML(){
   if(typeof googleLogout !== 'function' || !cap.ready || cap.noConfig) return '';
   if(cap.uid){
     const nm = (cap.me && cap.me.name) || '구글 계정';
-    return `<div class="acct-set"><div><small>로그인 중인 계정</small><b>${esc(nm)}</b></div><button class="btn ghost" data-act="logout-ask">로그아웃</button></div>`;
+    return `<h4 class="sec-title disp set-h">계정</h4><div class="set-card"><div class="acct-set"><div><small>로그인 중인 계정</small><b>${esc(nm)}</b></div><button class="btn ghost" data-act="logout-ask">로그아웃</button></div></div>`;
   }
-  return `<div class="acct-set"><div><small>계정</small><b>로그인하지 않음</b></div><button class="btn amber" data-act="g-login">구글 로그인</button></div>`;
+  return `<h4 class="sec-title disp set-h">계정</h4><div class="set-card"><div class="acct-set"><div><small>계정</small><b>로그인하지 않음</b></div><button class="btn amber" data-act="g-login">구글 로그인</button></div></div>`;
 }
 function askLogout(){
   if(G) G.menu = false;
@@ -1779,10 +1817,10 @@ async function doLogout(){
   render();
 }
 function soundHTML(){
-  return `<div class="vol"><label for="vol-bgm">배경음악 <b data-vol-out="bgm">${snd.bgm}</b></label>
+  return `<h4 class="sec-title disp set-h">소리</h4><div class="set-card"><div class="vol"><label for="vol-bgm">배경음악 <b data-vol-out="bgm">${snd.bgm}</b></label>
       <input id="vol-bgm" type="range" min="0" max="100" step="5" value="${snd.bgm}" data-vol="bgm"></div>
     <div class="vol"><label for="vol-sfx">효과음 <b data-vol-out="sfx">${snd.sfx}</b></label>
-      <input id="vol-sfx" type="range" min="0" max="100" step="5" value="${snd.sfx}" data-vol="sfx"></div>${accountSettingsHTML()}`;
+      <input id="vol-sfx" type="range" min="0" max="100" step="5" value="${snd.sfx}" data-vol="sfx"></div></div>${accountSettingsHTML()}`;
 }
 
 /* ---------------- 이어하기 ---------------- */
@@ -1854,6 +1892,9 @@ const TIERS = [
   { n:'레전드', d:'MVP 규칙 + 컨디션 난조: 매 라운드 12% 확률로 경험치가 절반이 돼요.' }
 ];
 const TIER_CLEAR = ['S', 'SS', 'SSS', 'EX'];
+// 난이도를 해금할 때마다 계정에 영구로 남는 보상 (모든 난이도의 육성에 적용)
+const TIER_REWARD = ['', '시작 챌린지 +1', '보상 카드를 4장 중에서 고르기', '첫 보상 카드가 한 등급 위(레어)', '시작 챌린지 +1 추가'];
+const tierRewards = () => { const t = hall.tier || 0; return { shields:(t >= 1 ? 1 : 0) + (t >= 4 ? 1 : 0), choices:3 + (t >= 2 ? 1 : 0), firstUp:t >= 3 }; };
 const tierOf = () => (G && G.tier) || 0;
 const perkEvery = () => PERK_EVERY + (tierOf() >= 2 ? 10 : 0);
 const tierXp = () => tierOf() >= 3 ? .9 : 1;
@@ -1889,7 +1930,7 @@ const PERKS = [
   { id:'xps50', t:'E', suit:true, n:'{s} 전담 코치', d:'{s} 경험치 +50%', apply:s => { G.xs[s] += .5; } },
   { id:'synSuit', t:'E', once:true, n:'문양 집중', d:'같은 문양이 3장 이상이면 그 문양의 경험치 +60%', apply:() => { G.synSuit = true; } },
   { id:'fcSecure', t:'E', once:true, n:'득점권 타선', d:'풀 카운트 승부의 득점권이 2승·5승부터 시작돼요', apply:() => { G.fcSafe = [2, 5]; } },
-  { id:'fcWide', t:'E', once:true, only:'bat', n:'타격 감각', d:'타자 전용 · 풀 카운트 승부에 "넓게 노리기"(여섯 칸, 이길 확률 67%, ×1.65)가 생겨요', apply:() => { G.fcWide = true; } },
+  { id:'fcWide', t:'E', once:true, only:'bat', n:'타격 감각', d:'타자 전용 · "넓게 노리기"(여섯 칸, 이길 확률 67%) 배율 ×1.65 → ×1.9', apply:() => { G.fcWide = true; } },
   { id:'fcMound', t:'E', once:true, only:'pit', n:'마운드 장악', d:'투수 전용 · 피해서 던지기 성공 배율 +30%', apply:() => { G.fcMound = true; } },
   // ---- 전설 ----
   { id:'rr2', t:'L', n:'명장의 안목', d:'이번 육성 동안 매 라운드 리롤 +2', apply:() => { G.rrPerm = (G.rrPerm || 0) + 2; } },
@@ -1927,9 +1968,9 @@ function makeOffer(M){
   return o;
 }
 function makeOfferRaw(M){
-  const base = M <= 1 ? 'C' : M === 2 ? 'R' : M <= 4 ? 'E' : 'L';
+  const base = M <= 1 ? (G.preRound && tierRewards().firstUp ? 'R' : 'C') : M === 2 ? 'R' : M <= 4 ? 'E' : 'L';
   const cards = [];
-  for(let n = 0; n < 3; n++){
+  for(let n = 0; n < tierRewards().choices; n++){
     let ti = TIER_ORDER.indexOf(base);
     if(ti < 3 && Math.random() < .22) ti++;
     let pool = [];
@@ -2050,7 +2091,7 @@ function startRun(){
     name: setup.name.trim() || '이름 없는 선수', pos: setup.pos, type: setup.type, tier: selTier(),
     stats: { S:1, H:1, D:1, C:1 }, xp: { S:0, H:0, D:0, C:0 }, maxJump: 0,
     hm: {}, xs: { S:0, H:0, D:0, C:0 }, xa: 0, rrPerm: 0, rrTemp: [], deckAdd: [], trim: false, jokers: 0, perks: [], offer: null,
-    round: 1, hiloLeft: 0, shields: (allTitlesDone() ? 1 : 0) + fameShields(), phase: 'draw',
+    lucky: { streak:0, armed:false, used:false, risky:false }, hint: Math.random() < .4 ? pickHint() : null, hintRound: 2 + Math.floor(Math.random() * 3), round: 1, hiloLeft: 0, shields: Math.min(5, (allTitlesDone() ? 1 : 0) + fameShields() + tierRewards().shields), phase: 'draw',
     deck: null, hand: [], locks: [false,false,false,false,false], rerolls: REROLLS,
     ev: null, abilities: [], newAbility: null,
     hilo: null, bestStreak: 0, star: 100, msg: '', season: null, lineScore: {}, fx: {},
@@ -2068,23 +2109,23 @@ function startRun(){
   SFX.play('ability', .3);
   setTimeout(() => { const t = document.querySelector('.perk-table'); if(t) t.scrollIntoView({ block:'end', behavior: reduceMotion() ? 'auto' : 'smooth' }); }, 350);
 }
-// 이스터에그 '신이 버린 사나이': 첫 공 연속 패배(이길 확률 40% 이상 선택만) 5번 → 다음 패에 플러시 파이브
-const JINX_KEY = 'fchl-jinx-v1', JINX_GOAL = 5;
-let jinx = (() => { try{ return JSON.parse(localStorage.getItem(JINX_KEY)) || { streak:0, armed:false }; }catch(e){ return { streak:0, armed:false }; } })();
-const saveJinx = () => { try{ localStorage.setItem(JINX_KEY, JSON.stringify(jinx)); }catch(e){} };
-function jinxFirstPitch(H, won){
-  const safe = (H.side === 'bat' && (H.sel.mode === 'square' || H.sel.mode === 'wide')) || (H.side === 'pit' && H.sel.mode === 'avoid' && H.sel.cell !== 5);
-  if(won){ jinx.streak = 0; saveJinx(); return; }
-  if(!safe) return;                                   // 원래 질 확률이 높은 선택은 세지 않음
-  jinx.streak++;
-  if(jinx.streak >= JINX_GOAL){
-    jinx.streak = 0; jinx.armed = true; G.jinxHit = true;
-    modal = { title:'신이 버린 사나이', body:`<p>풀 카운트 승부 첫 공에서 다섯 번 연속으로 졌어요…</p>
+// 럭키 라운드(이스터에그 '신이 버린 사나이'): 풀 카운트 승부에서 실패(진 판정)가 3번 연속 쌓이면 다음 라운드에 보너스 라운드.
+// 챌린지로 뒤집을 수 있는 실패도 실패로 세고(실패 → 챌린지 → 또 실패 = 2번), 한 번이라도 이기면 처음부터.
+// 위험한 노림수(한 점 타격·노림수 간파)는 승패와 상관없이 카운트에서 뺌. 한 육성에 여러 번 나올 수 있음
+const LUCKY_GOAL = 3;
+const lk = () => G.lucky || (G.lucky = { streak:0, armed:false, used:false, risky:false });
+function luckyPitch(H, won){
+  const L = lk(); if(G.inBonus || L.armed) return;
+  if(H.sel.mode === 'point' || H.sel.mode === 'read') return;       // 위험한 노림수는 세지 않음
+  if(won){ L.streak = 0; return; }
+  L.streak++;
+  if(L.streak >= LUCKY_GOAL){
+    L.streak = 0; L.armed = true; G.jinxHit = true; G.luckyCount = (G.luckyCount || 0) + 1;
+    modal = { title:'신이 버린 사나이', body:`<p>안전하게 쳤는데도 풀 카운트 승부에서 세 번 연속으로 졌어요…</p>
       <p class="jinx-line">하지만 저희는 당신을 버리지 않았습니다.</p>
-      <p>지금 바로 <b>보너스 라운드</b>가 찾아갑니다. 🍀<br>이번 승부에서는 <b>첫 실패를 한 번 막아 드려요.</b></p>` };
+      <p>다음 라운드에 <b>보너스 라운드</b>가 찾아옵니다. 🍀<br>가장 낮은 스탯의 문양으로 맞춘 <b>행운의 플러시</b>가 준비돼 있고, 이번 승부에서는 <b>첫 실패를 한 번 막아 드려요.</b></p>` };
     SFX.play('unlock', .6);
   }
-  saveJinx();
 }
 function dealHand(){
   G.deck = runDeck();
@@ -2169,18 +2210,18 @@ function bank(mult){
   }
   nextRound(1);
 }
-// 보너스 라운드: 라운드를 쓰지 않는 특별한 한 판 (가장 낮은 스탯 문양의 7 다섯 장 = 플러시 파이브)
+// 보너스 라운드: 라운드를 쓰지 않는 특별한 한 판 (가장 낮은 스탯 문양으로 맞춘 행운의 플러시 = ×8, 풀 카운트 승부 가능)
 function startBonus(){
-  G.inBonus = true; jinx.armed = false; saveJinx();
+  G.inBonus = true; lk().armed = false;
   dealHand();
   const low = SUITS.reduce((a, k) => G.stats[k] < G.stats[a] ? k : a, 'S');
-  G.hand = Array.from({ length:5 }, () => ({ r:7, s:low }));
+  G.hand = [1, 3, 5, 7, 9].map(r => ({ r, s:low }));
   G.locks = [true,true,true,true,true]; G.luckyHand = true;
   G.fx.flash = 'gold'; SFX.play('unlock');
   render();
 }
 function nextRound(used){
-  if(jinx.armed && !G.inBonus){ startBonus(); return; }          // 보너스 라운드가 끝나면 원래 순서대로
+  if(lk().armed && !G.inBonus){ startBonus(); return; }          // 보너스 라운드가 끝나면 원래 순서대로
   if(G.inBonus){ G.inBonus = false; G.bonusDone = (G.bonusDone || 0) + 1; }
   G.round += used;
   if(G.round > RN()){ finishRun(); return; }
@@ -2357,18 +2398,18 @@ const FC_SQ = [[7,8,4,5], [8,9,5,6], [4,5,1,2], [5,6,2,3]];
 const sqOf = (r, c) => FC_SQ[(r ? 0 : 2) + c];            // r: 1=위쪽 행 묶음, 0=아래쪽 / c: 0=왼쪽, 1=오른쪽
 const FC_M = { square:2.5, wide:1.65, point:10, cornerAvoid:1.5, edgeAvoid:2.2, read:10 };
 // 증강이 풀 카운트 배율을 바꿈: 장타 본능(한 점·노림수 ×15), 마운드 장악(피해서 던지기 +30%)
-const fcM = k => (G && G.fcBang && (k === 'point' || k === 'read')) ? 15 : (G && G.fcMound && (k === 'cornerAvoid' || k === 'edgeAvoid')) ? FC_M[k] * 1.3 : FC_M[k];
-const fcModes = side => side === 'bat' ? [['square','네모 타격'], ...(G && G.fcWide ? [['wide','넓게 노리기']] : []), ['point','한 점 타격']] : [['avoid','피해서 던지기'], ['read','노림수 간파']];
+const fcM = k => (G && G.fcWide && k === 'wide') ? 1.9 : (G && G.fcBang && (k === 'point' || k === 'read')) ? 15 : (G && G.fcMound && (k === 'cornerAvoid' || k === 'edgeAvoid')) ? FC_M[k] * 1.3 : FC_M[k];
+const fcModes = side => side === 'bat' ? [['square','네모 타격'], ['wide','넓게 노리기'], ['point','한 점 타격']] : [['avoid','피해서 던지기'], ['read','노림수 간파']];
 const FC_WIDE = { up:[4,5,6,7,8,9], low:[1,2,3,4,5,6] };
 const pct = x => Math.round(x * 100) + '%';
-const fmtM = m => '×' + (Math.round(m * 10) / 10).toLocaleString('ko-KR');
+const fmtM = m => '×' + (m >= 100 ? Math.round(m) : m >= 10 ? Math.round(m * 10) / 10 : Math.round(m * 100) / 100).toLocaleString('ko-KR');
 function fcSide(){ return G.type === 'pit' ? 'pit' : 'bat'; }
 function fcCellsOf(sel){ return sel.mode === 'square' ? FC_SQ[sel.sq] : sel.mode === 'wide' ? FC_WIDE[sel.wide || 'low'] : [sel.cell]; }
 // 선택 → 배율·확률·설명
 function fcInfo(side, sel){
   if(side === 'bat'){
     if(sel.mode === 'square') return { m:fcM('square'), win:'안타', label:'네모 타격 · 네 칸', odds:'맞히면 안타 44% · 못 맞히면 헛스윙 삼진' };
-    if(sel.mode === 'wide') return { m:fcM('wide'), win:'안타', label:`넓게 노리기 · ${sel.wide === 'up' ? '위쪽' : '아래쪽'} 여섯 칸`, odds:'맞히면 안타 67% · 못 맞히면 헛스윙 삼진' };
+    if(sel.mode === 'wide') return { m:fcM('wide'), win:'안타', label:'넓게 노리기 · 여섯 칸', odds:'맞히면 안타 67% · 못 맞히면 헛스윙 삼진' };
     return { m:fcM('point'), win:'홈런', jack:true, label:`한 점 타격 · ${sel.cell}번 칸`, odds:'정확히 맞히면 홈런 11% · 아니면 헛스윙 삼진' };
   }
   if(sel.mode === 'read') return { m:fcM('read'), win:'결정구 삼진', jack:true, label:`노림수 간파 · ${sel.cell}번 칸`, odds:'타자가 노린 칸을 맞히면 결정구 11% · 틀리면 피홈런' };
@@ -2425,7 +2466,8 @@ function fcPlay(){
   const H = G.hilo; if(!H || H.state !== 'pick') return;
   const info = fcInfo(H.side, H.sel); if(info.bad) return;
   const j = fcJudge(H.side, H.sel);
-  if(!H.firstDone){ H.firstDone = true; if(!G.inBonus) jinxFirstPitch(H, j.res === 'win'); }      // 보너스 라운드의 승부는 징크스 횟수에 넣지 않음
+  if(!H.firstDone) H.firstDone = true;
+  luckyPitch(H, j.res === 'win');                                   // 모든 판정을 센다 (챌린지 전 실패도 실패)
   H.last = j; H.lastSel = JSON.parse(JSON.stringify(H.sel));
   SFX.play(j.snd);
   if(j.res === 'win'){
@@ -2497,7 +2539,7 @@ const TITLES = [
   { id:'ironarm', n:'철완', hint:'그가 나오는 날은 불펜이 쉰다', desc:'투수로 스태미너 SSS(Lv 75) 이상', test:R => isPit(R) && R.st.D >= 75 },
   { id:'magic', n:'마구 보유자', hint:'공이 홈플레이트 앞에서 사라진다', desc:'투수로 변화 EX(Lv 85) 이상', test:R => isPit(R) && R.st.C >= 85 },
   { id:'closer_tank', n:'선발 체질 마무리', hint:'1이닝만 던지기엔 너무 튼튼하다', desc:'마무리로 스태미너 S(Lv 55) 이상', test:R => R.pos === '마무리' && R.st.D >= 55 },
-  { id:'jinx', n:'신이 버린 사나이', hint:'아무에게도 일어나지 않았으면 하는 일', desc:'풀 카운트 승부 첫 공에서 다섯 번 연속 패배하기 (이길 확률 40% 이상 선택만). 하지만 저희는 당신을 버리지 않았습니다', test:R => R.jinx, rare:true },
+  { id:'jinx', n:'신이 버린 사나이', hint:'아무에게도 일어나지 않았으면 하는 일', desc:'풀 카운트 승부에서 세 번 연속 지기. 챌린지로 뒤집을 수 있는 실패도 실패로 세고, 위험한 노림수(한 점 타격·노림수 간파)는 세지 않아요. 하지만 저희는 당신을 버리지 않았습니다', test:R => R.jinx, rare:true },
   { id:'zeroerr', n:'무결점 글러브', hint:'한 시즌 동안 공이 한 번도 글러브를 빠져나가지 않았다', desc:'수비 LEGEND(Lv 100)로 전성기 시즌 실책 0개 기록하기', test:R => R.zeroErr, rare:true },
   { id:'luckynum', n:'럭키 넘버', hint:'서른일곱 칸 중 단 하나', desc:'올스타 카지노에서 스트레이트 업(숫자 하나) 당첨', test:R => R.allstar === 'num', rare:true },
   { id:'insured', n:'비디오 판독', hint:'방금 그 판정, 다시 봅시다', desc:'풀 카운트 승부에서 챌린지 신청하기', test:R => R.shieldsUsed >= 1 },
@@ -3269,14 +3311,15 @@ function startV2(c){
       <span class="lab">난이도</span>
       <div class="tier-chips">${TIERS.map((t, i) => `<button class="tc2 ${i > (hall.tier || 0) ? 'locked' : ''}" data-act="tier" data-v="${i}" aria-pressed="${selTier() === i}">${i > (hall.tier || 0) ? '🔒' : ''}${t.n}</button>`).join('')}</div>
       <p class="tier-desc">${esc(TIERS[selTier()].d)}${(hall.tier || 0) < TIERS.length - 1 ? ` <span class="tier-next">다음 난이도 해금: ${TIERS[(hall.tier || 0)].n} 난이도에서 ${TIER_CLEAR[hall.tier || 0]}급 이상 달성</span>` : ''}</p>
+      <ul class="tier-rw" aria-label="난이도 해금 보상 (계정에 영구 적용)">${[1, 2, 3, 4].map(i => `<li class="${(hall.tier || 0) >= i ? 'on' : ''}"><b>${(hall.tier || 0) >= i ? '✓' : '🔒'} ${TIERS[i].n} 해금</b><span>${TIER_REWARD[i]}</span></li>`).join('')}</ul>
     </div>
   </section>
   <div class="cta">
     <button class="btn amber play disp" data-act="start">${BALL_ICO}플레이볼</button>
-    <div class="row">
-      <button class="btn ghost" data-act="records">기록과 랭킹</button>
-      <button class="btn ghost" data-act="dex">칭호 도감<small>${tn}/${TITLES.length}</small></button>
-      <button class="btn ghost sq" data-act="sound" aria-label="설정">설정</button>
+    <div class="navrow">
+      <button class="navtile" data-act="records"><b>기록과 랭킹</b><small>${hall.runs || 0}명 등록</small></button>
+      <button class="navtile" data-act="dex"><b>칭호 도감</b><small>${tn}/${TITLES.length}</small></button>
+      <button class="navtile" data-act="sound" aria-label="설정"><b>설정</b><small>소리·계정</small></button>
     </div>
   </div>`;
 }
@@ -3510,7 +3553,7 @@ const TUT = [
        <p>풀하우스 이상이면 <b>특수능력</b>도 얻어요. 스트레이트에서 <b>A는 1(A-2-3-4-5)로도, 10 다음(7-8-9-10-A)으로도</b> 쓸 수 있고, <b>플러시</b>는 랜덤한 다른 스탯에 경험치 50%가 더 쌓여요.</p>` },
   { icon:'⚾', t:'풀 카운트 승부',
     b:`<p><b>풀하우스 이상</b>을 만들면 승부 기회가 열려요. 이기면 그 라운드 경험치가 몇 배로 불고, 지면 사라져요.</p>
-       <div class="tut-two"><div><b>타자</b><span>네모 타격 44% · ×2.5</span><span>한 점 타격 11% · ×10</span></div>
+       <div class="tut-two"><div><b>타자</b><span>넓게 노리기 67% · ×1.65</span><span>네모 타격 44% · ×2.5</span><span>한 점 타격 11% · ×10</span></div>
        <div><b>투수</b><span>피해서 던지기 · ×1.5~2.2</span><span>노림수 간파 11% · ×10</span></div></div>
        <p>이기면 이어가거나 멈출 수 있어요. <b>3연승</b>하면 득점권에서 배율이 확보되고, <b>챌린지</b>로 진 판정을 뒤집을 수 있어요.</p>` },
   { icon:'🎁', t:'보상 카드와 올스타',
@@ -3538,37 +3581,64 @@ function tutHTML(){
   </div>`;
 }
 // 첫 플레이 팁: 단계별로 한 번씩
+// 가끔 TIP 창에 나오는 힌트: 숨은 보상과 이스터에그를 넌지시 알려 줌 (안 본 것부터, 다 보면 다시)
+const HINTS = [
+  { id:'grand', t:'<b>알고 계셨나요?</b> 모든 칭호를 모으면 <b>그랜드슬램</b>! 이후 모든 육성을 챌린지 +1로 시작해요.' },
+  { id:'lucky', t:'<b>소문</b> 안전하게만 쳤는데도 풀 카운트 승부에서 <b>세 번 연속</b> 지는 날이 있어요. 신은 그런 사람을 버리지 않는다는데… (위험한 노림수는 세지 않아요)' },
+  { id:'fame', t:'<b>알고 계셨나요?</b> 구단 모드에서 <b>한국시리즈 우승</b>을 하면 새 육성을 챌린지와 함께 시작해요. 1회 +1, 3회 +2, 6회 +3.' },
+  { id:'two', t:'<b>알고 계셨나요?</b> S급 투수와 S급 타자를 명예의 전당에 등록하면 <b>이도류</b>가 열려요. 한 선수가 마운드와 타석을 모두 키워요.' },
+  { id:'tier', t:'<b>알고 계셨나요?</b> 난이도를 해금할 때마다 시작 챌린지, 보상 카드 4장 중 선택 같은 <b>영구 보상</b>이 생겨요. 난이도별 랭킹도 따로 있어요.' },
+  { id:'straight', t:'<b>꿀팁</b> 스트레이트에서 <b>A는 1로도, 10 다음으로도</b> 쓸 수 있어요. 7-8-9-10-A도 스트레이트예요.' },
+  { id:'flush', t:'<b>꿀팁</b> <b>플러시</b>를 만들면 한 스탯에 몰린 경험치의 50%가 다른 스탯 하나에 랜덤으로 더 쌓여요.' },
+  { id:'pity', t:'<b>알고 계셨나요?</b> 전설 보상 카드가 오래 안 나오면, 다음 제시에는 <b>전설 한 장이 반드시</b> 들어 있어요.' },
+  { id:'team', t:'<b>알고 계셨나요?</b> 특수능력은 구단 모드에서 <b>팀 전력</b>이 돼요. 같은 계열 능력자를 모으면 팀 컬러(시너지)가 발동해요.' },
+  { id:'glove', t:'<b>소문</b> 수비를 LEGEND(Lv 100)까지 키우면 전성기 시즌 실책이 0개가 된다는데… 그에 걸맞은 이름이 있대요.' },
+  { id:'casino', t:'<b>알고 계셨나요?</b> 올스타 카지노의 <b>스트레이트 업(2.7%)</b>은 챌린지 3장과 전설 카드를 줘요.' },
+  { id:'guts', t:'<b>알고 계셨나요?</b> 풀 카운트 승부에서 연승을 이어 가면 <b>배짱</b>이 올라서 선수 생활이 길어지고 타자는 볼넷이 늘어요.' },
+  { id:'walkoff', t:'<b>꿀팁</b> 전설 카드 <b>9회말 2아웃</b>은 마지막 라운드를 ×3으로 만들고, 풀 카운트 배율과도 곱해져요.' },
+  { id:'career', t:'<b>알고 계셨나요?</b> 선수마다 전성기가 달라요. 조숙형, 대기만성형, 슬럼프와 부상까지… 연도별 기록표에서 확인해 보세요.' }
+];
+const HINT_KEY = 'fchl-hints-v1';
+function pickHint(){
+  let seen = []; try{ seen = JSON.parse(localStorage.getItem(HINT_KEY)) || []; }catch(e){}
+  let pool = HINTS.filter(h => !seen.includes(h.id)); if(!pool.length){ pool = HINTS; seen = []; }
+  const h = pool[Math.floor(Math.random() * pool.length)]; seen.push(h.id);
+  try{ localStorage.setItem(HINT_KEY, JSON.stringify(seen)); }catch(e){}
+  return h;
+}
 function tipHTML(){
   if(!G) return '';
-  if(G.phase === 'draw' && G.luckyHand){ const fresh = tipAnimKey !== 'lucky'; tipAnimKey = 'lucky'; return `<div class="tip lucky${fresh ? ' enter' : ''}" role="note"><span class="tip-k">🍀</span><span class="tip-t"><b>보너스 라운드!</b> 저희는 당신을 버리지 않았습니다. 라운드를 쓰지 않는 특별한 한 판이에요. 럭키 세븐 플러시 파이브를 확정하세요. 풀 카운트 승부의 첫 실패는 한 번 막아 드려요!</span></div>`; }
+  if(G.phase === 'draw' && G.luckyHand){ const fresh = tipAnimKey !== 'lucky'; tipAnimKey = 'lucky'; return `<div class="tip lucky${fresh ? ' enter' : ''}" role="note"><span class="tip-k">🍀</span><span class="tip-t"><b>보너스 라운드!</b> 저희는 당신을 버리지 않았습니다. 라운드를 쓰지 않는 특별한 한 판이에요. 가장 낮은 스탯의 문양으로 맞춘 행운의 플러시를 확정하세요. 풀 카운트 승부의 첫 실패는 한 번 막아 드려요!</span></div>`; }
   let key = null, txt = '';
   const side = G.type === 'pit' ? 'pit' : 'bat';
   if(G.phase === 'draw' && G.isTwo && G.firstSide && G.round === TWO_PER_SIDE + 1){ key = 'two-half'; txt = `후반기 시작! 이제 <b>${G.cur === 'pit' ? '마운드를' : '타석을'}</b> ${TWO_PER_SIDE}라운드 키워요. 전반기에 키운 쪽은 그대로 남아 있어요.`; }
+  else if(G.phase === 'draw' && tipsSeen.draw && G.hint && !G.hintDone && G.round >= (G.hintRound || 2)){ key = 'hint'; txt = G.hint.t; }
   else if(G.phase === 'draw'){ key = 'draw'; txt = '카드를 눌러 <b>잠그고</b>, <b>리롤</b>로 나머지를 바꿔 족보를 만들어요. 마음에 들면 <b>이 패로 확정</b>!'; }
   else if(G.phase === 'result' && G.ev){
     if(FC_BIG.includes(G.ev.key)){ key = 'result-fc'; txt = '풀하우스 이상! <b>풀 카운트 승부</b>로 이번 라운드 경험치를 몇 배로 불릴 수 있어요. 지면 사라지니 신중하게.'; }
     else { key = 'result'; txt = '족보에 쓰인 카드의 <b>문양 스탯</b>이 경험치를 받아요. <b>경험치 받기</b>를 누르면 레벨이 올라요.'; }
   }
   else if(G.phase === 'hilo'){ key = 'hilo-' + side; txt = side === 'bat'
-    ? '존을 눌러 노림수를 정해요. <b>네모 타격</b>은 자주 맞히고(×2.5), <b>한 점 타격</b>은 홈런 한 방(×10)!'
+    ? '존을 눌러 노림수를 정해요. <b>넓게 노리기</b>는 가장 안전하고(67%, ×1.65), <b>네모 타격</b>은 자주 맞히고(×2.5), <b>한 점 타격</b>은 홈런 한 방(×10)!'
     : '<b>피해서 던지기</b>는 타자의 네모 스윙을 피할 칸을, <b>노림수 간파</b>는 타자가 노린 칸을 맞혀 ×10을 노려요.'; }
   else if(G.phase === 'perk'){ key = 'perk'; txt = '<b>보상 카드</b>를 하나 골라요. 덱에 카드를 더하거나 족보 배율을 올려서 다음 라운드부터 효과가 있어요.'; }
   else if(G.phase === 'allstar'){ key = 'allstar'; txt = '베팅 종류를 고르고 <b>돌리기</b>! 맞히기 어려울수록 보상이 커요. 꽝이어도 잃는 건 없어요.'; }
   else if(G.phase === 'side'){ key = 'side'; txt = '이도류는 먼저 키울 쪽을 <b>한 번만</b> 골라요. <b>마운드</b>(투수 덱)나 <b>타석</b>(타자 덱) 중 한쪽을 6라운드 키우고, 올스타 브레이크 뒤에는 자동으로 반대쪽으로 바뀌어요.'; }
   // 보여 주던 TIP이 있는 단계를 벗어났다면(이 패로 확정 등으로 넘어감) 그 TIP은 본 걸로 처리 → 다음 TIP이 나옴
-  if(tipActive && tipActive !== key){ tipsSeen[tipActive] = 1; saveTips(); tipActive = null; }
-  if(!key || tipsSeen[key]){ tipAnimKey = null; return ''; }
+  if(tipActive && tipActive !== key){ if(tipActive === 'hint') G.hintDone = true; else { tipsSeen[tipActive] = 1; saveTips(); } tipActive = null; }
+  if(!key || (key !== 'hint' && tipsSeen[key])){ tipAnimKey = null; return ''; }
   tipActive = key;
   const fresh = tipAnimKey !== key; tipAnimKey = key;              // 새로 나오는 TIP일 때만 등장 모션
-  return `<div class="tip${fresh ? ' enter' : ''}" role="note"><span class="tip-k">TIP</span><span class="tip-t">${txt}</span><button class="tip-x" data-act="tip-x" data-v="${key}">알겠어요</button></div>`;
+  return `<div class="tip${key === 'hint' ? ' hint' : ''}${fresh ? ' enter' : ''}" role="note"><span class="tip-k">${key === 'hint' ? '💡' : 'TIP'}</span><span class="tip-t">${txt}</span><button class="tip-x" data-act="tip-x" data-v="${key}">알겠어요</button></div>`;
 }
 function menuHTML(){
   if(!G.menu) return '';
   return `<div class="menu-back" data-act="menu-close">
     <div class="menu sb" role="dialog" aria-modal="true" aria-labelledby="menu-t">
       <h3 class="disp" id="menu-t">설정</h3>
-      <div class="sound-box">${soundHTML()}</div>
-      <p>재도전하면 지금까지 올린 스탯과 남은 기회가 모두 사라지고 ${esc(G.name)} 선수로 1라운드부터 다시 시작합니다. 처음 화면으로 나가면 지금 상태가 저장돼서 이어하기로 돌아올 수 있어요.</p>
+      <div class="set-body">${soundHTML()}</div>
+      <h4 class="sec-title disp set-h">육성</h4>
+      <p class="set-note">재도전하면 지금까지 올린 스탯과 남은 기회가 모두 사라지고 ${esc(G.name)} 선수로 1라운드부터 다시 시작합니다. 처음 화면으로 나가면 지금 상태가 저장돼서 이어하기로 돌아올 수 있어요.</p>
       <div class="menu-actions">
         <button class="btn amber" data-act="retry">재도전</button>
         <button class="btn ghost" data-act="quit">처음 화면으로</button>
@@ -3815,7 +3885,7 @@ function renderResult(){
     if(G.newBest) banners.push(`${esc(r.pos)} 개인 최고 기록 경신`);
     G.firstGrades.forEach(g => banners.push(`처음으로 ${g} 달성`));
   }
-  if(G.tierUnlock) banners.unshift(`🔓 새 난이도 해금: ${TIERS[G.tierUnlock].n}`);
+  if(G.tierUnlock) banners.unshift(`🔓 새 난이도 해금: ${TIERS[G.tierUnlock].n} · 보상 ${TIER_REWARD[G.tierUnlock]}`);
   const pr = predictReg(r);
   const where = cap.uid ? `${cap.me && cap.me.name ? esc(cap.me.name) + ' 계정' : '내 계정'}의 명예의 전당과 전체 랭킹` : '이 기기의 명예의 전당';
   let reg;
@@ -3937,17 +4007,24 @@ function openPlayer(rec){
   modal = { title:rec.name, body };
   render();
 }
+function recSummary(){
+  const best = Object.values(hall.bestByPos || {}).reduce((a, r) => Math.max(a, r && r.top ? r.top.value : 0), 0);
+  const n = TITLES.filter(t => (hall.titles || {})[t.id]).length;
+  return `<div class="rsum sb"><div><small>등록한 선수</small><b class="disp">${hall.runs || 0}명</b></div><div><small>최고 등급</small><b class="disp">${best ? gradeOf(best) : '-'}</b></div><div><small>칭호</small><b class="disp">${n}/${TITLES.length}</b></div><div><small>난이도</small><b class="disp">${TIERS[hall.tier || 0].n}</b></div></div>`;
+}
 const tierChips = () => `<div class="tier-chips rec" role="group" aria-label="난이도 필터">${['전체', ...TIERS.map(t => t.n)].map((n, i) => `<button class="tc2" data-act="rtier" data-v="${i - 1}" aria-pressed="${recTier === i - 1}">${n}</button>`).join('')}</div>`;
 function renderRecords(){
   let body = '';
   if(recTab === 'titles'){
     const gs = allTitlesDone() && hall.grandslam;
     const got = hall.titles || {};
-    const n = TITLES.filter(t => got[t.id]).length;
-    body = `${gs ? `<div class="gslam small"><small>그랜드슬램 달성 · ${new Date(hall.grandslam.ts).toLocaleDateString('ko-KR')}</small><b class="disp">모든 칭호 완성</b><em>모든 육성 챌린지 +1 적용 중</em></div>` : ''}<div class="tprog"><div class="bar"><i style="width:${(100*n/TITLES.length).toFixed(1)}%"></i></div><b>${n} / ${TITLES.length}</b></div>
-      <div class="tgrid">${TITLES.map(t => got[t.id]
-        ? `<button class="tchip ${t.rare ? 'rare' : ''}" data-act="title" data-v="${t.id}">${esc(t.n)}</button>`
-        : `<button class="tchip locked" data-act="title" data-v="${t.id}" aria-label="얻지 못한 칭호, 힌트 보기">???</button>`).join('')}</div>
+    const have = TITLES.filter(t => got[t.id]), rest = TITLES.filter(t => !got[t.id]);
+    body = `${gs ? `<div class="gslam small"><small>그랜드슬램 달성 · ${new Date(hall.grandslam.ts).toLocaleDateString('ko-KR')}</small><b class="disp">모든 칭호 완성</b><em>모든 육성 챌린지 +1 적용 중</em></div>` : ''}
+      <div class="tprog"><div class="bar"><i style="width:${(100 * have.length / TITLES.length).toFixed(1)}%"></i></div><b>${have.length} / ${TITLES.length}</b></div>
+      <h3 class="sec-title disp">획득한 칭호 <span class="car-yrs">${have.length}</span></h3>
+      ${have.length ? `<div class="ttiles">${have.map(t => `<button class="ttile ${t.rare ? 'rare' : ''}" data-act="title" data-v="${t.id}"><span>${esc(t.n)}</span>${t.rare ? '<i aria-label="희귀">★</i>' : ''}</button>`).join('')}</div>` : '<p class="empty">아직 얻은 칭호가 없어요. 육성을 마치면 조건에 맞는 칭호를 얻어요.</p>'}
+      <h3 class="sec-title disp">아직 못 얻은 칭호 <span class="car-yrs">${rest.length}</span></h3>
+      <div class="tlocked">${rest.map(t => `<button class="ttile locked" data-act="title" data-v="${t.id}" aria-label="얻지 못한 칭호, 힌트 보기">🔒</button>`).join('')}</div>
       <p class="note">얻지 못한 칭호를 누르면 힌트를 볼 수 있어요.</p>`;
   } else if(recTab === 'mine'){
     const sideTabs = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>`;
@@ -3956,8 +4033,7 @@ function renderRecords(){
       return r ? entryHTML('', r, `<span class="pos-tag">${esc(p)}</span> ${esc(r.top.label)}${(r.tier || 0) > 0 ? ` <span class="tier-tag">${TIERS[r.tier].n}</span>` : ''}`, 'mine', recTier < 0 ? p : p + '@' + recTier)
                : `<div class="entry empty no-rk"><div class="en-main"><div class="nm">${p}</div><div class="sub">아직 키운 선수가 없어요</div></div></div>`;
     }).join('');
-    body = `<p class="muted" style="margin:0">지금까지 ${hall.runs}명을 등록했어요.</p>
-      <h3 class="sec-title disp">포지션별 최고 선수</h3>${sideTabs}${tierChips()}<div class="list">${byPos}</div>`;
+    body = `<h3 class="sec-title disp">포지션별 최고 선수</h3>${sideTabs}${tierChips()}<div class="list">${byPos}</div>`;
   } else {
     let list;
     if(board.error === 'none') list = `<p class="empty">랭킹은 Firebase를 연결하면 보여요. 내 기록은 이 기기에 저장됩니다.</p><button class="btn ghost" style="margin-top:10px" data-act="tab" data-v="mine">내 명예의 전당 보기</button>`;
@@ -3974,12 +4050,14 @@ function renderRecords(){
             `<span class="pos-tag">${esc(r.pos)}</span> ${esc(sv.label)}${(r.tier || 0) > 0 ? ` <span class="tier-tag">${TIERS[r.tier].n}</span>` : ''}`, 'world', i); }).join('')
         : `<p class="empty">${recSide === 'bat' ? '타자' : '투수'} 기록이 아직 없어요. 첫 번째 기록의 주인이 되어 보세요.</p>`;
     }
-    body = `<div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>
+    body = `<h3 class="sec-title disp">${recSide === 'bat' ? '타자' : '투수'} 전체 랭킹</h3>
+      <div class="tabs side-tabs" role="group"><button data-act="rside" data-v="bat" aria-pressed="${recSide==='bat'}">타자</button><button data-act="rside" data-v="pit" aria-pressed="${recSide==='pit'}">투수</button></div>
       ${tierChips()}
       <p class="muted" style="margin:0;font-size:14px">가장 높은 단일 스탯 순위 · 이도류는 양쪽 모두에 올라가요</p>
       <div class="list">${list}</div>`;
   }
   return `<div class="topbar"><h2 class="disp" style="font-size:28px">기록과 랭킹</h2><button class="link" data-act="home">처음 화면</button></div>
+    ${recSummary()}
     <div class="tabs" role="group">
       <button data-act="tab" data-v="world" aria-pressed="${recTab==='world'}">전체 랭킹</button>
       <button data-act="tab" data-v="mine" aria-pressed="${recTab==='mine'}">명예의 전당</button>
@@ -4243,7 +4321,7 @@ document.addEventListener('click', e => {
     case 'tut-prev': tut = Math.max(0, tut - 1); render(); break;
     case 'tut-close': tut = null; try{ localStorage.setItem(TUT_KEY, '1'); }catch(e){} render(); break;
     case 'noop': break;
-    case 'tip-x': tipsSeen[v] = 1; saveTips(); render(); break;
+    case 'tip-x': if(v === 'hint' && G) G.hintDone = true; else { tipsSeen[v] = 1; saveTips(); } render(); break;
     case 'tips-reset': tipsSeen = {}; tipActive = null; tipAnimKey = null; saveTips(); if(G) G.menu = false; render(); break;
     case 'ct-view': { const [id, i] = v.split(':');
       document.querySelectorAll(`[data-ctg="${id}"]`).forEach(el => { el.hidden = el.dataset.cti !== i; });
