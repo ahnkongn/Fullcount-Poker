@@ -1448,7 +1448,7 @@ button.bk-c:active{ transform:translateY(1px); } .bk-c b{ font-size:19px; line-h
 .lrows{ display:grid; gap:5px; } .lrow{ display:grid; grid-template-columns:30px 1fr auto auto; gap:8px; align-items:center; text-align:left; padding:9px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); color:inherit; font:inherit; }
 .lrow i{ font-style:normal; font-weight:900; font-size:15px; text-align:center; color:var(--muted); } .lrow:nth-child(-n+3) i{ color:#c79a00; }
 .lrow .ln b{ display:block; font-size:15px; } .lrow .ln small{ color:var(--muted); font-size:11px; font-weight:700; } .lrow .lp{ font-size:12px; color:var(--muted); font-weight:700; } .lrow em{ font-style:normal; font-weight:900; font-size:16px; }
-.lrow.me{ background:rgba(255,210,63,.22); border-color:#e0a800; } .lgap{ text-align:center; color:var(--muted); }
+.lrow.me{ background:rgba(255,210,63,.22); border-color:#e0a800; } .lrow.idle{ opacity:.8; border-style:dashed; } .lrow.idle .lp{ font-size:11px; max-width:96px; text-align:right; line-height:1.25; } .lgap{ text-align:center; color:var(--muted); }
 .lgrows{ display:grid; gap:5px; } .lgrow{ display:grid; grid-template-columns:1fr auto; gap:2px 8px; padding:9px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); }
 .lgrow b{ font-size:14px; } .lgrow b small{ color:var(--muted); } .lgrow span{ display:block; font-size:12px; color:var(--muted); font-weight:600; } .lgrow em{ font-style:normal; font-weight:900; font-size:13px; align-self:center; } .lgrow em.win{ color:#2a9d5c; } .lgrow em.lose{ color:#d3342b; }
 .lgrow > small{ grid-column:2; text-align:right; color:var(--muted); font-size:11px; } .lgrow.new{ border-color:#e0a800; box-shadow:0 0 0 2px rgba(224,168,0,.3); }
@@ -1457,6 +1457,36 @@ button.bk-c:active{ transform:translateY(1px); } .bk-c b{ font-size:19px; line-h
 .lgr.real{ border-color:#2a6fd0; background:rgba(42,111,208,.1); } .ur{ font-style:normal; font-size:10px; font-weight:800; padding:1px 6px; border-radius:6px; background:#2a6fd0; color:#fff; vertical-align:1px; }
 .clubres{ margin-top:10px; padding:10px 12px; border-radius:12px; background:rgba(42,111,208,.14); border:1px solid #2a6fd0; display:grid; gap:2px; text-align:center; } .clubres small{ font-weight:700; opacity:.8; } .clubres b{ font-size:24px; } .clubres p{ margin:0; font-size:12px; opacity:.85; line-height:1.4; }
 .clubres em.up{ color:#2a9d5c; font-style:normal; } .clubres em.dn{ color:#d3342b; font-style:normal; }
+.clubwarn{ margin:0; padding:8px 10px; border-radius:10px; background:rgba(211,52,43,.14); color:#d3342b; font-size:12.5px; font-weight:700; line-height:1.4; }
+.clubdiag{ margin:0; font-size:12px; color:var(--muted); font-weight:700; }
+/* ---- 주간 시즌 · 시상식 ---- */
+.wkcard{ padding:14px; border-radius:16px; background:var(--panel); border:2px solid var(--line); display:grid; gap:10px; } .wkcard.sun{ border-color:#d3342b; background:rgba(211,52,43,.07); }
+.wk-top{ display:flex; justify-content:space-between; align-items:flex-end; gap:10px; } .wk-top small{ display:block; color:var(--muted); font-size:12px; font-weight:700; } .wk-top b{ font-size:26px; line-height:1.1; } .wk-cd{ text-align:right; } .wk-cd b{ font-size:22px; }
+.wk-days{ display:grid; grid-template-columns:repeat(7, 1fr); gap:4px; } .wk-days i{ position:relative; text-align:center; padding:6px 0 7px; border-radius:9px; background:rgba(127,127,127,.14); font-style:normal; font-weight:800; font-size:13px; color:var(--muted); }
+.wk-days i.past{ background:rgba(42,157,92,.18); color:#2a9d5c; } .wk-days i.now{ background:var(--strike); color:#2a1c00; box-shadow:0 0 0 2px rgba(0,0,0,.12); } .wk-days i.sun{ outline:1px dashed #d3342b; } .wk-days i u{ display:block; text-decoration:none; font-size:9px; font-weight:700; line-height:1; margin-top:1px; }
+.wk-me{ display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center; } .wk-me span{ padding:7px 2px; border-radius:10px; background:rgba(127,127,127,.12); font-size:12px; color:var(--muted); font-weight:700; } .wk-me b{ font-size:17px; color:var(--ink); } .wk-me b.up{ color:#2a9d5c; } .wk-me b.dn{ color:#d3342b; }
+.awcard{ padding:14px; border-radius:16px; background:linear-gradient(180deg, rgba(255,210,63,.2), rgba(255,210,63,.06)); border:2px solid #e0a800; display:grid; gap:10px; } .aw-h{ display:flex; justify-content:space-between; align-items:baseline; } .aw-h b{ font-size:21px; } .aw-h small{ color:var(--muted); font-weight:700; font-size:12px; }
+.aw-list{ display:grid; gap:6px; } .aw{ display:grid; grid-template-columns:34px 1fr auto; gap:8px; align-items:center; text-align:left; padding:9px 10px; border-radius:12px; background:var(--panel); border:1px solid var(--line); color:inherit; font:inherit; } .aw.me{ background:rgba(255,210,63,.28); border-color:#e0a800; }
+.aw .ai{ font-size:24px; text-align:center; } .aw .at small{ display:block; color:var(--muted); font-size:11px; font-weight:800; } .aw .at b{ font-size:15px; } .aw .at b i{ color:var(--muted); font-style:normal; font-size:11px; } .aw em{ font-style:normal; font-weight:800; font-size:13px; text-align:right; max-width:130px; }
+.aw-me{ display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:10px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); } .aw-me small{ color:var(--muted); font-size:11px; font-weight:700; } .aw-me b{ display:block; font-size:22px; } .aw-me b span{ font-size:12px; color:var(--muted); font-family:inherit; } .aw-me > div > span{ font-size:12px; font-weight:700; color:#2a6fd0; } .aw-me .btn{ margin:0; }
+.seg{ display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:4px; border-radius:12px; background:rgba(127,127,127,.14); } .seg button{ padding:8px 0; border-radius:9px; border:0; background:transparent; color:var(--muted); font:800 14px var(--fb, sans-serif); } .seg button[aria-pressed="true"]{ background:var(--panel); color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.2); }
+.lrow em.up{ color:#2a9d5c; } .lrow em.dn{ color:#d3342b; } .awhist{ display:flex; flex-wrap:wrap; gap:6px; } .awhist span{ padding:5px 10px; border-radius:999px; background:rgba(255,210,63,.22); border:1px solid #e0a800; font-size:12px; font-weight:800; } .awhist i{ font-style:normal; color:var(--muted); margin-right:6px; font-weight:700; }
+.wkwarn{ border-color:#d3342b; background:rgba(211,52,43,.08); } .clubres small{ display:block; font-weight:700; opacity:.85; }
+/* ---- 오늘의 시드 런 ---- */
+.dcard{ margin-top:10px; padding:13px 14px; border-radius:14px; background:linear-gradient(135deg, rgba(255,210,63,.22), rgba(255,210,63,.06)); border:2px solid #e0a800; box-shadow:0 3px 0 rgba(0,0,0,.14); display:grid; gap:8px; }
+.dcard.big{ margin-top:0; }
+.dc-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; } .dc-top small{ display:block; color:var(--muted); font-size:12px; font-weight:700; } .dc-top b{ font-size:22px; line-height:1.15; }
+.dcard > p{ margin:0; font-size:13px; line-height:1.45; color:var(--muted); font-weight:600; }
+.dc-mid{ display:flex; } .dc-st{ padding:5px 10px; border-radius:9px; background:rgba(127,127,127,.16); font-size:13px; font-weight:800; } .dc-st.play{ background:rgba(42,111,208,.18); color:#2a6fd0; } .dc-st.done{ background:rgba(42,157,92,.2); color:#2a9d5c; } .dc-st b{ font-size:15px; }
+.dc-act{ display:grid; grid-template-columns:1fr 1fr; gap:8px; } .dc-act .btn{ margin:0; } .dc-note{ color:var(--muted); font-size:11.5px; line-height:1.4; }
+.dc-mine{ display:grid; grid-template-columns:1fr 1fr auto; gap:10px; align-items:center; padding:10px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); } .dc-mine small{ display:block; color:var(--muted); font-size:11px; font-weight:700; } .dc-mine b{ font-size:22px; } .dc-mine b span{ font-size:12px; color:var(--muted); font-family:inherit; } .dc-mine .btn{ margin:0; }
+.daily-tag{ background:#e0a800 !important; color:#231c00 !important; }
+.seg4{ grid-template-columns:repeat(4, 1fr); } .lrow.dly{ grid-template-columns:30px 1fr auto auto; cursor:default; }
+.dresult{ margin:10px 0; padding:12px; border-radius:14px; background:rgba(255,210,63,.16); border:2px solid #e0a800; display:grid; gap:8px; text-align:center; } .dr-top small{ display:block; font-weight:800; color:var(--muted); font-size:12px; } .dr-top b{ font-size:26px; }
+.dr-rank b{ font-size:30px; } .dr-rank b span{ font-size:13px; color:var(--muted); font-family:inherit; } .dr-rank small{ display:block; color:var(--muted); font-size:11.5px; font-weight:700; }
+.dresult .row{ display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:8px; } .dresult .btn{ margin:0; }
+.sharepre{ width:100%; padding:10px; border-radius:10px; background:rgba(255,255,255,.08); color:inherit; font:13px/1.5 inherit; white-space:pre-wrap; border:1px solid rgba(255,255,255,.2); box-sizing:border-box; }
+.tabs:has(> button:nth-child(5)) > button{ font-size:13px; padding-left:2px; padding-right:2px; }
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
 .g-logo{ width:18px; height:18px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:12px; color:#fff;
@@ -2232,7 +2262,7 @@ const TIERS = [
 const TIER_CLEAR = ['S', 'SS', 'SSS', 'EX'];
 // 난이도를 해금할 때마다 계정에 영구로 남는 보상 (모든 난이도의 육성에 적용)
 const TIER_REWARD = ['', '시작 챌린지 +1', '보상 카드를 4장 중에서 고르기', '첫 보상 카드가 한 등급 위(레어)', '시작 챌린지 +1 추가'];
-const tierRewards = () => { const t = hall.tier || 0; return { shields:(t >= 1 ? 1 : 0) + (t >= 4 ? 1 : 0), choices:3 + (t >= 2 ? 1 : 0), firstUp:t >= 3 }; };
+const tierRewards = () => { if(G && G.daily) return { shields:0, choices:3, firstUp:false }; const t = hall.tier || 0; return { shields:(t >= 1 ? 1 : 0) + (t >= 4 ? 1 : 0), choices:3 + (t >= 2 ? 1 : 0), firstUp:t >= 3 }; };
 const tierOf = () => (G && G.tier) || 0;
 const perkEvery = () => PERK_EVERY + (tierOf() >= 2 ? 10 : 0);
 const tierXp = () => tierOf() >= 3 ? .9 : 1;
@@ -2240,9 +2270,10 @@ const PERK_TIER = { C:{ n:'일반', cls:'pc' }, R:{ n:'레어', cls:'pr' }, E:{ 
 const TIER_ORDER = ['C','R','E','L'];
 function addCards(s, n, ranks, side){
   const tgt = (G.isTwo && side && side !== G.cur) ? G.two[side].deckAdd : (G.deckAdd = G.deckAdd || []);
-  for(let i = 0; i < n; i++) tgt.push({ r:(ranks && ranks[i]) || 1 + Math.floor(Math.random()*10), s });
+  const rnd = dailyRnd('add:' + G.round + ':' + s + ':' + (G.perks || []).length);
+  for(let i = 0; i < n; i++) tgt.push({ r:(ranks && ranks[i]) || 1 + Math.floor(rnd()*10), s });
 }
-const rollRanks = n => Array.from({ length:n }, () => 1 + Math.floor(Math.random()*10)).sort((a, b) => a - b);
+const rollRanks = (n, rnd) => { const f = rnd || Math.random; return Array.from({ length:n }, () => 1 + Math.floor(f()*10)).sort((a, b) => a - b); };
 function setM(k, m){ G.hm = G.hm || {}; G.hm[k] = Math.max(G.hm[k] || HANDS[k].m, m); }
 const HAND_RANK = ['HighCard','Pair','TwoPair','Trips','Straight','Flush','FullHouse','FourKind','StraightFlush','FiveKind','FlushHouse','FlushFive'];
 const handRank = k => HAND_RANK.indexOf(k);
@@ -2298,27 +2329,29 @@ const PITY_KEY = 'fchl-pity-v1', PITY_AT = 6;
 let pity = (() => { try{ return +localStorage.getItem(PITY_KEY) || 0; }catch(e){ return 0; } })();
 const savePity = () => { try{ localStorage.setItem(PITY_KEY, String(pity)); }catch(e){} };
 function makeOffer(M){
-  const o = makeOfferRaw(M);
-  // 천장: 전설 카드가 PITY_AT번 연속으로 안 나왔으면 이번에는 전설 한 장을 포함
-  if(pity >= PITY_AT && !o.cards.some(c => c.t === 'L') && !G.preRound){
+  const rnd = dailyRnd('offer:' + G.round + ':' + (G.preRound ? 'pre' : 'post') + ':' + M + ':' + (G.inBonus ? 'b' : ''));
+  const o = makeOfferRaw(M, rnd);
+  // 천장: 전설 카드가 PITY_AT번 연속으로 안 나왔으면 이번에는 전설 한 장을 포함 (데일리 런은 모두에게 같은 후보여야 해서 천장 없음)
+  if(!G.daily && pity >= PITY_AT && !o.cards.some(c => c.t === 'L') && !G.preRound){
     const pool = PERKS.filter(p => p.t === 'L' && perkAvailable(p, o.cards.map(c => c.id)));
     if(pool.length){ const p = pool[Math.floor(Math.random() * pool.length)]; o.cards[2] = { id:p.id, t:p.t, s:null, ranks:undefined, side:undefined }; o.pity = true; }
   }
-  if(!G.preRound){ pity = o.cards.some(c => c.t === 'L') ? 0 : pity + 1; savePity(); }
+  if(!G.preRound && !G.daily){ pity = o.cards.some(c => c.t === 'L') ? 0 : pity + 1; savePity(); }
   return o;
 }
-function makeOfferRaw(M){
+function makeOfferRaw(M, rnd){
+  rnd = rnd || Math.random;
   const base = M <= 1 ? (G.preRound && tierRewards().firstUp ? 'R' : 'C') : M === 2 ? 'R' : M <= 4 ? 'E' : 'L';
   const cards = [];
   for(let n = 0; n < tierRewards().choices; n++){
     let ti = TIER_ORDER.indexOf(base);
-    if(ti < 3 && Math.random() < .22) ti++;
+    if(ti < 3 && rnd() < .22) ti++;
     let pool = [];
     for(let k = ti; k >= 0 && !pool.length; k--) pool = PERKS.filter(p => p.t === TIER_ORDER[k] && perkAvailable(p, cards.map(c => c.id)));
     if(!pool.length) pool = PERKS.filter(p => perkAvailable(p, cards.map(c => c.id)));
-    const p = pool[Math.floor(Math.random()*pool.length)];
-    cards.push({ id:p.id, t:p.t, s:p.suit ? SUITS[Math.floor(Math.random()*4)] : null, ranks:p.add ? rollRanks(p.add) : undefined,
-      side:(G.isTwo && p.add) ? (G.preRound ? (Math.random() < .5 ? 'pit' : 'bat') : G.cur) : undefined });
+    const p = pool[Math.floor(rnd()*pool.length)];
+    cards.push({ id:p.id, t:p.t, s:p.suit ? SUITS[Math.floor(rnd()*4)] : null, ranks:p.add ? rollRanks(p.add, rnd) : undefined,
+      side:(G.isTwo && p.add) ? (G.preRound ? (rnd() < .5 ? 'pit' : 'bat') : G.cur) : undefined });
   }
   return { tier:base, cards };
 }
@@ -2327,7 +2360,8 @@ function runDeck(){
   for(const s of SUITS) for(let r = 1; r <= 10; r++) if(!(G.trim && r <= 2)) d.push({ r, s });
   (G.deckAdd || []).forEach(c => d.push({ r:c.r, s:c.s }));
   for(let i = 0; i < (G.jokers || 0); i++) d.push({ r:0, s:'J' });
-  for(let i = d.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [d[i], d[j]] = [d[j], d[i]]; }
+  const rnd = dailyRnd('deck:' + G.round + ':' + (G.inBonus ? 'b' + (G.bonusDone || 0) : '') + ':' + (G.cur || ''));          // 데일리 런: 라운드마다 정해진 순서로 섞음
+  for(let i = d.length - 1; i > 0; i--){ const j = Math.floor(rnd()*(i+1)); [d[i], d[j]] = [d[j], d[i]]; }
   return d;
 }
 function pickPerk(i){
@@ -2428,15 +2462,22 @@ function renderSide(){
 function startRun(){
   SFX.playball();
   G = {
-    name: setup.name.trim() || '이름 없는 선수', pos: setup.pos, type: setup.type, tier: selTier(),
+    name: setup.name.trim() || '이름 없는 선수', pos: setup.pos, type: setup.type, tier: setup.daily ? dailyRule(dayKey()).tier : selTier(),
     stats: { S:1, H:1, D:1, C:1 }, xp: { S:0, H:0, D:0, C:0 }, maxJump: 0,
     hm: {}, xs: { S:0, H:0, D:0, C:0 }, xa: 0, rrPerm: 0, rrTemp: [], deckAdd: [], trim: false, jokers: 0, perks: [], offer: null,
-    lucky: { streak:0, armed:false, used:false, risky:false }, hint: Math.random() < .4 ? pickHint() : null, hintRound: 2 + Math.floor(Math.random() * 3), round: 1, hiloLeft: 0, shields: Math.min(5, (allTitlesDone() ? 1 : 0) + fameShields() + tierRewards().shields), phase: 'draw',
+    lucky: { streak:0, armed:false, used:false, risky:false }, hint: !setup.daily && Math.random() < .4 ? pickHint() : null, hintRound: 2 + Math.floor(Math.random() * 3), round: 1, hiloLeft: 0, shields: setup.daily ? 0 : (() => { const base = Math.min(5, (allTitlesDone() ? 1 : 0) + fameShields() + tierRewards().shields); return base + takeWeekBonus(5 - base); })(), phase: 'draw',
     deck: null, hand: [], locks: [false,false,false,false,false], rerolls: REROLLS,
     ev: null, abilities: [], newAbility: null,
     hilo: null, bestStreak: 0, star: 100, msg: '', season: null, lineScore: {}, fx: {},
     handsLog: [], hiloUsed: 0, busts: 0, pushes: 0, rerollsUsed: 0, lastMult: 0
   };
+  if(setup.daily){                                                   // 오늘의 시드 런: 모두 같은 규칙·같은 시드
+    const key = dayKey(), R = dailyRule(key), prevD = hall.daily && hall.daily.key === key ? hall.daily : null;
+    G.daily = { key, rule:R.id, scored:!prevD };                       // 하루의 첫 도전만 기록돼요 (이후는 연습)
+    G.jokers = R.jokers || 0; G.trim = !!R.trim; G.rrPerm = R.rr || 0; G.shields = R.shields || 0;
+    if(!prevD){ hall.daily = { key, rule:R.id, status:'playing', total:0, submitted:false }; saveHall(); }
+    setup.daily = false;
+  }
   if(setup.type === 'two'){
     const side = () => ({ stats:{ S:1, H:1, D:1, C:1 }, xp:{ S:0, H:0, D:0, C:0 }, deckAdd:[], used:0 });
     G.isTwo = true; G.two = { pit:side(), bat:side() }; G.cur = 'pit'; G.type = 'pit';
@@ -2485,9 +2526,10 @@ function reroll(){
   G.rerolls--; G.rerollsUsed++; render();
 }
 function confirmHand(){
+  const rnd = dailyRnd('confirm:' + G.round + ':' + (G.inBonus ? 'b' : ''));
   G.ev = evaluate(G.hand);
   G.ev.bonus = null;
-  if(tierOf() >= 4 && !G.inBonus && Math.random() < .12){ G.ev.injury = true; }                    // 레전드 난이도: 컨디션 난조
+  if(tierOf() >= 4 && !G.inBonus && rnd() < .12){ G.ev.injury = true; }                    // 레전드 난이도: 컨디션 난조
   if(G.gambleX && G.initRank != null && handRank(G.ev.key) > G.initRank){          // 도박사의 직감: 리롤로 족보가 올라감
     SUITS.forEach(x => { G.ev.pts[x] *= G.gambleX; }); G.ev.gamble = G.gambleX;
   }
@@ -2495,7 +2537,7 @@ function confirmHand(){
   if(G.ev.key === 'Flush'){
     // 플러시 보너스: 한 문양에 몰린 경험치의 50%를 나머지 스탯 중 랜덤으로 하나에 더 줌
     const fs = SUITS.find(x => G.ev.pts[x] > 0), total = SUITS.reduce((a, x) => a + G.ev.pts[x], 0);
-    const others = SUITS.filter(x => x !== fs), bs = others[Math.floor(Math.random() * others.length)];
+    const others = SUITS.filter(x => x !== fs), bs = others[Math.floor(rnd() * others.length)];
     G.ev.pts[bs] += total * .5; G.ev.bonus = { suit:bs, xp:total * .5 };
     G.flushBonus = (G.flushBonus || 0) + 1;
   }
@@ -2510,7 +2552,7 @@ function confirmHand(){
   const tier = ['StraightFlush','FlushFive'].includes(k) ? 3 : ['FourKind','FiveKind','FlushHouse'].includes(k) ? 2 : k === 'FullHouse' ? 1 : 0;
   if(tier){
     const pool = ABILITIES[G.type][tier].filter(a => !G.abilities.some(x => x.n === a));
-    if(pool.length){ const a = pool[Math.floor(Math.random()*pool.length)]; const why = `${G.round}라운드 ${HANDS[k].n} 완성 (${handDetail(G.ev.sub || G.hand, G.ev).detail})`; G.abilities.push({ n:a, tier, why }); G.newAbility = { n:a, tier }; SFX.play('ability', .5); }
+    if(pool.length){ const a = pool[Math.floor(rnd()*pool.length)]; const why = `${G.round}라운드 ${HANDS[k].n} 완성 (${handDetail(G.ev.sub || G.hand, G.ev).detail})`; G.abilities.push({ n:a, tier, why }); G.newAbility = { n:a, tier }; SFX.play('ability', .5); }
   }
   render();
 }
@@ -2613,7 +2655,8 @@ function lvUp(s, n){
 }
 function spinWheel(){
   const A = G.allstar; if(!A || A.state !== 'ready' || !A.bet) return;
-  const n = Math.floor(Math.random() * 37), idx = WHEEL_ORDER.indexOf(n), th = 360 / 37;
+  const rnd = dailyRnd('wheel:' + (A.spins = (A.spins || 0) + 1));
+  const n = Math.floor(rnd() * 37), idx = WHEEL_ORDER.indexOf(n), th = 360 / 37;
   A.n = n; A.win = betWins(A.bet, n); A.state = 'spinning';
   A.rot = 360 * 5 + ((360 - idx * th) % 360);
   const id = A.spinId = (A.spinId || 0) + 1;
@@ -2780,19 +2823,20 @@ function startHilo(){
 }
 // 한 구 판정: 맞히거나(win) 못 맞히거나(lose) 둘 중 하나
 function fcJudge(side, sel){
+  const rnd = (() => { if(!(G && G.daily)) return Math.random; const fk = G.round + ':' + (G.inBonus ? 'b' : ''); G.fcCnt = G.fcCnt || {}; const n = G.fcCnt[fk] = (G.fcCnt[fk] || 0) + 1; return dailyRnd('fc:' + fk + ':' + n); })();
   if(side === 'bat'){
-    const pitch = 1 + Math.floor(Math.random() * 9);                 // 공이 들어온 칸
+    const pitch = 1 + Math.floor(rnd() * 9);                 // 공이 들어온 칸
     let ok, mark = pitch;
-    if(sel.mode === 'wide'){ const cells = fcCellsOf(sel), outside = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(c => !cells.includes(c)); ok = Math.random() < FC_WIDE_P; mark = ok ? cells[Math.floor(Math.random() * cells.length)] : outside[Math.floor(Math.random() * outside.length)]; }
+    if(sel.mode === 'wide'){ const cells = fcCellsOf(sel), outside = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(c => !cells.includes(c)); ok = rnd() < FC_WIDE_P; mark = ok ? cells[Math.floor(rnd() * cells.length)] : outside[Math.floor(rnd() * outside.length)]; }
     else ok = fcCellsOf(sel).includes(pitch);
     return { res:ok ? 'win' : 'lose', label:ok ? (sel.mode === 'point' ? '홈런' : '안타') : '헛스윙 삼진', mark, opp:null, snd:ok ? (sel.mode === 'point' ? 'homer' : 'hit') : 'mitt' };
   }
   if(sel.mode === 'read'){
-    const spot = 1 + Math.floor(Math.random() * 9);                  // 타자가 노린 한 점
+    const spot = 1 + Math.floor(rnd() * 9);                  // 타자가 노린 한 점
     const ok = spot === sel.cell;
     return { res:ok ? 'win' : 'lose', label:ok ? '결정구 삼진' : '피홈런', mark:sel.cell, spot, snd:ok ? 'mittBig' : 'gotHomer' };
   }
-  const sq = Math.floor(Math.random() * 4);                          // 타자의 네모 스윙
+  const sq = Math.floor(rnd() * 4);                          // 타자의 네모 스윙
   const ok = !FC_SQ[sq].includes(sel.cell);
   return { res:ok ? 'win' : 'lose', label:ok ? '헛스윙 삼진' : '피안타', mark:sel.cell, oppSq:sq, snd:ok ? 'mitt' : 'gotHit' };
 }
@@ -3430,9 +3474,10 @@ function finishRun(){
   rec.season = packSeason(G.season); rec.line = G.line; rec.calcVer = CALC_VER;
   rec.career = { ...packSeason(G.career), years:G.career.years, trophies:G.career.trophies, line:G.career.line, ages:G.career.ages, tables:G.career.tables };
   G.record = rec;
+  if(G.daily) dailyFinish(rec);
   // 난이도 해금: 현재 가장 높은 해금 단계에서 목표 등급을 넘기면 다음 단계가 열림
   G.tierUnlock = 0;
-  if(tierOf() === (hall.tier || 0) && tierOf() < TIERS.length - 1 && G_NAMES.indexOf(gradeOf(rec.top.value)) >= G_NAMES.indexOf(TIER_CLEAR[tierOf()])){ hall.tier = tierOf() + 1; G.tierUnlock = hall.tier; saveHall(); }
+  if(!G.daily && tierOf() === (hall.tier || 0) && tierOf() < TIERS.length - 1 && G_NAMES.indexOf(gradeOf(rec.top.value)) >= G_NAMES.indexOf(TIER_CLEAR[tierOf()])){ hall.tier = tierOf() + 1; G.tierUnlock = hall.tier; saveHall(); }
   G.reg = null; G.newBest = false; G.firstGrades = [];
   const R = runSummary();
   G.titles = TITLES.filter(t => { try{ return t.test(R); }catch(e){ return false; } }).map(t => t.id);
@@ -3661,6 +3706,7 @@ function startV2(c){
   </section>` : ''}
   <div class="acct-row">${accountHTML()}</div>
   <button class="team-card" data-act="team-open"><span class="tc-ico" aria-hidden="true">⚾</span><span class="tc-main"><b class="disp">내 구단</b><small>${teamStatusText()}${teamFame() ? ` · 우승 ${teamFame()}회` : ''}</small></span><span class="chev" aria-hidden="true">›</span></button>
+  ${dailyCardHTML()}
   <section class="builder2" aria-labelledby="b-title">
     <header class="b2-head"><h2 class="disp" id="b-title">선수 만들기</h2><span class="b2-step">이름 → 포지션</span></header>
     <label class="lab" for="pname">등 뒤에 새길 이름</label>
@@ -3734,6 +3780,7 @@ function renderStart(){
     <div class="rc-bar"><i style="width:${(Math.min(saved.round - 1, saved.isTwo ? TWO_ROUNDS : ROUNDS) / (saved.isTwo ? TWO_ROUNDS : ROUNDS) * 100).toFixed(0)}%"></i></div>
   </section>` : ''}
   <div class="acct-row">${accountHTML()}</div>
+  ${dailyCardHTML()}
   <section class="builder" aria-labelledby="b-title">
     <h2 class="disp" id="b-title">선수 만들기</h2>
     <label class="lab" for="pname">등 뒤에 새길 이름</label>
@@ -3793,7 +3840,7 @@ function headerHTML(){
   }).join('');
   return `<div class="board sb compact">
     <div class="bd-row1">
-      <div class="who disp"><small>${esc(G.pos)}${G.isTwo ? ` · <span class="side-tag ${G.cur}">${SIDE_NAME[G.cur]}</span>` : ''}${G.inBonus ? ' · <span class="bonus-tag">🍀 보너스 라운드</span>' : ''}${G.tier ? ` <span class="tier-tag">${TIERS[G.tier].n}</span>` : ''}</small>${esc(G.name)}</div>
+      <div class="who disp"><small>${esc(G.pos)}${G.isTwo ? ` · <span class="side-tag ${G.cur}">${SIDE_NAME[G.cur]}</span>` : ''}${G.inBonus ? ' · <span class="bonus-tag">🍀 보너스 라운드</span>' : ''}${G.daily ? ' <span class="tier-tag daily-tag">오늘의 런</span>' : ''}${G.tier ? ` <span class="tier-tag">${TIERS[G.tier].n}</span>` : ''}</small>${esc(G.name)}</div>
       <div class="bd-btns"><button class="gear" data-act="deck">덱 ${deckSize()}</button><button class="gear" data-act="perks">보상 ${(G.perks || []).length}</button><button class="gear" data-act="menu" aria-haspopup="dialog">설정</button></div>
     </div>
     <div class="bd-row2">
@@ -4283,7 +4330,7 @@ function renderResult(){
       <span class="grade g-${topG}" style="font-size:22px;padding:6px 12px">${topG}</span>
     </div>
     ${G.grandslam ? `<div class="gslam">${burstHTML(70, '40%')}<small>비밀 보상 해금</small><b class="disp">그랜드슬램</b><span>모든 칭호 ${TITLES.length}종을 모았어요!</span><em>이제부터 모든 육성을 챌린지 신청권 1장과 함께 시작해요</em></div>` : ''}
-    ${reg}
+    ${G.daily ? dailyResultHTML() : ''}${reg}
     <p class="tap-hint">항목 이름을 누르면 설명을 볼 수 있어요</p>
     ${G.isTwo ? `<div class="two-radar"><div><h4 class="disp">투수 · 최고 ${esc(r.pitTop.label)} Lv ${fmt(r.pitTop.value)}</h4>${radarSVG(axesFor('pit', G.two.pit.stats, r.guts, r.star))}</div><div><h4 class="disp">타자 · 최고 ${esc(r.batTop.label)} Lv ${fmt(r.batTop.value)}</h4>${radarSVG(axesFor('bat', G.two.bat.stats, r.guts, r.star))}</div></div>` : radarSVG(axes)}
     <p class="oneliner">“${esc(G.line)}”</p>
@@ -4399,7 +4446,9 @@ const tierChips = () => `<div class="tier-chips rec" role="group" aria-label="�
 function renderRecords(){
   rollWeek();
   let body = '';
-  if(recTab === 'titles'){
+  if(recTab === 'daily'){
+    body = dailyTabHTML();
+  } else if(recTab === 'titles'){
     const gs = allTitlesDone() && hall.grandslam;
     const got = hall.titles || {};
     const have = TITLES.filter(t => got[t.id]), rest = TITLES.filter(t => !got[t.id]);
@@ -4460,6 +4509,7 @@ function renderRecords(){
       <button data-act="tab" data-v="mine" aria-pressed="${recTab==='mine'}">명예의 전당</button>
       <button data-act="tab" data-v="saved" aria-pressed="${recTab==='saved'}">내 선수</button>
       <button data-act="tab" data-v="titles" aria-pressed="${recTab==='titles'}">칭호 도감</button>
+      <button data-act="tab" data-v="daily" aria-pressed="${recTab==='daily'}">오늘</button>
     </div>${body}`;
 }
 
@@ -4641,6 +4691,12 @@ document.addEventListener('click', e => {
     case 'club-publish': clubPublishNow(); break;
     case 'club-open': openClub(v); break;
     case 'club-refresh': loadLeague(true); break;
+    case 'daily-board': view = 'records'; recTab = 'daily'; render(); window.scrollTo(0, 0); loadDaily(true); break;
+    case 'daily-filter': dailyBoard.filter = v; render(); break;
+    case 'daily-refresh': loadDaily(true); break;
+    case 'daily-share': shareDaily(); break;
+    case 'club-view': league.view = v; render(); break;
+    case 'club-claim': claimWeek(); break;
     case 'team-rename': teamRename(); break;
     case 'team-rename-save': { const el = document.getElementById('tname'), nm = el ? el.value.trim() : ''; if(nm){ TEAM().name = nm.slice(0, 12); mcCache = null; saveHall(); } modal = null; render(); break; }
     case 'dev-apply': devApply(); break;
@@ -4688,7 +4744,9 @@ document.addEventListener('click', e => {
     case 'side': if(twoFirstPick()) G.firstSide = v; chooseSide(v); break;
     case 'g-logout': askLogout(); break;
     case 'dex': view = 'records'; recTab = 'titles'; render(); window.scrollTo(0, 0); break;
+    case 'daily-start':
     case 'start': {
+      setup.daily = b.dataset.act === 'daily-start';                  // 오늘의 시드 런으로 시작하는지
       if(!ALL_POS.includes(setup.pos)){
         const f = document.querySelector('.ballfield');
         if(f){
@@ -4701,7 +4759,7 @@ document.addEventListener('click', e => {
       const sv = loadRun();
       if(sv && !b.dataset.force){
         modal = { title:'진행 중인 육성이 있어요', body:`<p>${esc(sv.name)} · ${esc(sv.pos)} · ${Math.min(sv.round, sv.isTwo ? TWO_ROUNDS : ROUNDS)}/${sv.isTwo ? TWO_ROUNDS : ROUNDS} 라운드까지 진행했어요. 새로 시작하면 이 육성은 사라져요.</p>
-          <div class="menu-actions"><button class="btn amber" data-act="start" data-force="1">새 선수(${esc(setup.name.trim() || '이름 없는 선수')} · ${esc(setup.pos)})로 시작</button>
+          <div class="menu-actions"><button class="btn amber" data-act="${setup.daily ? 'daily-start' : 'start'}" data-force="1">새 선수(${esc(setup.name.trim() || '이름 없는 선수')} · ${esc(setup.pos)})로 시작</button>
           <button class="btn ghost" data-act="resume">${esc(sv.name)} 이어하기</button></div>` };
         render(); break;
       }
@@ -4763,7 +4821,7 @@ document.addEventListener('click', e => {
     case 'again': setup.name = G.name; setup.type = G.isTwo ? 'two' : G.type; setup.pos = G.pos; startRun(); window.scrollTo(0, 0); break;
     case 'home': view = 'start'; render(); window.scrollTo(0, 0); break;
     case 'records': view = 'records'; if(recTab === 'world') loadBoard(); render(); window.scrollTo(0, 0); break;
-    case 'tab': recTab = v; if(v === 'world') loadBoard(); else render(); break;
+    case 'tab': recTab = v; if(v === 'world') loadBoard(); else { render(); if(v === 'daily') loadDaily(true); } break;
     case 'rpos': recPos = v; render(); break;
     case 'rside': recSide = v; render(); break;
   }
@@ -4974,7 +5032,7 @@ const saveDraft = () => { try{ if(draft) localStorage.setItem(DRAFT_KEY, JSON.st
 const syncDay = () => { if(draft && draft.day !== todayStr()){ draft = null; try{ localStorage.removeItem(DRAFT_KEY); }catch(e){} } };
 const teamLocked = () => { if(devUnlimited()) return false; syncDay(); return playsToday() >= DAILY_MAX && !(draft && draft.phase !== 'done'); };
 const untilTomorrow = () => { const n = window.__now ? new Date(window.__now) : new Date(), t = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1), ms = t - n; return `${Math.floor(ms / 36e5)}시간 ${Math.floor(ms % 36e5 / 6e4)}분`; };
-const teamStatusText = () => (syncDay(), draft && draft.phase !== 'done') ? '진행 중인 시즌이 있어요' : devUnlimited() ? '무제한 모드 · 언제든 도전 가능' : teamLocked() ? `오늘 ${DAILY_MAX}번 모두 완료 · 내일 다시` : `오늘 ${playsToday()}/${DAILY_MAX}회 · ${LV_NAMES[selLevel()]} 난이도`;
+const teamStatusText = () => ((syncDay(), draft && draft.phase !== 'done') ? '진행 중인 시즌이 있어요' : devUnlimited() ? '무제한 모드 · 언제든 도전 가능' : teamLocked() ? `오늘 ${DAILY_MAX}번 모두 완료 · 내일 다시` : `오늘 ${playsToday()}/${DAILY_MAX}회 · ${LV_NAMES[selLevel()]} 난이도`) + weekHint();
 
 /* ---- 한 시점의 팀 전력 (드래프트한 선수 + 케미 + 시너지) ---- */
 function buildTeam(opts = {}){
@@ -5042,13 +5100,13 @@ function simMyGame(st, opp, sp){
 /* ======================== 구단 리그: 다른 유저의 구단과 붙는 비동기 대결 ======================== */
 const CLUB_VER = 1, CLUB_MAX_AGE = 21 * 864e5, CLUB_MIN = 9;
 const clubOn = () => !!(typeof cap !== 'undefined' && cap && cap.db && cap.uid);
-const clubStateOf = T => (T.club = Object.assign({ rating:1000, hide:false, seen:0, pubAt:0, sig:'' }, T.club || {}));
+const clubStateOf = T => (T.club = Object.assign({ rating:1000, hide:false, seen:0, pubAt:0, sig:'', wk:null, pwk:null, claimed:'', bonus:0, awards:[], seenWeek:'' }, T.club || {}));
 const clubState = () => clubStateOf(TEAM());
 const clubTag = uid => String(uid).slice(-4).toUpperCase();
 const hashStr = str => { let h = 7; for(let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0; return h; };
-const clampLv = v => Math.max(1, Math.min(160, Math.round(+v) || 1));
+const clampLv = v => Math.max(1, Math.min(500, Math.round(+v) || 1));            // 숫자가 아니거나 음수·무한대 같은 값만 막는 안전장치 (강하다는 이유로 걸러내지 않음)
 const cleanStats = st => st && typeof st === 'object' ? { S:clampLv(st.S), H:clampLv(st.H), D:clampLv(st.D), C:clampLv(st.C) } : null;
-const league = { loading:false, err:null, clubs:[], logs:[], at:0, logAt:0 };
+const league = { loading:false, err:null, clubs:[], logs:[], at:0, logAt:0, view:'week', rwPending:false };
 const clubCache = { at:0, docs:[], loading:false };
 function slimClubPlayer(r){
   const o = { name:String(r.name || '선수').slice(0, 14), pos:r.pos, type:r.type, stats:cleanStats(r.stats) || { S:1, H:1, D:1, C:1 }, top:{ value:r.top ? r.top.value : 1, label:r.top ? String(r.top.label).slice(0, 6) : '' },
@@ -5070,17 +5128,19 @@ function rosterSummary(roster){
 function clubDoc(){
   const T = TEAM(), R = rosterMap(), ids = Object.keys(R); if(ids.length < CLUB_MIN || !clubOn()) return null;
   const roster = {}; ids.forEach(id => { roster[id] = slimClubPlayer(R[id]); });
-  return { ver:CLUB_VER, name:String(T.name || '내 구단').slice(0, 12), tag:clubTag(cap.uid), power:rosterSummary(R).power, rating:clubStateOf(T).rating, season:T.season || 0, titles:T.titles || 0, roster, updated:Date.now() };
+  const C = clubStateOf(T); weekRoll(C);
+  return { ver:CLUB_VER, name:String(T.name || '내 구단').slice(0, 12), tag:clubTag(cap.uid), power:rosterSummary(R).power, rating:C.rating, season:T.season || 0, titles:T.titles || 0, roster, wk:C.wk, pwk:C.pwk, updated:Date.now() };
 }
 async function publishClub(force){
   const T = TEAM(), C = clubStateOf(T); if(!clubOn() || C.hide) return false;
   const d = clubDoc(); if(!d) return false;
-  const sig = String(hashStr(JSON.stringify([d.name, d.roster, d.rating, d.titles])));
+  const sig = String(hashStr(JSON.stringify([d.name, d.roster, d.rating, d.titles, d.wk, d.pwk])));
   if(!force && sig === C.sig && Date.now() - (C.pubAt || 0) < 6 * 36e5) return true;           // 바뀐 게 없으면 다시 올리지 않음
-  try{ await cap.db.doc('clubs/' + cap.uid).set(d); C.sig = sig; C.pubAt = Date.now(); hall.team = T; try{ localStorage.setItem(LS_KEY, JSON.stringify(hall)); }catch(e){} clubCache.at = 0; return true; }
-  catch(e){ console.warn('구단 공개 실패', e); return false; }
+  try{ await cap.db.doc('clubs/' + cap.uid).set(d); const C2 = clubState(); C2.sig = sig; C2.pubAt = Date.now(); try{ localStorage.setItem(LS_KEY, JSON.stringify(hall)); }catch(e){} clubCache.at = 0; clubErr = ''; return true; }
+  catch(e){ console.warn('구단 공개 실패', e); clubErr = '공개 실패 — ' + clubErrTxt(e); return false; }
 }
-let clubPubTimer = null;
+let clubPubTimer = null, clubErr = '';
+const clubErrTxt = e => { const c = String((e && (e.code || e.message)) || e || ''); return /permission|denied/i.test(c) ? '권한 거부(permission-denied): Firestore 보안 규칙이 게시되지 않았거나 붙여 넣기가 어긋났어요' : /unavailable|network|offline/i.test(c) ? '네트워크 연결 문제예요' : c.slice(0, 80) || '알 수 없는 오류'; };
 function schedulePublish(){ if(!clubOn()) return; clearTimeout(clubPubTimer); clubPubTimer = setTimeout(() => { publishClub(false); }, 4000); }
 async function unpublishClub(){
   if(!clubOn()) return;
@@ -5101,8 +5161,7 @@ function sanitizeClub(uid, d){
     roster[sl.id] = rec; n++;
   });
   if(n < 7) return null;
-  if(Object.values(roster).reduce((a, r) => a + r.top.value, 0) / n > 100) return null;                      // 선수 평균이 레전드급(Lv 100)을 넘는 구단은 정상 플레이로 만들 수 없으므로 제외
-  return { uid, name:String(d.name || '이름 없는 구단').slice(0, 12), tag:String(d.tag || clubTag(uid)).slice(0, 4), rating:Math.max(0, Math.min(5000, Math.round(+d.rating || 1000))), titles:Math.max(0, Math.min(999, Math.round(+d.titles || 0))), season:Math.max(0, Math.round(+d.season || 0)), updated:+d.updated || 0, roster, sum:null, me:uid === cap.uid };
+  return { uid, wk:cleanWeek(d.wk), pwk:cleanWeek(d.pwk), name:String(d.name || '이름 없는 구단').slice(0, 12), tag:String(d.tag || clubTag(uid)).slice(0, 4), rating:Math.max(0, Math.min(5000, Math.round(+d.rating || 1000))), titles:Math.max(0, Math.min(999, Math.round(+d.titles || 0))), season:Math.max(0, Math.round(+d.season || 0)), updated:+d.updated || 0, roster, sum:null, me:uid === cap.uid };
 }
 const clubSum = c => c.sum || (c.sum = rosterSummary(c.roster));
 async function fetchClubs(force){
@@ -5112,7 +5171,7 @@ async function fetchClubs(force){
   try{
     const snap = await cap.db.collection('clubs').limit(400).get(), docs = [];
     snap.docs.forEach(d => { const c = sanitizeClub(d.id, d.data()); if(c) docs.push(c); });
-    clubCache.docs = docs; clubCache.at = Date.now();
+    clubCache.docs = docs; clubCache.at = Date.now(); clubCache.total = snap.docs.length; clubCache.meRaw = snap.docs.some(d => d.id === cap.uid); clubCache.meOk = docs.some(c => c.me);
   } finally { clubCache.loading = false; }
   return clubCache.docs;
 }
@@ -5123,7 +5182,7 @@ async function findOpponents(){
   const near = docs.map(c => ({ c, d:Math.abs(Math.log(Math.max(30, clubSum(c).power) / myPower)) })).filter(x => x.d < Math.log(1.8)).sort((a, b) => a.d - b.d).slice(0, 16);
   return shuffleArr(near).slice(0, 9).map(x => x.c);
 }
-async function warmClubs(){ if(!clubOn() || clubCache.loading || Date.now() - clubCache.at < 60000) return; try{ await fetchClubs(true); if(view === 'team' && (teamTab === 'season' || teamTab === 'league')) render(); }catch(e){} }
+async function warmClubs(){ if(!clubOn() || clubCache.loading || Date.now() - clubCache.at < 60000) return; try{ await fetchClubs(true); leagueSync(); if(view === 'team' && (teamTab === 'season' || teamTab === 'league')) render(); }catch(e){} }
 async function loadLogs(){
   if(!clubOn()) return;
   try{
@@ -5136,9 +5195,9 @@ async function loadLogs(){
 async function loadLeague(force){
   if(!clubOn() || league.loading) return;
   league.loading = true; league.err = null; if(view === 'team') render();
-  try{ await publishClub(false); const docs = await fetchClubs(!!force || true); league.clubs = docs.slice().sort((a, b) => b.rating - a.rating || clubSum(b).power - clubSum(a).power); league.at = Date.now(); await loadLogs(); }
-  catch(e){ league.err = 'fail'; }
-  league.loading = false; if(view === 'team' && teamTab === 'league'){ const C = clubState(); C.seen = Date.now(); saveHall(); } if(view === 'team') render();
+  try{ await publishClub(false); await fetchClubs(true); leagueSync(); league.at = Date.now(); await loadLogs(); }
+  catch(e){ league.err = clubErrTxt(e); console.warn('구단 목록 불러오기 실패', e); }
+  league.loading = false; if(view === 'team' && teamTab === 'league'){ const C = clubState(); C.seen = Date.now(); C.seenWeek = lwKey(); saveHall(); } if(view === 'team') render();
 }
 const clubUnread = () => league.logs.filter(x => x.ts > clubState().seen).length;
 function teamTabEnter(){
@@ -5163,6 +5222,214 @@ async function clubAfterSeason(SS, upd){
   }
 }
 
+/* ======================== 주간 시즌 리듬: 월요일 0시 개막 · 일요일 밤 12시 마감 · 다음 월요일 시상식 (한국 시간 기준) ======================== */
+const KST_MS = 9 * 36e5, DAY_NAMES = ['월', '화', '수', '목', '금', '토', '일'], WEEK_MAX_SEASONS = 21;
+const lwStartMs = ms => { const k = (ms == null ? nowMs() : ms) + KST_MS, back = ((new Date(k).getUTCDay() + 6) % 7) * 864e5; return k - back - (k % 864e5) - KST_MS; };          // 그 주 월요일 00:00(한국 시간)의 실제 시각
+const lwKey = ms => new Date(lwStartMs(ms) + KST_MS).toISOString().slice(0, 10);
+const lwDay = ms => (new Date((ms == null ? nowMs() : ms) + KST_MS).getUTCDay() + 6) % 7;                            // 0=월 … 6=일
+const lwPrevKey = () => lwKey(lwStartMs() - 864e5);
+const lwUntilEnd = () => lwStartMs() + 7 * 864e5 - nowMs();
+const durTxt = ms => { const d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5), m = Math.floor(ms % 36e5 / 6e4); return d > 0 ? `${d}일 ${h}시간` : h > 0 ? `${h}시간 ${m}분` : `${Math.max(1, m)}분`; };
+const weekLabel = key => { const [, m, d] = key.split('-').map(Number); return `${m}월 ${d}일 주`; };
+const sgn = v => (v >= 0 ? '+' : '') + v;
+function cleanWeek(w){
+  if(!w || typeof w.key !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(w.key)) return null;
+  const capS = w.key === lwKey() ? Math.min(WEEK_MAX_SEASONS, DAILY_MAX * (lwDay() + 2)) : WEEK_MAX_SEASONS;           // 이번 주 기록은 하루 3번 × 지난 요일 수를 넘을 수 없음
+  const seasons = Math.round(+w.seasons), wins = Math.round(+w.w), loss = Math.round(+w.l), gain = Math.round(+w.gain);
+  if(!(seasons >= 0 && seasons <= capS) || !(wins >= 0 && loss >= 0) || wins + loss !== 144 * seasons) return null;           // 정규 시즌은 항상 144경기: 승+패가 맞지 않는 기록은 버림
+  if(Math.abs(gain) > 216 * seasons) return null;                                                                          // 시즌당 레이팅 변화는 상대 9팀 × 24점(이론상 최대)을 넘을 수 없음
+  const db = w.dbest && typeof w.dbest.day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(w.dbest.day) && w.dbest.day >= w.key && w.dbest.day <= new Date(Date.parse(w.key + 'T00:00:00Z') + 6 * 864e5).toISOString().slice(0, 10) ? { day:w.dbest.day, total:Math.max(4, Math.min(1000, Math.round(+w.dbest.total) || 0)), name:String(w.dbest.name || '').slice(0, 14), pos:String(w.dbest.pos || '').slice(0, 8) } : null;
+  return { key:w.key, dbest:db, seasons, gain, w:wins, l:loss, champs:Math.max(0, Math.min(seasons, Math.round(+w.champs) || 0)),
+    mvp:w.mvp && typeof w.mvp.name === 'string' ? { name:String(w.mvp.name).slice(0, 14), pos:String(w.mvp.pos || '').slice(0, 6), war:Math.max(0, Math.min(25, +w.mvp.war || 0)), v:Math.max(0, Math.min(500, Math.round(+w.mvp.v) || 0)) } : null };
+}
+// 새 주가 시작되면 지난 주 기록은 pwk로 옮기고 이번 주 기록을 새로 시작
+function weekRoll(C){
+  const k = lwKey(), prev = lwPrevKey();
+  if(!C.wk || C.wk.key !== k){ C.pwk = C.wk && C.wk.key === prev ? C.wk : (C.pwk && C.pwk.key === prev ? C.pwk : null); C.wk = { key:k, gain:0, w:0, l:0, seasons:0, champs:0, mvp:null, dbest:null }; }
+  else if(C.pwk && C.pwk.key !== prev) C.pwk = null;
+  return C.wk;
+}
+function weekAdd(T, result, upd){
+  const C = clubStateOf(T), W = weekRoll(C);
+  W.seasons++; W.w += result.w; W.l += result.l; if(result.champion) W.champs++; if(upd) W.gain += upd.delta;
+  if(result.mvp && (!W.mvp || result.mvp.war > W.mvp.war)) W.mvp = { name:String(result.mvp.name).slice(0, 14), pos:String(result.mvp.slot || '').slice(0, 6), war:Math.round(result.mvp.war * 10) / 10, v:result.mvp.v || 0 };
+}
+const wkOfClub = (c, key) => c.wk && c.wk.key === key ? c.wk : (c.pwk && c.pwk.key === key ? c.pwk : null);
+function weeklyRows(key){ return league.clubs.map(c => ({ c, w:wkOfClub(c, key) })).filter(x => x.w && x.w.seasons > 0).sort((a, b) => b.w.gain - a.w.gain || b.w.w - a.w.w || b.c.rating - a.c.rating); }
+// 시상식: 주간 우승 구단 · 주간 MVP · 다승왕 · 신인왕 (참가 구단이 2팀 이상일 때)
+function weekAwards(rows){
+  if(rows.length < 2) return [];
+  const out = [], best = (arr, f) => arr.length ? arr.reduce((a, x) => f(x) > f(a) ? x : a) : null, act = rows.filter(x => x.w.seasons >= 2);
+  const champ = best(act, x => x.w.gain + x.w.w / 1000); if(champ) out.push({ id:'champ', icon:'🏆', title:'주간 우승 구단', c:champ.c, text:`레이팅 ${sgn(champ.w.gain)}` });
+  const mv = best(rows.filter(x => x.w.mvp), x => x.w.mvp.war); if(mv) out.push({ id:'mvp', icon:'⭐', title:'주간 MVP', c:mv.c, text:`${esc(mv.w.mvp.name)} · WAR ${mv.w.mvp.war.toFixed(1)}` });
+  const wn = best(act, x => x.w.w); if(wn) out.push({ id:'wins', icon:'🔥', title:'다승왕', c:wn.c, text:`${wn.w.w}승` });
+  const rk = best(rows.filter(x => x.c.season - x.w.seasons <= 3), x => x.w.gain); if(rk) out.push({ id:'rookie', icon:'🌱', title:'신인왕', c:rk.c, text:`레이팅 ${sgn(rk.w.gain)}` });
+  const dcs = rows.filter(x => x.w.dbest); if(dcs.length >= 2){ const dc = best(dcs, x => x.w.dbest.total); out.push({ id:'daily', icon:'🎯', title:'데일리 챔피언', c:dc.c, text:`${esc(dc.w.dbest.name)} · 합계 Lv ${fmt(dc.w.dbest.total)}` }); }
+  return out;
+}
+// 보상(다음 육성의 챌린지 신청권): 참가 +1 · 주간 상위 10% +2 · 시상식 수상 +3
+function weekReward(aw, rows){
+  const i = rows.findIndex(x => x.c.me); if(i < 0) return null;
+  const n = rows.length, rank = i + 1, mine = aw.filter(a => a.c.me); let sh = 1, why = '지난주 시즌 참가';
+  if(rank <= Math.max(1, Math.ceil(n * .1))){ sh = 2; why = '주간 상위 10%'; }
+  if(mine.length){ sh = 3; why = mine.map(a => a.title).join(' · ') + ' 수상'; }
+  return { sh, why, rank, n, awards:mine, gain:rows[i].w.gain };
+}
+function leagueSync(){
+  league.clubs = clubCache.docs.slice().sort((a, b) => b.rating - a.rating || clubSum(b).power - clubSum(a).power);
+  const rows = weeklyRows(lwPrevKey()), rw = weekReward(weekAwards(rows), rows); league.rwPending = !!rw && clubState().claimed !== lwPrevKey();
+}
+const clubBadge = () => clubUnread() + (league.rwPending ? 1 : 0);
+// 시상식 보상 받기: 다음 육성을 챌린지 신청권과 함께 시작 (최대 5장 안에서 적용)
+function claimWeek(){
+  const key = lwPrevKey(), C = clubState(); if(C.claimed === key) return;
+  const rows = weeklyRows(key), aw = weekAwards(rows), rw = weekReward(aw, rows); if(!rw) return;
+  C.claimed = key; C.bonus = Math.min(5, (C.bonus || 0) + rw.sh);
+  C.awards = rw.awards.map(a => ({ wk:key, t:a.title })).concat([{ wk:key, t:`주간 ${rw.rank}위 / ${rw.n}팀` }], C.awards || []).slice(0, 24);
+  league.rwPending = false; saveHall(); SFX.play('levelup');
+  modal = { title:'보상을 받았어요', body:`<p><b>${esc(rw.why)}</b> 보상으로 다음 육성을 챌린지 신청권 <b>+${rw.sh}장</b>과 함께 시작해요. (보관 중 ${C.bonus}장 · 육성 시작 시 최대 5장까지 적용)</p>` }; render();
+}
+const takeWeekBonus = room => { const C = clubState(), n = Math.max(0, Math.min(C.bonus || 0, room)); if(n){ C.bonus -= n; saveHall(); } return n; };
+const weekHint = () => { if(!clubOn()) return ''; const C = clubState(), prev = lwPrevKey(); return C.seenWeek !== lwKey() && C.claimed !== prev && ((C.wk && C.wk.key === prev) || (C.pwk && C.pwk.key === prev)) ? ' · 🏅 지난주 시상식 도착' : ''; };
+/* ======================== 데일리 시드 런: 모두가 같은 시드로 하루 한 판 · 합계 레벨로 순위 (한국 날짜 기준) ======================== */
+const DAILY_VER = 1;
+const dayKey = ms => new Date((ms == null ? nowMs() : ms) + KST_MS).toISOString().slice(0, 10);
+const DAILY_RULES = [
+  { id:'std',    n:'표준의 날',    d:'특별한 규칙 없이 실력으로 승부해요.', tier:1 },
+  { id:'joker',  n:'조커의 날',    d:'조커 2장이 덱에 들어 있어요.', tier:1, jokers:2 },
+  { id:'reroll', n:'리롤의 날',    d:'매 라운드 리롤이 1번 더 있어요.', tier:2, rr:1 },
+  { id:'trim',   n:'압축 덱의 날', d:'1·2 카드가 빠져서 높은 숫자와 페어가 잘 나와요.', tier:1, trim:true },
+  { id:'shield', n:'챌린지의 날',  d:'챌린지 신청권 3장으로 시작해요.', tier:2, shields:3 },
+  { id:'iron',   n:'강행군의 날',  d:'경험치가 줄지만 조커 1장과 챌린지 2장을 줘요.', tier:3, jokers:1, shields:2 },
+  { id:'legend', n:'레전드의 날',  d:'컨디션 난조가 있는 대신 조커 2장과 챌린지 3장을 줘요.', tier:4, jokers:2, shields:3 }
+];
+const dailyRule = key => DAILY_RULES[hashStr('rule|' + key) % DAILY_RULES.length];
+const dailyRuleById = id => DAILY_RULES.find(r => r.id === id) || DAILY_RULES[0];
+// 데일리 런 중에는 (날짜 + 지점) 이름으로 난수를 고정: 같은 날이면 누구나 같은 덱 순서·같은 보상 후보·같은 판정이 나와요
+const dailyRnd = tag => (G && G.daily) ? seededRng(hashStr(G.daily.key + '|' + tag)) : Math.random;
+// ---- 기록 저장 · 서버 제출 · 순위 ----
+const TYPE_NAME = { bat:'타자', pit:'투수', two:'이도류' };
+const dailyBoard = { loading:false, err:null, rows:[], at:0, key:'', filter:'all' };
+function dailyEntryOf(rec){
+  const two = rec.type === 'two' && rec.two, st = two ? rec.two.bat : rec.stats;
+  return { ver:DAILY_VER, name:String(rec.name || '선수').slice(0, 12), tag:'', type:rec.type, pos:String(rec.pos || '').slice(0, 8), total:Math.round(recTotal(rec)),
+    stats:{ S:clampLv(st.S), H:clampLv(st.H), D:clampLv(st.D), C:clampLv(st.C) }, pit:two ? cleanStats(rec.two.pit) : null,
+    top:{ label:String(rec.top ? rec.top.label : '').slice(0, 8), value:rec.top ? Math.round(rec.top.value) : 0 }, rule:G && G.daily ? G.daily.rule : '', tier:G ? (G.tier || 0) : 0, abil:(rec.abilities || []).length, ts:Date.now() };
+}
+// 받은 기록은 합계를 믿지 않고 능력치로 다시 계산
+const okDailyStats = o => !!o && typeof o === 'object' && ['S', 'H', 'D', 'C'].every(k => Number.isFinite(+o[k]) && +o[k] >= 1 && +o[k] <= 250);      // 1레벨에서 12라운드로 키우는 능력치의 현실적인 범위
+function cleanDaily(uid, d){
+  if(!d || d.ver !== DAILY_VER || !okDailyStats(d.stats) || (d.type === 'two' && !okDailyStats(d.pit))) return null;
+  const st = cleanStats(d.stats); if(!st) return null;
+  const sum = o => o.S + o.H + o.D + o.C, type = d.type === 'pit' || d.type === 'two' ? d.type : 'bat', pit = type === 'two' ? cleanStats(d.pit) : null;
+  if(type === 'two' && !pit) return null;
+  const total = type === 'two' ? Math.min(sum(st), sum(pit)) : sum(st);
+  return { uid, me:uid === cap.uid, name:String(d.name || '선수').slice(0, 12), tag:String(d.tag || '').slice(0, 4), type, pos:String(d.pos || '').slice(0, 8), total, stats:st,
+    top:{ label:String(d.top && d.top.label || '').slice(0, 8), value:Math.max(0, Math.min(500, Math.round(+(d.top && d.top.value)) || 0)) }, rule:String(d.rule || '').slice(0, 8), tier:Math.max(0, Math.min(4, Math.round(+d.tier) || 0)), ts:+d.ts || 0 };
+}
+function dailyRank(row){
+  const grp = dailyBoard.rows.filter(r => r.type === row.type), before = (a, b) => b.total > a.total || (b.total === a.total && b.ts < a.ts);
+  return { rank:grp.filter(r => before(row, r)).length + 1, n:grp.length, all:dailyBoard.rows.filter(r => before(row, r)).length + 1, nAll:dailyBoard.rows.length };
+}
+async function pushDaily(){                                         // 끝낸 기록을 서버에 한 번만 올림 (이미 있으면 첫 기록이 유지돼요)
+  const D = hall.daily; if(!D || D.status !== 'done' || D.submitted || !D.entry || D.key !== dayKey() || !clubOn()) return;
+  const ref = cap.db.doc('daily/' + D.key + '/entries/' + cap.uid), snap = await ref.get();
+  if(snap.exists) D.dup = true; else await ref.set(Object.assign({}, D.entry, { tag:clubTag(cap.uid) }));
+  D.submitted = true; delete D.entry; saveHall();
+}
+async function loadDaily(force){
+  const key = dayKey();
+  if(!clubOn()){ dailyBoard.err = 'login'; if(view === 'records' || view === 'result') render(); return; }
+  if(dailyBoard.loading) return;
+  if(!force && dailyBoard.key === key && Date.now() - dailyBoard.at < 30000) return;
+  dailyBoard.loading = true; dailyBoard.err = null; if(view === 'records') render();
+  try{
+    await pushDaily();
+    const snap = await cap.db.collection('daily/' + key + '/entries').limit(500).get(), rows = [];
+    snap.docs.forEach(d => { const e = cleanDaily(d.id, d.data()); if(e) rows.push(e); });
+    rows.sort((a, b) => b.total - a.total || a.ts - b.ts);
+    dailyBoard.rows = rows; dailyBoard.key = key; dailyBoard.at = Date.now();
+    const me = rows.find(r => r.me), D = hall.daily;
+    if(me && D && D.key === key){ const k = dailyRank(me); D.rank = k.rank; D.n = k.n; D.all = k.all; D.nAll = k.nAll; if(D.dup){ D.total = me.total; D.top = me.top; D.name = me.name; D.pos = me.pos; D.type = me.type; } D.submitted = true; saveHall(); }
+  }catch(e){ dailyBoard.err = clubErrTxt(e); console.warn('데일리 기록 처리 실패', e); }
+  dailyBoard.loading = false; if(view === 'records' || view === 'game' || view === 'start' || view === 'result') render();
+}
+function dailyFinish(rec){
+  const D = G.daily;
+  if(!D.scored){ G.dailyMsg = '오늘의 첫 도전만 기록돼요. 이번 판은 연습이에요.'; return; }
+  if(dayKey() !== D.key){ G.dailyMsg = '날짜가 바뀌어서 이번 기록은 순위에 올라가지 않아요.'; return; }
+  const entry = dailyEntryOf(rec);
+  hall.daily = { key:D.key, rule:D.rule, status:'done', total:entry.total, name:entry.name, pos:entry.pos, type:entry.type, top:entry.top, submitted:false, rank:0, n:0, entry };
+  hall.dailyHist = [{ key:D.key, rule:D.rule, total:entry.total, pos:entry.pos, type:entry.type }, ...(hall.dailyHist || []).filter(x => x.key !== D.key)].slice(0, 14);
+  weekDaily(entry); saveHall();
+  loadDaily(true);
+}
+// 이번 주 시상식에 오늘의 런 최고 기록을 올림 (공개된 구단 기록에 함께 실려요)
+function weekDaily(entry){
+  const C = clubState(), W = weekRoll(C);
+  if(!W.dbest || entry.total > W.dbest.total) W.dbest = { day:dayKey(), total:entry.total, name:entry.name, pos:entry.pos };
+}
+// ---- 공유 ----
+function dailyShareText(){
+  const D = hall.daily; if(!D || D.status !== 'done') return '';
+  const R = dailyRuleById(D.rule), g = D.top ? gradeOf(D.top.value) : '';
+  const lines = [`⚾ 풀 카운트 포커 · 오늘의 시드 런 (${D.key.slice(5).replace('-', '/')} · ${R.n})`, `${D.name} (${D.pos}) · 합계 Lv ${fmt(D.total)}${D.top && D.top.value ? ` · 최고 ${D.top.label} Lv ${fmt(D.top.value)} ${g}` : ''}`];
+  if(D.rank) lines.push(`오늘 ${TYPE_NAME[D.type] || ''} ${D.rank}위 / ${D.n}명`);
+  lines.push('같은 카드로 도전해 보세요 👉 ' + String(location.href).split('#')[0].split('?')[0]);
+  return lines.join('\n');
+}
+async function shareDaily(){
+  const text = dailyShareText(); if(!text) return;
+  try{ if(navigator.share){ await navigator.share({ text }); return; } }catch(e){ if(e && e.name === 'AbortError') return; }
+  try{ await navigator.clipboard.writeText(text); modal = { title:'공유 문구를 복사했어요', body:`<p>원하는 곳에 붙여 넣어 주세요.</p><pre class="sharepre">${esc(text)}</pre>` }; }
+  catch(e){ modal = { title:'공유 문구', body:`<p>아래 문구를 길게 눌러 복사해 주세요.</p><textarea class="sharepre" readonly rows="6">${esc(text)}</textarea>` }; }
+  render();
+}
+// ---- 화면 ----
+function dailyCardHTML(){
+  const key = dayKey(), R = dailyRule(key), D = hall.daily && hall.daily.key === key ? hall.daily : null, sv = loadRun(), cont = !!(sv && sv.daily && sv.daily.key === key);
+  const rn = sv && sv.isTwo ? TWO_ROUNDS : ROUNDS, md = `${+key.slice(5, 7)}월 ${+key.slice(8)}일`;
+  const st = cont ? `<span class="dc-st play">진행 중 · ${Math.min(sv.round, rn)}/${rn} 라운드</span>`
+    : D && D.status === 'done' ? `<span class="dc-st done">오늘의 기록 · 합계 <b>Lv ${fmt(D.total)}</b>${D.rank ? ` · ${TYPE_NAME[D.type] || ''} ${D.rank}위/${D.n}명` : ''}</span>`
+    : D ? '<span class="dc-st play">오늘의 기회를 썼어요 (끝까지 마치지 못한 도전)</span>' : '<span class="dc-st">아직 도전하지 않았어요 · 하루 한 번만 기록돼요</span>';
+  const btn = cont ? '<button class="btn amber" data-act="resume">이어하기</button>' : D ? '<button class="btn ghost" data-act="daily-start">연습으로 다시 하기</button>' : '<button class="btn amber" data-act="daily-start">오늘의 런 시작</button>';
+  return `<section class="dcard" aria-label="오늘의 시드 런"><div class="dc-top"><div><small>${md} · 오늘의 시드 런</small><b class="disp">${esc(R.n)}</b></div><span class="tier-tag">${TIERS[R.tier].n}</span></div>
+    <p>${esc(R.d)}</p><div class="dc-mid">${st}</div>
+    <div class="dc-act">${btn}<button class="btn ghost" data-act="daily-board">오늘의 순위</button></div>
+    <small class="dc-note">${cont ? '' : '아래에서 이름과 포지션을 고른 뒤 시작해요. '}같은 날이면 누구나 같은 카드 순서와 같은 보상 후보로 도전해요.</small></section>`;
+}
+function dailyRowHTML(r, i){
+  return `<div class="lrow dly ${r.me ? 'me' : ''}"><i>${i}</i><span class="ln"><b>${esc(r.name)}</b><small>${esc(r.pos)}${r.tag ? ` · #${esc(r.tag)}` : ''}</small></span><span class="lp">${r.top.value ? `${esc(r.top.label)} ${gradeTag(r.top.value)}` : ''}</span><em>Lv ${fmt(r.total)}</em></div>`;
+}
+function dailyTabHTML(){
+  const key = dayKey(), R = dailyRule(key), D = hall.daily && hall.daily.key === key ? hall.daily : null, f = dailyBoard.filter, md = `${+key.slice(5, 7)}월 ${+key.slice(8)}일`;
+  const mine = dailyBoard.rows.find(r => r.me), rows = dailyBoard.rows.filter(r => f === 'all' || r.type === f), list = rows.slice(0, 30);
+  const mineIn = mine && (f === 'all' || mine.type === f) ? rows.indexOf(mine) + 1 : 0;
+  const head = `<div class="dcard big"><div class="dc-top"><div><small>${md} · 오늘의 시드 런</small><b class="disp">${esc(R.n)}</b></div><span class="tier-tag">${TIERS[R.tier].n}</span></div><p>${esc(R.d)}</p>
+    ${D && D.status === 'done' ? `<div class="dc-mine"><div><small>내 기록</small><b class="disp">Lv ${fmt(D.total)}</b></div><div><small>${TYPE_NAME[D.type] || ''} 순위</small><b class="disp">${D.rank ? D.rank + '위' : '-'}<span> ${D.n ? '/ ' + D.n + '명' : ''}</span></b></div><button class="btn amber" data-act="daily-share">공유</button></div>`
+      : `<div class="dc-mid"><span class="dc-st">${D ? '오늘의 기회를 썼지만 끝까지 마치지 못했어요' : '오늘은 아직 도전하지 않았어요'}</span></div><button class="btn amber" data-act="home">${D ? '연습하러 가기' : '오늘의 런 하러 가기'}</button>`}</div>`;
+  let body;
+  if(dailyBoard.err === 'login') body = '<p class="empty">로그인하면 오늘의 순위를 볼 수 있어요. 처음 화면의 계정 카드에서 로그인해 주세요.</p>';
+  else if(dailyBoard.err) body = `<p class="empty">순위를 불러오지 못했어요.<br><small>${esc(dailyBoard.err)}</small></p>`;
+  else if(dailyBoard.loading && !dailyBoard.rows.length) body = '<p class="empty">순위를 불러오는 중…</p>';
+  else if(!rows.length) body = '<p class="empty">아직 기록이 없어요. 첫 번째로 이름을 올려 보세요!</p>';
+  else body = `<div class="lrows">${list.map((r, i) => dailyRowHTML(r, i + 1)).join('')}${mine && mineIn > 30 ? `<div class="lgap">⋯</div>${dailyRowHTML(mine, mineIn)}` : ''}</div>`;
+  const hist = (hall.dailyHist || []).filter(x => x.key !== key).slice(0, 7);
+  return `${head}<div class="seg seg4" role="group">${[['all', '전체'], ['bat', '타자'], ['pit', '투수'], ['two', '이도류']].map(([k, n]) => `<button data-act="daily-filter" data-v="${k}" aria-pressed="${f === k}">${n}</button>`).join('')}</div>
+    <h3 class="sec-title disp">오늘의 순위 <button class="rfr" data-act="daily-refresh">새로고침</button></h3>${body}
+    ${hist.length ? `<h3 class="sec-title disp">지난 기록</h3><div class="awhist">${hist.map(x => `<span><i>${x.key.slice(5).replace('-', '/')}</i>${esc(dailyRuleById(x.rule).n)} · Lv ${fmt(x.total)}</span>`).join('')}</div>` : ''}`;
+}
+function dailyResultHTML(){
+  const D = G.daily, R = dailyRuleById(D.rule), HD = hall.daily && hall.daily.key === D.key ? hall.daily : null, total = Math.round(recTotal(G.record));
+  let note;
+  if(G.dailyMsg) note = `<p class="muted-s">${esc(G.dailyMsg)}${HD && HD.status === 'done' ? ` 오늘의 기록은 Lv ${fmt(HD.total)}이에요.` : ''}</p>`;
+  else if(!clubOn()) note = '<p class="muted-s">이번 기록은 이 기기에만 남아요. 로그인한 상태로 열면 순위에 올라가요.</p>';
+  else if(dailyBoard.err && dailyBoard.err !== 'login') note = `<p class="clubwarn">⚠ ${esc(dailyBoard.err)}</p><button class="btn ghost" data-act="daily-refresh">다시 시도</button>`;
+  else if(HD && HD.rank) note = `<div class="dr-rank"><b class="disp">${HD.rank}위 <span>/ ${HD.n}명 (${TYPE_NAME[HD.type] || ''})</span></b>${HD.dup ? '<small>오늘 이미 기록이 있어서 첫 기록이 유지돼요</small>' : ''}</div>`;
+  else note = '<p class="muted-s">순위를 불러오는 중…</p>';
+  return `<div class="dresult"><div class="dr-top"><small>오늘의 시드 런 · ${esc(R.n)}</small><b class="disp">합계 Lv ${fmt(total)}</b></div>${note}
+    <div class="row">${HD && HD.status === 'done' && !G.dailyMsg ? '<button class="btn amber" data-act="daily-share">결과 공유</button>' : ''}<button class="btn ghost" data-act="daily-board">오늘의 순위</button></div></div>`;
+}
 const newLeague = (level, real) => {
   real = real || [];
   const no = TEAM().season + 1, nAI = 9 - real.length, pool = shuffleArr(aiPool(level)).slice(0, nAI), regions = shuffleArr(PROVS.slice()).slice(0, nAI);
@@ -5628,7 +5895,7 @@ function seasonConclude(SS){
   const bats = players.filter(x => x.sl.side === 'bat').sort((a, b) => (b.ln.raw.obp + b.ln.raw.slg) * b.avail - (a.ln.raw.obp + a.ln.raw.slg) * a.avail);
   const pits = players.filter(x => x.sl.id.startsWith('SP')).sort((a, b) => b.ln.raw.w * b.avail - a.ln.raw.w * a.avail);
   const result = { no:SS.no, name:me, level:SS.level, w:reg.w, l:reg.l, rank:reg.rank, res:PS.res, champion, final:reg.final, unlock:0,
-    mvp:mvp ? { name:mvp.rec.name, slot:mvp.sl.label, war:mvp.war } : null,
+    mvp:mvp ? { name:mvp.rec.name, slot:mvp.sl.label, war:mvp.war, v:mvp.rec.top.value } : null,
     topBat:bats[0] ? { name:bats[0].rec.name, ops:bats[0].ln.raw.obp + bats[0].ln.raw.slg, hr:Math.round(bats[0].ln.raw.hr * bats[0].avail) } : null,
     ace:pits[0] ? { name:pits[0].rec.name, w:Math.round(pits[0].ln.raw.w * pits[0].avail), era:pits[0].ln.raw.era } : null,
     rs:reg.rs, ra:reg.ra, flips:reg.flips, streak:reg.streak, practice:!!draft.practice };
@@ -5639,7 +5906,7 @@ function seasonConclude(SS){
     T.season = SS.no; T.history = [{ y:SS.no, lv:SS.level, w:reg.w, l:reg.l, rank:reg.rank, res:PS.res, champ:champion, mvp:result.mvp ? result.mvp.name : '' }, ...(T.history || [])].slice(0, 30);
     if(champion){ T.titles = (T.titles || 0) + 1; if(SS.level === T.lvl && T.lvl < LV_NAMES.length - 1){ T.lvl++; result.unlock = T.lvl; } }
   }
-  let club = null; if(!draft.practice){ club = clubSeasonUpdate(SS, T); result.club = club ? { from:club.from, to:club.to, delta:club.delta, vs:club.vs.map(x => ({ name:x.name, tag:x.tag, w:x.w, l:x.l })) } : null; }
+  let club = null; if(!draft.practice){ club = clubSeasonUpdate(SS, T); result.club = club ? { from:club.from, to:club.to, delta:club.delta, vs:club.vs.map(x => ({ name:x.name, tag:x.tag, w:x.w, l:x.l })) } : null; weekAdd(T, result, club); }
   hall.team = T; draft.phase = 'done'; saveHall(); saveDraft();
   if(club) clubAfterSeason(SS, club);
   return result;
@@ -5678,7 +5945,7 @@ function renderTeam(){
   return `<div class="topbar"><h2 class="disp" style="font-size:28px">내 구단</h2><button class="link" data-act="home">처음 화면</button></div>
     <div class="thead"><button class="tname" data-act="team-rename" aria-label="구단 이름 바꾸기"><b class="disp">${esc(T.name)}</b><span>✎</span></button>
       <span class="tmeta">${draft && draft.practice && draft.phase !== 'done' ? '<span class="tier-tag">연습</span> ' : ''}${T.season}시즌 · 우승 ${T.titles || 0}회</span></div>
-    <div class="tabs" role="group"><button data-act="team-tab" data-v="roster" aria-pressed="${teamTab === 'roster'}">로스터</button><button data-act="team-tab" data-v="season" aria-pressed="${teamTab === 'season'}">시즌</button><button data-act="team-tab" data-v="league" aria-pressed="${teamTab === 'league'}">리그${clubUnread() ? `<i class="tbadge">${clubUnread()}</i>` : ''}</button><button data-act="team-tab" data-v="history" aria-pressed="${teamTab === 'history'}">역사</button></div>
+    <div class="tabs" role="group"><button data-act="team-tab" data-v="roster" aria-pressed="${teamTab === 'roster'}">로스터</button><button data-act="team-tab" data-v="season" aria-pressed="${teamTab === 'season'}">시즌</button><button data-act="team-tab" data-v="league" aria-pressed="${teamTab === 'league'}">리그${clubBadge() ? `<i class="tbadge">${clubBadge()}</i>` : ''}</button><button data-act="team-tab" data-v="history" aria-pressed="${teamTab === 'history'}">역사</button></div>
     ${teamTab === 'history' ? historyHTML(T) : teamTab === 'league' ? leagueTabHTML(T) : teamTab === 'season' ? seasonTabHTML(T) : rosterTabHTML(T)}`;
 }
 /* ---- 로스터: 내가 저장한 선수들로만 구성 ---- */
@@ -5755,8 +6022,9 @@ async function clubToggle(){
 async function clubPublishNow(){
   const R = rosterMap(), n = Object.keys(R).length;
   if(n < CLUB_MIN){ modal = { title:'아직 공개할 수 없어요', body:`<p>로스터에 선수를 ${CLUB_MIN}명 이상 배치해야 구단이 공개돼요. 지금은 ${n}명이에요.</p>` }; render(); return; }
+  const T = TEAM(), C = clubStateOf(T); if(C.hide){ C.hide = false; hall.team = T; saveHall(); }                       // 갱신을 눌렀다면 공개하려는 뜻이므로 비공개를 풀어요
   const ok = await publishClub(true); await loadLeague(true);
-  modal = { title:ok ? '공개했어요' : '공개하지 못했어요', body:ok ? '<p>내 구단의 최신 로스터가 리그에 공개됐어요. 다음 시즌부터 비슷한 전력의 다른 유저와 맞붙어요.</p>' : '<p>네트워크나 권한 문제로 올리지 못했어요. 잠시 뒤 다시 시도해 주세요.</p>' }; render();
+  modal = { title:ok ? '공개했어요' : '공개하지 못했어요', body:ok ? '<p>내 구단의 최신 로스터가 리그에 공개됐어요. 다음 시즌부터 비슷한 전력의 다른 유저와 맞붙어요.</p>' : `<p>${esc(clubErr || '올리지 못했어요. 잠시 뒤 다시 시도해 주세요.')}</p>` }; render();
 }
 function openClub(uid){
   const c = league.clubs.find(x => x.uid === uid) || clubCache.docs.find(x => x.uid === uid); if(!c) return;
@@ -5771,27 +6039,49 @@ function leagueTabHTML(T){
   if(!cap || !cap.ready) return `<div class="tseason"><div class="sn-card sb"><small>구단 리그</small><p>계정을 확인하는 중이에요…</p></div></div>`;
   if(!clubOn()) return `<div class="tseason"><div class="sn-card sb"><small>구단 리그</small><b class="disp">로그인이 필요해요</b><p>구글 계정으로 로그인하면 내 구단이 리그에 공개되고, 시즌마다 비슷한 전력의 다른 유저 구단과 맞붙어요. 처음 화면의 계정 카드에서 로그인해 주세요.</p></div></div>`;
   const R = rosterMap(), filled = Object.keys(R).length, power = rosterSummary(R).power, me = league.clubs.find(x => x.uid === cap.uid), rank = me ? league.clubs.indexOf(me) + 1 : 0;
-  const rows = league.clubs.slice(0, 30), list = rows.map((c, i) => `<button class="lrow ${c.me ? 'me' : ''}" data-act="club-open" data-v="${c.uid}"><i>${i + 1}</i><span class="ln"><b>${esc(c.name)}</b><small>#${esc(c.tag)}${c.titles ? ` · 우승 ${c.titles}회` : ''}</small></span><span class="lp">전력 ${clubSum(c).power}</span><em>${fmt(c.rating)}</em></button>`).join('');
-  const mine = me && rank > 30 ? `<button class="lrow me" data-act="club-open" data-v="${me.uid}"><i>${rank}</i><span class="ln"><b>${esc(me.name)}</b><small>내 구단</small></span><span class="lp">전력 ${clubSum(me).power}</span><em>${fmt(me.rating)}</em></button>` : '';
+  const key = lwKey(), prev = lwPrevKey(), day = lwDay(), W = C.wk && C.wk.key === key ? C.wk : null;
+  const wrows = weeklyRows(key), wme = wrows.find(x => x.c.me), wrank = wme ? wrows.indexOf(wme) + 1 : 0;
+  const prows = weeklyRows(prev), aw = weekAwards(prows), rw = weekReward(aw, prows), claimed = C.claimed === prev;
+  const rowHTML = (c, i, extra) => `<button class="lrow ${c.me ? 'me' : ''}" data-act="club-open" data-v="${c.uid}"><i>${i}</i><span class="ln"><b>${esc(c.name)}</b><small>#${esc(c.tag)}${c.titles ? ` · 우승 ${c.titles}회` : ''}</small></span>${extra}</button>`;
+  const allList = league.clubs.slice(0, 30).map((c, i) => rowHTML(c, i + 1, `<span class="lp">전력 ${clubSum(c).power}</span><em>${fmt(c.rating)}</em>`)).join('');
+  const allMine = me && rank > 30 ? `<div class="lgap">⋯</div>${rowHTML(me, rank, `<span class="lp">전력 ${clubSum(me).power}</span><em>${fmt(me.rating)}</em>`)}` : '';
+  const wkList = wrows.slice(0, 30).map((x, i) => rowHTML(x.c, i + 1, `<span class="lp">${x.w.w}승 ${x.w.l}패 · ${x.w.seasons}시즌</span><em class="${x.w.gain >= 0 ? 'up' : 'dn'}">${sgn(x.w.gain)}</em>`)).join('');
+  const wkIdle = !wme && me ? `${wrows.length ? '<div class="lgap">⋯</div>' : ''}<button class="lrow me idle" data-act="club-open" data-v="${me.uid}"><i>-</i><span class="ln"><b>${esc(me.name)}</b><small>내 구단 · 이번 주 아직 시즌을 치르지 않았어요</small></span><span class="lp">시즌을 치르면 순위에 올라요</span><em>-</em></button>` : '';
+  const wkMine = wme && wrank > 30 ? `<div class="lgap">⋯</div>${rowHTML(wme.c, wrank, `<span class="lp">${wme.w.w}승 ${wme.w.l}패 · ${wme.w.seasons}시즌</span><em class="${wme.w.gain >= 0 ? 'up' : 'dn'}">${sgn(wme.w.gain)}</em>`)}` : '';
   const logs = league.logs.slice(0, 15).map(x => `<div class="lgrow ${x.ts > C.seen ? 'new' : ''}"><div><b>${esc(x.name)} <small>#${esc(x.tag)}</small></b><span>${x.season}시즌 · ${x.w + x.l}경기 ${x.w}승 ${x.l}패로 도전</span></div><em class="${x.l > x.w ? 'win' : x.l < x.w ? 'lose' : ''}">${x.l > x.w ? '방어 성공' : x.l < x.w ? '방어 실패' : '무승부'}</em><small>${agoTxt(x.ts)}</small></div>`).join('');
-  return `<div class="tseason"><div class="clubme"><div class="cm-top"><div><small>내 구단 레이팅</small><b class="disp">${fmt(C.rating)}</b></div><div class="cm-rk"><small>전체 순위</small><b class="disp">${rank ? rank + '위' : '-'}</b><em>${league.clubs.length ? `${league.clubs.length}개 구단 중` : ''}</em></div></div>
+  const weekCard = `<div class="wkcard ${day === 6 ? 'sun' : ''}"><div class="wk-top"><div><small>${weekLabel(key)} 시즌</small><b class="disp">${DAY_NAMES[day]}요일${day === 6 ? ' · 결산일' : ''}</b></div><div class="wk-cd"><small>${day === 6 ? '마감까지' : '시상식까지'}</small><b class="disp">${durTxt(lwUntilEnd())}</b></div></div>
+      <div class="wk-days">${DAY_NAMES.map((n, i) => `<i class="${i === day ? 'now' : i < day ? 'past' : ''} ${i === 6 ? 'sun' : ''}">${n}${i === 6 ? '<u>결산</u>' : ''}</i>`).join('')}</div>
+      <div class="wk-me"><span><b>${W ? W.seasons : 0}</b>시즌</span><span>레이팅 <b class="${W && W.gain < 0 ? 'dn' : 'up'}">${sgn(W ? W.gain : 0)}</b></span><span><b>${W ? W.w : 0}</b>승 <b>${W ? W.l : 0}</b>패</span><span>주간 <b>${wrank ? wrank + '위' : '-'}</b></span></div>
+      <p class="muted-s">${day === 6 ? '오늘이 이번 주 마지막 날이에요! 밤 12시(한국 시간)까지 치른 시즌의 레이팅 상승폭으로 주간 순위가 정해져요.' : '매주 월요일 0시(한국 시간)에 새 주가 개막하고 일요일 밤 12시에 마감돼요. 이번 주 레이팅 상승폭으로 주간 순위가 정해지고, 다음 월요일에 시상식과 보상이 열려요.'}</p></div>`;
+  const awCard = prows.length ? `<div class="awcard"><div class="aw-h"><b class="disp">지난주 시상식</b><small>${weekLabel(prev)}</small></div>
+      ${aw.length ? `<div class="aw-list">${aw.map(a => `<button class="aw ${a.c.me ? 'me' : ''}" data-act="club-open" data-v="${a.c.uid}"><span class="ai">${a.icon}</span><span class="at"><small>${a.title}</small><b>${esc(a.c.name)} <i>#${esc(a.c.tag)}</i></b></span><em>${a.text}</em></button>`).join('')}</div>` : '<p class="muted-s">지난주는 시즌을 치른 구단이 2팀 미만이라 시상식이 열리지 않았어요.</p>'}
+      ${rw ? `<div class="aw-me"><div><small>내 구단 지난주</small><b class="disp">${rw.rank}위 <span>/ ${rw.n}팀</span></b><span>레이팅 ${sgn(rw.gain)} · ${esc(rw.why)}</span></div><button class="btn amber" data-act="club-claim" ${claimed ? 'disabled' : ''}>${claimed ? '수령 완료' : `보상 받기 · 챌린지 +${rw.sh}`}</button></div>` : `<p class="muted-s">${C.hide ? '비공개 구단은 주간 시상식에 참가하지 않아요.' : '지난주에는 시즌을 치르지 않아 받을 보상이 없어요.'}</p>`}${(C.bonus || 0) ? `<p class="muted-s">보관 중인 챌린지 보너스 <b>${C.bonus}장</b> — 다음 육성을 시작할 때 적용돼요 (최대 5장까지).</p>` : ''}</div>` : '';
+  const hist = (C.awards || []).length ? `<h3 class="sec-title disp">내 수상 기록</h3><div class="awhist">${C.awards.slice(0, 12).map(x => `<span><i>${weekLabel(x.wk)}</i>${esc(x.t)}</span>`).join('')}</div>` : '';
+  return `<div class="tseason">${weekCard}${awCard}
+    <div class="clubme"><div class="cm-top"><div><small>내 구단 레이팅</small><b class="disp">${fmt(C.rating)}</b></div><div class="cm-rk"><small>전체 순위</small><b class="disp">${rank ? rank + '위' : '-'}</b><em>${league.clubs.length ? `${league.clubs.length}개 구단 중` : ''}</em></div></div>
       <div class="cm-chips"><span>전력 ${power}</span><span class="${C.hide ? 'off' : 'on'}">${C.hide ? '비공개' : '공개 중'}</span><span>${filled}/14명 배치</span></div>
       <div class="cm-act"><button class="btn ghost" data-act="club-toggle">${C.hide ? '리그에 공개하기' : '비공개로 전환'}</button><button class="btn amber" data-act="club-publish">로스터 갱신</button></div>
+      ${clubErr ? `<p class="clubwarn">⚠ ${esc(clubErr)}</p>` : ''}${league.at && !league.err && !clubErr ? `<p class="clubdiag">서버의 내 구단 기록: ${clubCache.meRaw ? (clubCache.meOk ? '있음 · 목록에 표시됨' : '있음 · 검증에서 제외됨') : '없음 (공개 전이에요)'} · 공개된 구단 ${clubCache.total || 0}개</p>` : ''}
       <p class="muted-s">공개된 구단끼리 시즌에서 맞붙어요. 레이팅은 <b>실제 유저 구단과의 전적</b>으로만 오르내려요(AI 상대는 영향 없음).${filled < CLUB_MIN ? ` 선수를 ${CLUB_MIN}명 이상 배치해야 공개돼요.` : ''}</p></div>
-    <h3 class="sec-title disp">구단 랭킹 ${league.loading ? '<span class="car-yrs">불러오는 중…</span>' : `<button class="rfr" data-act="club-refresh">새로고침</button>`}</h3>
-    ${league.err ? '<p class="empty">랭킹을 불러오지 못했어요. 잠시 뒤 다시 시도해 주세요.</p>' : league.clubs.length ? `<div class="lrows">${list}${mine ? `<div class="lgap">⋯</div>${mine}` : ''}</div>` : (league.loading ? '' : '<p class="empty">아직 공개된 구단이 없어요. 로스터를 갱신해서 첫 번째로 이름을 올려 보세요!</p>')}
+    <h3 class="sec-title disp">구단 순위 ${league.loading ? '<span class="car-yrs">불러오는 중…</span>' : `<button class="rfr" data-act="club-refresh">새로고침</button>`}</h3>
+    <div class="seg" role="group"><button data-act="club-view" data-v="week" aria-pressed="${league.view === 'week'}">이번 주</button><button data-act="club-view" data-v="all" aria-pressed="${league.view === 'all'}">전체 레이팅</button></div>
+    ${league.err ? `<p class="empty">랭킹을 불러오지 못했어요.<br><small>${esc(league.err === 'fail' ? '잠시 뒤 다시 시도해 주세요' : league.err)}</small></p>`
+      : league.view === 'week' ? (wrows.length || wkIdle ? `<div class="lrows">${wkList}${wkMine}${wkIdle}</div>${wrows.length ? '' : '<p class="empty">이번 주에 시즌을 치른 구단이 아직 없어요. 첫 번째로 순위에 올라 보세요!</p>'}` : (league.loading ? '' : '<p class="empty">이번 주에 시즌을 치른 구단이 아직 없어요. 첫 번째로 순위에 올라 보세요!</p>'))
+      : league.clubs.length ? `<div class="lrows">${allList}${allMine}</div>` : (league.loading ? '' : '<p class="empty">아직 공개된 구단이 없어요. 로스터를 갱신해서 첫 번째로 이름을 올려 보세요!</p>')}
+    ${hist}
     <h3 class="sec-title disp">도전 기록 <span class="car-yrs">내 구단에 붙은 유저</span></h3>
     ${logs ? `<div class="lgrows">${logs}</div>` : '<p class="empty">아직 도전한 유저가 없어요. 공개 상태로 두면 다른 유저의 시즌에 상대로 나가요.</p>'}</div>`;
 }
 function clubNoteHTML(){
+  const sun = lwDay() === 6 && clubOn() ? `<div class="lvinfo wkwarn"><b>🏁 오늘은 주간 결산일</b><p>밤 12시(한국 시간)까지 치른 시즌으로 이번 주 순위가 정해져요. 마감까지 ${durTxt(lwUntilEnd())} 남았어요.</p></div>` : '';
   if(!clubOn()) return '<p class="muted-s" style="text-align:center;margin:2px 0">로그인하면 다른 유저의 구단과 시즌에서 붙을 수 있어요 (리그 탭).</p>';
   const C = clubState(); if(C.hide) return '<p class="muted-s" style="text-align:center;margin:2px 0">구단이 비공개라서 AI 팀과만 대결해요. 리그 탭에서 공개할 수 있어요.</p>';
   const my = Math.max(30, rosterSummary(rosterMap()).power), n = clubCache.docs.filter(c => !c.me && Math.abs(Math.log(Math.max(30, clubSum(c).power) / my)) < Math.log(1.8)).length;
-  return `<div class="lvinfo" style="margin-top:8px"><b>실제 유저 구단과 대결</b><p>${clubCache.loading ? '공개된 구단을 찾는 중이에요…' : n ? `비슷한 전력의 공개 구단이 <b>${n}팀</b> 있어요. 시즌마다 최대 9팀이 상대로 나오고, 모자란 자리는 AI가 채워요.` : '지금은 비슷한 전력의 공개 구단이 없어서 AI 팀과 겨뤄요. 공개 구단이 늘면 자동으로 실제 유저가 상대로 나와요.'}</p></div>`;
+  return `${sun}<div class="lvinfo" style="margin-top:8px"><b>실제 유저 구단과 대결</b><p>${clubCache.loading ? '공개된 구단을 찾는 중이에요…' : n ? `비슷한 전력의 공개 구단이 <b>${n}팀</b> 있어요. 시즌마다 최대 9팀이 상대로 나오고, 모자란 자리는 AI가 채워요.` : '지금은 비슷한 전력의 공개 구단이 없어서 AI 팀과 겨뤄요. 공개 구단이 늘면 자동으로 실제 유저가 상대로 나와요.'}</p></div>`;
 }
 function clubResultHTML(c){
   const best = c.vs.slice().sort((a, b) => (b.w - b.l) - (a.w - a.l))[0], worst = c.vs.slice().sort((a, b) => (a.w - a.l) - (b.w - b.l))[0];
-  return `<div class="clubres"><small>구단 레이팅</small><b class="disp">${fmt(c.from)} → ${fmt(c.to)} <em class="${c.delta >= 0 ? 'up' : 'dn'}">${c.delta >= 0 ? '+' : ''}${c.delta}</em></b><p>실제 유저 구단 ${c.vs.length}팀과 대결 · 가장 잘 맞선 상대 ${esc(best.name)}(${best.w}승 ${best.l}패)${worst && worst !== best ? ` · 가장 고전한 상대 ${esc(worst.name)}(${worst.w}승 ${worst.l}패)` : ''}</p></div>`;
+  return `<div class="clubres"><small>구단 레이팅</small><b class="disp">${fmt(c.from)} → ${fmt(c.to)} <em class="${c.delta >= 0 ? 'up' : 'dn'}">${c.delta >= 0 ? '+' : ''}${c.delta}</em></b>${(() => { const W = clubState().wk; return W && W.key === lwKey() ? `<small>이번 주 누적 ${sgn(W.gain)} · ${W.seasons}시즌 ${W.w}승 ${W.l}패</small>` : ''; })()}<p>실제 유저 구단 ${c.vs.length}팀과 대결 · 가장 잘 맞선 상대 ${esc(best.name)}(${best.w}승 ${best.l}패)${worst && worst !== best ? ` · 가장 고전한 상대 ${esc(worst.name)}(${worst.w}승 ${worst.l}패)` : ''}</p></div>`;
 }
 /* ---- 시즌 탭: 난이도 선택과 시뮬레이터 ---- */
 function aiStats(lv){ const P = aiPool(lv); return { avg:P.reduce((a, t) => a + t.avg, 0) / P.length, sPlus:P.reduce((a, t) => a + t.sPlus, 0) / P.length, legendPct:100 * P.filter(t => t.legend > 0).length / P.length }; }
