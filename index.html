@@ -1437,6 +1437,26 @@ button.bk-c:active{ transform:translateY(1px); } .bk-c b{ font-size:19px; line-h
 @media (max-height:700px){ .bk-stand{ display:none; } }
 .bk-c.dim{ opacity:.45; } .bk-sum{ display:grid; gap:4px; padding:9px 12px; border-radius:12px; background:rgba(255,255,255,.06); border:1px dashed rgba(255,255,255,.24); }
 .bk-sum.ok{ border:2px solid var(--gold); background:rgba(255,210,63,.1); } .bk-sum b{ font-size:15px; } .bk-sum .bk-fx{ margin:0; } .bk-hint{ font-size:12.5px; color:var(--gm); font-weight:600; }
+/* ---- 구단 리그 (다른 유저와의 비동기 대결) ---- */
+.tbadge{ display:inline-grid; place-items:center; min-width:18px; height:18px; margin-left:4px; padding:0 5px; border-radius:99px; background:#e0402e; color:#fff; font:800 11px/1 var(--fb, sans-serif); font-style:normal; vertical-align:2px; }
+.clubme{ padding:14px; border-radius:16px; background:var(--panel); border:2px solid var(--strike); box-shadow:0 4px 0 rgba(0,0,0,.12); display:grid; gap:10px; }
+.cm-top{ display:flex; justify-content:space-between; align-items:flex-end; gap:10px; } .cm-top small{ display:block; color:var(--muted); font-size:12px; font-weight:700; } .cm-top b{ font-size:38px; line-height:1.05; }
+.cm-rk{ text-align:right; } .cm-rk b{ font-size:26px; } .cm-rk em{ display:block; font-style:normal; font-size:11px; color:var(--muted); font-weight:700; }
+.cm-chips{ display:flex; flex-wrap:wrap; gap:6px; } .cm-chips span{ padding:3px 10px; border-radius:999px; background:rgba(127,127,127,.16); font-size:12px; font-weight:800; } .cm-chips .on{ background:rgba(42,157,92,.2); color:#2a9d5c; } .cm-chips .off{ background:rgba(211,52,43,.16); color:#d3342b; }
+.cm-act{ display:grid; grid-template-columns:1fr 1fr; gap:8px; } .cm-act .btn{ margin:0; }
+.rfr{ margin-left:8px; padding:3px 10px; border-radius:8px; border:1px solid var(--line); background:var(--panel); color:inherit; font:700 12px var(--fb, sans-serif); }
+.lrows{ display:grid; gap:5px; } .lrow{ display:grid; grid-template-columns:30px 1fr auto auto; gap:8px; align-items:center; text-align:left; padding:9px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); color:inherit; font:inherit; }
+.lrow i{ font-style:normal; font-weight:900; font-size:15px; text-align:center; color:var(--muted); } .lrow:nth-child(-n+3) i{ color:#c79a00; }
+.lrow .ln b{ display:block; font-size:15px; } .lrow .ln small{ color:var(--muted); font-size:11px; font-weight:700; } .lrow .lp{ font-size:12px; color:var(--muted); font-weight:700; } .lrow em{ font-style:normal; font-weight:900; font-size:16px; }
+.lrow.me{ background:rgba(255,210,63,.22); border-color:#e0a800; } .lgap{ text-align:center; color:var(--muted); }
+.lgrows{ display:grid; gap:5px; } .lgrow{ display:grid; grid-template-columns:1fr auto; gap:2px 8px; padding:9px 12px; border-radius:12px; background:var(--panel); border:1px solid var(--line); }
+.lgrow b{ font-size:14px; } .lgrow b small{ color:var(--muted); } .lgrow span{ display:block; font-size:12px; color:var(--muted); font-weight:600; } .lgrow em{ font-style:normal; font-weight:900; font-size:13px; align-self:center; } .lgrow em.win{ color:#2a9d5c; } .lgrow em.lose{ color:#d3342b; }
+.lgrow > small{ grid-column:2; text-align:right; color:var(--muted); font-size:11px; } .lgrow.new{ border-color:#e0a800; box-shadow:0 0 0 2px rgba(224,168,0,.3); }
+.cdet .cd-top{ display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; text-align:center; } .cdet .cd-top small{ display:block; font-size:11px; opacity:.75; } .cdet .cd-top b{ font-size:24px; }
+.cd-roster{ display:grid; grid-template-columns:1fr 1fr; gap:5px 8px; margin-top:8px; } .cd-roster > div{ display:flex; align-items:center; gap:6px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,.08); font-size:13px; } .cd-roster span{ flex:none; width:44px; opacity:.7; font-size:11px; } .cd-roster b{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; }
+.lgr.real{ border-color:#2a6fd0; background:rgba(42,111,208,.1); } .ur{ font-style:normal; font-size:10px; font-weight:800; padding:1px 6px; border-radius:6px; background:#2a6fd0; color:#fff; vertical-align:1px; }
+.clubres{ margin-top:10px; padding:10px 12px; border-radius:12px; background:rgba(42,111,208,.14); border:1px solid #2a6fd0; display:grid; gap:2px; text-align:center; } .clubres small{ font-weight:700; opacity:.8; } .clubres b{ font-size:24px; } .clubres p{ margin:0; font-size:12px; opacity:.85; line-height:1.4; }
+.clubres em.up{ color:#2a9d5c; font-style:normal; } .clubres em.dn{ color:#d3342b; font-style:normal; }
 .acct-btn{ flex:none; min-height:40px; padding:8px 12px; font-size:14px; }
 .g-btn{ background:#fff; color:#1f1f1f; border:1px solid #dadce0; display:inline-flex; align-items:center; gap:8px; }
 .g-logo{ width:18px; height:18px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:12px; color:#fff;
@@ -3471,6 +3491,7 @@ async function saveHall(){
   if(cap.db && cap.uid){
     try{ await cap.db.doc('data/users/' + cap.uid + '/hall3').set(hall); }catch(e){}
     try{ await cap.db.doc('board/' + cap.uid).set({ bestByPos: hall.bestByPos, tierBest: hall.tierBest || {}, ver: 3, updated: Date.now() }); }catch(e){}
+    try{ schedulePublish(); }catch(e){}
   }
 }
 let fbAuth = null;
@@ -4614,8 +4635,12 @@ document.addEventListener('click', e => {
     case 'quit': G.menu = false; view = 'start'; setup.name = G.name; setup.type = G.isTwo ? 'two' : G.type; setup.pos = G.pos; render(); window.scrollTo(0, 0); break;
     case 'ladder': G.showLadder = !G.showLadder; render(); break;
     case 'type': setup.type = v; setup.pos = POSITIONS[v][0]; render(); break;
-    case 'team-open': view = 'team'; teamTab = draft && !(draft.phase === 'done' && draft.closed) ? 'season' : 'roster'; render(); window.scrollTo(0, 0); break;
-    case 'team-tab': teamTab = v; render(); break;
+    case 'team-open': view = 'team'; teamTab = draft && !(draft.phase === 'done' && draft.closed) ? 'season' : 'roster'; render(); window.scrollTo(0, 0); teamTabEnter(); break;
+    case 'team-tab': teamTab = v; render(); teamTabEnter(); break;
+    case 'club-toggle': clubToggle(); break;
+    case 'club-publish': clubPublishNow(); break;
+    case 'club-open': openClub(v); break;
+    case 'club-refresh': loadLeague(true); break;
     case 'team-rename': teamRename(); break;
     case 'team-rename-save': { const el = document.getElementById('tname'), nm = el ? el.value.trim() : ''; if(nm){ TEAM().name = nm.slice(0, 12); mcCache = null; saveHall(); } modal = null; render(); break; }
     case 'dev-apply': devApply(); break;
@@ -5014,9 +5039,138 @@ function simMyGame(st, opp, sp){
   return { w:us > them, us, them, flip, bl, sv };
 }
 // 레전드 리그: 난이도에 따라 상대 팀 선수들의 수준이 달라짐 (하나씩 해금)
-const newLeague = level => {
-  const no = TEAM().season + 1, pool = shuffleArr(aiPool(level)).slice(0, 9);
-  return { no, level, ai:PROVS.map((p, i) => { const t = pool[i], j = 1 + gauss() * .015; return { name:p.n, short:p.s, off:t.off * j, ra:t.ra / j, stars:t.stars, sps:t.sps, avg:t.avg, bats:t.bats, rpName:t.rpName, clName:t.clName }; }) };
+/* ======================== 구단 리그: 다른 유저의 구단과 붙는 비동기 대결 ======================== */
+const CLUB_VER = 1, CLUB_MAX_AGE = 21 * 864e5, CLUB_MIN = 9;
+const clubOn = () => !!(typeof cap !== 'undefined' && cap && cap.db && cap.uid);
+const clubStateOf = T => (T.club = Object.assign({ rating:1000, hide:false, seen:0, pubAt:0, sig:'' }, T.club || {}));
+const clubState = () => clubStateOf(TEAM());
+const clubTag = uid => String(uid).slice(-4).toUpperCase();
+const hashStr = str => { let h = 7; for(let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0; return h; };
+const clampLv = v => Math.max(1, Math.min(160, Math.round(+v) || 1));
+const cleanStats = st => st && typeof st === 'object' ? { S:clampLv(st.S), H:clampLv(st.H), D:clampLv(st.D), C:clampLv(st.C) } : null;
+const league = { loading:false, err:null, clubs:[], logs:[], at:0, logAt:0 };
+const clubCache = { at:0, docs:[], loading:false };
+function slimClubPlayer(r){
+  const o = { name:String(r.name || '선수').slice(0, 14), pos:r.pos, type:r.type, stats:cleanStats(r.stats) || { S:1, H:1, D:1, C:1 }, top:{ value:r.top ? r.top.value : 1, label:r.top ? String(r.top.label).slice(0, 6) : '' },
+    abilities:(r.abilities || []).filter(a => typeof a === 'string').slice(0, 8), guts:Math.max(1, Math.min(50, +r.guts || 20)) };
+  if(r.type === 'two' && r.two) o.two = { bat:cleanStats(r.two.bat), pit:cleanStats(r.two.pit) };
+  return o;
+}
+// 팀 전력 요약: 내 구단·AI·다른 유저 구단 모두 같은 방식으로 계산 (power 100 = 리그 평균)
+function rosterSummary(roster){
+  const st = buildTeam({ roster }), players = T_SLOTS.map(sl => roster[sl.id]).filter(Boolean), clampQ = v => Math.max(.5, Math.min(1.6, v));
+  const bl = T_BAT.map(id => roster[id] ? playerLine(roster[id], 'bat', id) : standLine(T_SLOTS.find(sl => sl.id === id))), avgW = bl.reduce((a, l) => a + l.wrc, 0) / 9;
+  const nm = (id, d) => roster[id] ? roster[id].name : d;
+  return { off:st.off, ra:st.raAvg, power:Math.round(100 * st.off / st.raAvg), bats:T_BAT.map((id, i) => ({ name:nm(id, '임시 ' + id), pos:id, q:clampQ(bl[i].wrc / avgW) })),
+    rpName:nm('RP', '불펜 투수'), clName:nm('CL', '마무리'), sps:['SP1', 'SP2', 'SP3'].map((id, i) => nm(id, '선발 ' + (i + 1))),
+    stars:players.slice().sort((a, b) => b.top.value - a.top.value).slice(0, 3).map(r => ({ name:r.name, pos:r.pos, v:r.top.value })),
+    avg:players.length ? players.reduce((a, r) => a + r.top.value, 0) / players.length : 30, sPlus:players.filter(r => r.top.value >= 55).length, legend:players.filter(r => r.top.value >= 100).length };
+}
+// 내 구단의 공개용 기록 (실제 이름은 올리지 않고 구단 이름과 계정 끝 4자리 태그만)
+function clubDoc(){
+  const T = TEAM(), R = rosterMap(), ids = Object.keys(R); if(ids.length < CLUB_MIN || !clubOn()) return null;
+  const roster = {}; ids.forEach(id => { roster[id] = slimClubPlayer(R[id]); });
+  return { ver:CLUB_VER, name:String(T.name || '내 구단').slice(0, 12), tag:clubTag(cap.uid), power:rosterSummary(R).power, rating:clubStateOf(T).rating, season:T.season || 0, titles:T.titles || 0, roster, updated:Date.now() };
+}
+async function publishClub(force){
+  const T = TEAM(), C = clubStateOf(T); if(!clubOn() || C.hide) return false;
+  const d = clubDoc(); if(!d) return false;
+  const sig = String(hashStr(JSON.stringify([d.name, d.roster, d.rating, d.titles])));
+  if(!force && sig === C.sig && Date.now() - (C.pubAt || 0) < 6 * 36e5) return true;           // 바뀐 게 없으면 다시 올리지 않음
+  try{ await cap.db.doc('clubs/' + cap.uid).set(d); C.sig = sig; C.pubAt = Date.now(); hall.team = T; try{ localStorage.setItem(LS_KEY, JSON.stringify(hall)); }catch(e){} clubCache.at = 0; return true; }
+  catch(e){ console.warn('구단 공개 실패', e); return false; }
+}
+let clubPubTimer = null;
+function schedulePublish(){ if(!clubOn()) return; clearTimeout(clubPubTimer); clubPubTimer = setTimeout(() => { publishClub(false); }, 4000); }
+async function unpublishClub(){
+  if(!clubOn()) return;
+  try{ if(cap.db.doc('clubs/' + cap.uid).delete) await cap.db.doc('clubs/' + cap.uid).delete(); else await cap.db.doc('clubs/' + cap.uid).set({ ver:0 }); }catch(e){ try{ await cap.db.doc('clubs/' + cap.uid).set({ ver:0 }); }catch(e2){} }
+  clubCache.at = 0;
+}
+// 받아온 다른 유저 구단 기록을 믿지 않고 범위를 검증·보정해서 팀으로 만듦
+function sanitizeClub(uid, d){
+  if(!d || d.ver !== CLUB_VER || !d.roster || typeof d.roster !== 'object') return null;
+  if(uid !== cap.uid && (d.updated || 0) < Date.now() - CLUB_MAX_AGE) return null;
+  const roster = {}; let n = 0;
+  T_SLOTS.forEach((sl, idx) => {
+    const p = d.roster[sl.id], stats = p && cleanStats(p.stats); if(!p || !stats) return;
+    if(sl.side === 'bat' ? p.type === 'pit' : p.type === 'bat') return;
+    const rec = { name:String(p.name || '선수').slice(0, 14), pos:String(p.pos || sl.pos), type:p.type === 'two' ? 'two' : sl.side, stats, top:{ value:Math.max(...Object.values(stats)), label:String(p.top && p.top.label || '').slice(0, 6) },
+      abilities:(Array.isArray(p.abilities) ? p.abilities : []).filter(a => typeof a === 'string').slice(0, 8), guts:Math.max(1, Math.min(50, +p.guts || 20)), ts:-(3000000 + (hashStr(uid) % 40000) * 24 + idx) };
+    if(rec.type === 'two'){ const t = p.two ? { bat:cleanStats(p.two.bat), pit:cleanStats(p.two.pit) } : null; if(!t || !t.bat || !t.pit) return; rec.two = t; }
+    roster[sl.id] = rec; n++;
+  });
+  if(n < 7) return null;
+  if(Object.values(roster).reduce((a, r) => a + r.top.value, 0) / n > 100) return null;                      // 선수 평균이 레전드급(Lv 100)을 넘는 구단은 정상 플레이로 만들 수 없으므로 제외
+  return { uid, name:String(d.name || '이름 없는 구단').slice(0, 12), tag:String(d.tag || clubTag(uid)).slice(0, 4), rating:Math.max(0, Math.min(5000, Math.round(+d.rating || 1000))), titles:Math.max(0, Math.min(999, Math.round(+d.titles || 0))), season:Math.max(0, Math.round(+d.season || 0)), updated:+d.updated || 0, roster, sum:null, me:uid === cap.uid };
+}
+const clubSum = c => c.sum || (c.sum = rosterSummary(c.roster));
+async function fetchClubs(force){
+  if(!clubOn()) return [];
+  if(!force && Date.now() - clubCache.at < 60000 && clubCache.docs.length) return clubCache.docs;
+  clubCache.loading = true;
+  try{
+    const snap = await cap.db.collection('clubs').limit(400).get(), docs = [];
+    snap.docs.forEach(d => { const c = sanitizeClub(d.id, d.data()); if(c) docs.push(c); });
+    clubCache.docs = docs; clubCache.at = Date.now();
+  } finally { clubCache.loading = false; }
+  return clubCache.docs;
+}
+// 비슷한 전력의 공개 구단을 최대 9팀 고름 (너무 강하거나 약한 구단은 제외)
+async function findOpponents(){
+  const T = TEAM(); if(!clubOn() || clubStateOf(T).hide) return [];
+  const myPower = Math.max(30, rosterSummary(rosterMap()).power), docs = (await fetchClubs(true)).filter(c => c.uid !== cap.uid && !c.me);
+  const near = docs.map(c => ({ c, d:Math.abs(Math.log(Math.max(30, clubSum(c).power) / myPower)) })).filter(x => x.d < Math.log(1.8)).sort((a, b) => a.d - b.d).slice(0, 16);
+  return shuffleArr(near).slice(0, 9).map(x => x.c);
+}
+async function warmClubs(){ if(!clubOn() || clubCache.loading || Date.now() - clubCache.at < 60000) return; try{ await fetchClubs(true); if(view === 'team' && (teamTab === 'season' || teamTab === 'league')) render(); }catch(e){} }
+async function loadLogs(){
+  if(!clubOn()) return;
+  try{
+    const snap = await cap.db.collection('clubs/' + cap.uid + '/log').limit(60).get(), logs = [];
+    snap.docs.forEach(d => { const x = d.data() || {}; if(typeof x.from !== 'string') return;
+      logs.push({ id:d.id, from:x.from, name:String(x.fromName || '구단').slice(0, 12), tag:String(x.tag || '').slice(0, 4), w:Math.max(0, Math.min(99, +x.w || 0)), l:Math.max(0, Math.min(99, +x.l || 0)), power:Math.round(+x.power || 0), rating:Math.round(+x.rating || 0), season:Math.round(+x.season || 0), ts:+x.ts || 0 }); });
+    league.logs = logs.sort((a, b) => b.ts - a.ts); league.logAt = Date.now();
+  }catch(e){ league.logErr = true; }
+}
+async function loadLeague(force){
+  if(!clubOn() || league.loading) return;
+  league.loading = true; league.err = null; if(view === 'team') render();
+  try{ await publishClub(false); const docs = await fetchClubs(!!force || true); league.clubs = docs.slice().sort((a, b) => b.rating - a.rating || clubSum(b).power - clubSum(a).power); league.at = Date.now(); await loadLogs(); }
+  catch(e){ league.err = 'fail'; }
+  league.loading = false; if(view === 'team' && teamTab === 'league'){ const C = clubState(); C.seen = Date.now(); saveHall(); } if(view === 'team') render();
+}
+const clubUnread = () => league.logs.filter(x => x.ts > clubState().seen).length;
+function teamTabEnter(){
+  if(!clubOn()) return;
+  if(teamTab === 'league') loadLeague(true); else { warmClubs(); if(Date.now() - league.logAt > 120000) loadLogs().then(() => { if(view === 'team') render(); }); }
+}
+// 시즌이 끝나면: 실제 유저 구단과의 전적으로 레이팅 조정 (Elo, 상대당 K=24)
+function clubSeasonUpdate(SS, T){
+  const C = clubStateOf(T), from = C.rating, vs = [];
+  SS.ai.forEach((a, i) => { if(!a.real) return; const h = SS.h2h && SS.h2h[i]; if(!h || h.w + h.l === 0) return;
+    const exp = 1 / (1 + Math.pow(10, ((a.rating || 1000) - from) / 400)), act = h.w / (h.w + h.l); vs.push({ uid:a.uid, name:a.name, tag:a.tag, w:h.w, l:h.l, d:24 * (act - exp) }); });
+  if(!vs.length) return null;
+  C.rating = Math.max(100, Math.min(4000, from + Math.round(vs.reduce((a, x) => a + x.d, 0))));
+  return { from, to:C.rating, delta:C.rating - from, vs };
+}
+async function clubAfterSeason(SS, upd){
+  if(!clubOn()) return;
+  const T = TEAM(), tag = clubTag(cap.uid), power = rosterSummary(rosterMap()).power;
+  await publishClub(true);
+  for(const x of upd.vs){
+    try{ await cap.db.doc('clubs/' + x.uid + '/log/' + cap.uid.slice(0, 8) + '-' + Date.now().toString(36)).set({ from:cap.uid, fromName:String(T.name || '내 구단').slice(0, 12), tag, w:x.w, l:x.l, power, rating:upd.to, season:SS.no, ts:Date.now() }); }catch(e){}
+  }
+}
+
+const newLeague = (level, real) => {
+  real = real || [];
+  const no = TEAM().season + 1, nAI = 9 - real.length, pool = shuffleArr(aiPool(level)).slice(0, nAI), regions = shuffleArr(PROVS.slice()).slice(0, nAI);
+  const ais = regions.map((p, i) => { const t = pool[i], j = 1 + gauss() * .015; return { name:p.n, short:p.s, off:t.off * j, ra:t.ra / j, stars:t.stars, sps:t.sps, avg:t.avg, bats:t.bats, rpName:t.rpName, clName:t.clName }; });
+  const names = new Set(ais.map(a => a.name).concat([TEAM().name || '내 구단']));
+  const reals = real.map(c => { let nm = c.name; if(names.has(nm)) nm = `${c.name} #${c.tag}`; names.add(nm); const S = clubSum(c);
+    return { name:nm, short:nm.slice(0, 8), real:true, uid:c.uid, tag:c.tag, rating:c.rating, power:S.power, off:S.off, ra:S.ra, stars:S.stars, sps:S.sps, avg:S.avg, bats:S.bats, rpName:S.rpName, clName:S.clName }; });
+  return { no, level, ai:shuffleArr(ais.concat(reals)) };
 };
 // 포스트시즌 (KBO 방식): 1위 한국시리즈 직행 / 4·5위 와일드카드 → 준PO → PO → 한국시리즈
 function playoffs(finalNames, strength, meName){
@@ -5052,8 +5206,8 @@ function mcRun(N, level){
 }
 /* ---- 실제 시즌: 월별로 진행, 올스타 브레이크에 라인업 정비, 포스트시즌은 한 경기씩 ---- */
 const MONTHS = ['3~4월', '5월', '6월', '7월', '8월', '9~10월'];
-function seasonInit(level){
-  const T = TEAM(), lg = newLeague(level), games = [];
+function seasonInit(level, real){
+  const T = TEAM(), lg = newLeague(level, real), games = [];
   for(let a = 0; a < 10; a++) for(let b = a + 1; b < 10; b++) for(let k = 0; k < 16; k++) games.push([a, b]);
   return { no:lg.no, level, ai:lg.ai, name:T.name || '내 구단', teams:[T.name || '내 구단', ...lg.ai.map(x => x.name)], W:Array(10).fill(0), Ls:Array(10).fill(0), sched:shuffleArr(games),
     months:[], avail:{}, formSum:{}, active:{}, offSum:0, raSum:0, myGames:0, rs:0, ra:0, flips:0, blown:0, saves:0, best:0, cur:0, curType:'', m:0, reg:null, ps:null, result:null };
@@ -5077,6 +5231,7 @@ function seasonMonth(SS){
     const r = simMyGame(st, SS.ai[b - 1], SS.myGames++ % 3);
     SS.rs += r.us; SS.ra += r.them; flips += r.flip; SS.blown += r.bl; SS.saves += r.sv;
     games.push({ opp:b - 1, us:r.us, them:r.them, w:r.w, home:Math.random() < .5 });
+    { const h = SS.h2h || (SS.h2h = {}), o = h[b - 1] || (h[b - 1] = { w:0, l:0 }); if(r.w) o.w++; else o.l++; }          // 상대별 전적 (실제 유저 구단과의 레이팅 계산용)
     if(r.w){ SS.W[0]++; SS.Ls[b]++; w++; if(SS.curType === 'W') SS.cur++; else { SS.curType = 'W'; SS.cur = 1; } } else { SS.Ls[0]++; SS.W[b]++; l++; if(SS.curType === 'L') SS.cur++; else { SS.curType = 'L'; SS.cur = 1; } }
     if(SS.curType === 'W') SS.best = Math.max(SS.best, SS.cur);
   });
@@ -5484,7 +5639,9 @@ function seasonConclude(SS){
     T.season = SS.no; T.history = [{ y:SS.no, lv:SS.level, w:reg.w, l:reg.l, rank:reg.rank, res:PS.res, champ:champion, mvp:result.mvp ? result.mvp.name : '' }, ...(T.history || [])].slice(0, 30);
     if(champion){ T.titles = (T.titles || 0) + 1; if(SS.level === T.lvl && T.lvl < LV_NAMES.length - 1){ T.lvl++; result.unlock = T.lvl; } }
   }
+  let club = null; if(!draft.practice){ club = clubSeasonUpdate(SS, T); result.club = club ? { from:club.from, to:club.to, delta:club.delta, vs:club.vs.map(x => ({ name:x.name, tag:x.tag, w:x.w, l:x.l })) } : null; }
   hall.team = T; draft.phase = 'done'; saveHall(); saveDraft();
+  if(club) clubAfterSeason(SS, club);
   return result;
 }
 
@@ -5521,8 +5678,8 @@ function renderTeam(){
   return `<div class="topbar"><h2 class="disp" style="font-size:28px">내 구단</h2><button class="link" data-act="home">처음 화면</button></div>
     <div class="thead"><button class="tname" data-act="team-rename" aria-label="구단 이름 바꾸기"><b class="disp">${esc(T.name)}</b><span>✎</span></button>
       <span class="tmeta">${draft && draft.practice && draft.phase !== 'done' ? '<span class="tier-tag">연습</span> ' : ''}${T.season}시즌 · 우승 ${T.titles || 0}회</span></div>
-    <div class="tabs" role="group"><button data-act="team-tab" data-v="roster" aria-pressed="${teamTab === 'roster'}">로스터</button><button data-act="team-tab" data-v="season" aria-pressed="${teamTab === 'season'}">시즌</button><button data-act="team-tab" data-v="history" aria-pressed="${teamTab === 'history'}">역사</button></div>
-    ${teamTab === 'history' ? historyHTML(T) : teamTab === 'season' ? seasonTabHTML(T) : rosterTabHTML(T)}`;
+    <div class="tabs" role="group"><button data-act="team-tab" data-v="roster" aria-pressed="${teamTab === 'roster'}">로스터</button><button data-act="team-tab" data-v="season" aria-pressed="${teamTab === 'season'}">시즌</button><button data-act="team-tab" data-v="league" aria-pressed="${teamTab === 'league'}">리그${clubUnread() ? `<i class="tbadge">${clubUnread()}</i>` : ''}</button><button data-act="team-tab" data-v="history" aria-pressed="${teamTab === 'history'}">역사</button></div>
+    ${teamTab === 'history' ? historyHTML(T) : teamTab === 'league' ? leagueTabHTML(T) : teamTab === 'season' ? seasonTabHTML(T) : rosterTabHTML(T)}`;
 }
 /* ---- 로스터: 내가 저장한 선수들로만 구성 ---- */
 function slotRow(st, sl){
@@ -5588,6 +5745,54 @@ function lineupBody(){
     return `<button class="pick" data-act="lineup-slot" data-v="${sl.id}"><span class="pk-main"><span class="ts-name"><b>${sl.label}</b>${r ? `<span>${esc(r.name)}</span>${gradeTag(r.top.value)}` : '<em>임시 선수</em>'}</span></span></button>`; }).join('')}</div>`;
 }
 const lineupModal = () => { modal = { title:'라인업 조정', body:lineupBody(), lineup:true }; render(); };
+/* ---- 리그 탭: 다른 유저의 구단과 비교하는 랭킹 ---- */
+const agoTxt = ts => { const m = Math.floor((Date.now() - ts) / 6e4); return m < 1 ? '방금' : m < 60 ? `${m}분 전` : m < 1440 ? `${Math.floor(m / 60)}시간 전` : `${Math.floor(m / 1440)}일 전`; };
+async function clubToggle(){
+  const T = TEAM(), C = clubStateOf(T); C.hide = !C.hide; hall.team = T; saveHall();
+  if(C.hide) await unpublishClub(); else await publishClub(true);
+  await loadLeague(true);
+}
+async function clubPublishNow(){
+  const R = rosterMap(), n = Object.keys(R).length;
+  if(n < CLUB_MIN){ modal = { title:'아직 공개할 수 없어요', body:`<p>로스터에 선수를 ${CLUB_MIN}명 이상 배치해야 구단이 공개돼요. 지금은 ${n}명이에요.</p>` }; render(); return; }
+  const ok = await publishClub(true); await loadLeague(true);
+  modal = { title:ok ? '공개했어요' : '공개하지 못했어요', body:ok ? '<p>내 구단의 최신 로스터가 리그에 공개됐어요. 다음 시즌부터 비슷한 전력의 다른 유저와 맞붙어요.</p>' : '<p>네트워크나 권한 문제로 올리지 못했어요. 잠시 뒤 다시 시도해 주세요.</p>' }; render();
+}
+function openClub(uid){
+  const c = league.clubs.find(x => x.uid === uid) || clubCache.docs.find(x => x.uid === uid); if(!c) return;
+  const S = clubSum(c), mine = rosterSummary(rosterMap()).power, diff = S.power - mine;
+  modal = { title:c.name, body:`<div class="cdet"><div class="cd-top"><div><small>레이팅</small><b>${fmt(c.rating)}</b></div><div><small>전력</small><b>${S.power}</b></div><div><small>우승</small><b>${c.titles}회</b></div></div>
+    <p class="muted-s" style="text-align:center">${c.me ? '내 구단이에요' : `내 구단(전력 ${mine})보다 ${Math.abs(diff)} ${diff >= 0 ? '높아요' : '낮아요'}`} · 구단 #${esc(c.tag)} · ${c.season}시즌</p>
+    <div class="cd-roster">${T_SLOTS.map(sl => { const r = c.roster[sl.id]; return `<div><span>${sl.label}</span>${r ? `<b>${esc(r.name)}</b>${gradeTag(r.top.value)}` : '<em>비어 있음</em>'}</div>`; }).join('')}</div></div>` };
+  render();
+}
+function leagueTabHTML(T){
+  const C = clubState();
+  if(!cap || !cap.ready) return `<div class="tseason"><div class="sn-card sb"><small>구단 리그</small><p>계정을 확인하는 중이에요…</p></div></div>`;
+  if(!clubOn()) return `<div class="tseason"><div class="sn-card sb"><small>구단 리그</small><b class="disp">로그인이 필요해요</b><p>구글 계정으로 로그인하면 내 구단이 리그에 공개되고, 시즌마다 비슷한 전력의 다른 유저 구단과 맞붙어요. 처음 화면의 계정 카드에서 로그인해 주세요.</p></div></div>`;
+  const R = rosterMap(), filled = Object.keys(R).length, power = rosterSummary(R).power, me = league.clubs.find(x => x.uid === cap.uid), rank = me ? league.clubs.indexOf(me) + 1 : 0;
+  const rows = league.clubs.slice(0, 30), list = rows.map((c, i) => `<button class="lrow ${c.me ? 'me' : ''}" data-act="club-open" data-v="${c.uid}"><i>${i + 1}</i><span class="ln"><b>${esc(c.name)}</b><small>#${esc(c.tag)}${c.titles ? ` · 우승 ${c.titles}회` : ''}</small></span><span class="lp">전력 ${clubSum(c).power}</span><em>${fmt(c.rating)}</em></button>`).join('');
+  const mine = me && rank > 30 ? `<button class="lrow me" data-act="club-open" data-v="${me.uid}"><i>${rank}</i><span class="ln"><b>${esc(me.name)}</b><small>내 구단</small></span><span class="lp">전력 ${clubSum(me).power}</span><em>${fmt(me.rating)}</em></button>` : '';
+  const logs = league.logs.slice(0, 15).map(x => `<div class="lgrow ${x.ts > C.seen ? 'new' : ''}"><div><b>${esc(x.name)} <small>#${esc(x.tag)}</small></b><span>${x.season}시즌 · ${x.w + x.l}경기 ${x.w}승 ${x.l}패로 도전</span></div><em class="${x.l > x.w ? 'win' : x.l < x.w ? 'lose' : ''}">${x.l > x.w ? '방어 성공' : x.l < x.w ? '방어 실패' : '무승부'}</em><small>${agoTxt(x.ts)}</small></div>`).join('');
+  return `<div class="tseason"><div class="clubme"><div class="cm-top"><div><small>내 구단 레이팅</small><b class="disp">${fmt(C.rating)}</b></div><div class="cm-rk"><small>전체 순위</small><b class="disp">${rank ? rank + '위' : '-'}</b><em>${league.clubs.length ? `${league.clubs.length}개 구단 중` : ''}</em></div></div>
+      <div class="cm-chips"><span>전력 ${power}</span><span class="${C.hide ? 'off' : 'on'}">${C.hide ? '비공개' : '공개 중'}</span><span>${filled}/14명 배치</span></div>
+      <div class="cm-act"><button class="btn ghost" data-act="club-toggle">${C.hide ? '리그에 공개하기' : '비공개로 전환'}</button><button class="btn amber" data-act="club-publish">로스터 갱신</button></div>
+      <p class="muted-s">공개된 구단끼리 시즌에서 맞붙어요. 레이팅은 <b>실제 유저 구단과의 전적</b>으로만 오르내려요(AI 상대는 영향 없음).${filled < CLUB_MIN ? ` 선수를 ${CLUB_MIN}명 이상 배치해야 공개돼요.` : ''}</p></div>
+    <h3 class="sec-title disp">구단 랭킹 ${league.loading ? '<span class="car-yrs">불러오는 중…</span>' : `<button class="rfr" data-act="club-refresh">새로고침</button>`}</h3>
+    ${league.err ? '<p class="empty">랭킹을 불러오지 못했어요. 잠시 뒤 다시 시도해 주세요.</p>' : league.clubs.length ? `<div class="lrows">${list}${mine ? `<div class="lgap">⋯</div>${mine}` : ''}</div>` : (league.loading ? '' : '<p class="empty">아직 공개된 구단이 없어요. 로스터를 갱신해서 첫 번째로 이름을 올려 보세요!</p>')}
+    <h3 class="sec-title disp">도전 기록 <span class="car-yrs">내 구단에 붙은 유저</span></h3>
+    ${logs ? `<div class="lgrows">${logs}</div>` : '<p class="empty">아직 도전한 유저가 없어요. 공개 상태로 두면 다른 유저의 시즌에 상대로 나가요.</p>'}</div>`;
+}
+function clubNoteHTML(){
+  if(!clubOn()) return '<p class="muted-s" style="text-align:center;margin:2px 0">로그인하면 다른 유저의 구단과 시즌에서 붙을 수 있어요 (리그 탭).</p>';
+  const C = clubState(); if(C.hide) return '<p class="muted-s" style="text-align:center;margin:2px 0">구단이 비공개라서 AI 팀과만 대결해요. 리그 탭에서 공개할 수 있어요.</p>';
+  const my = Math.max(30, rosterSummary(rosterMap()).power), n = clubCache.docs.filter(c => !c.me && Math.abs(Math.log(Math.max(30, clubSum(c).power) / my)) < Math.log(1.8)).length;
+  return `<div class="lvinfo" style="margin-top:8px"><b>실제 유저 구단과 대결</b><p>${clubCache.loading ? '공개된 구단을 찾는 중이에요…' : n ? `비슷한 전력의 공개 구단이 <b>${n}팀</b> 있어요. 시즌마다 최대 9팀이 상대로 나오고, 모자란 자리는 AI가 채워요.` : '지금은 비슷한 전력의 공개 구단이 없어서 AI 팀과 겨뤄요. 공개 구단이 늘면 자동으로 실제 유저가 상대로 나와요.'}</p></div>`;
+}
+function clubResultHTML(c){
+  const best = c.vs.slice().sort((a, b) => (b.w - b.l) - (a.w - a.l))[0], worst = c.vs.slice().sort((a, b) => (a.w - a.l) - (b.w - b.l))[0];
+  return `<div class="clubres"><small>구단 레이팅</small><b class="disp">${fmt(c.from)} → ${fmt(c.to)} <em class="${c.delta >= 0 ? 'up' : 'dn'}">${c.delta >= 0 ? '+' : ''}${c.delta}</em></b><p>실제 유저 구단 ${c.vs.length}팀과 대결 · 가장 잘 맞선 상대 ${esc(best.name)}(${best.w}승 ${best.l}패)${worst && worst !== best ? ` · 가장 고전한 상대 ${esc(worst.name)}(${worst.w}승 ${worst.l}패)` : ''}</p></div>`;
+}
 /* ---- 시즌 탭: 난이도 선택과 시뮬레이터 ---- */
 function aiStats(lv){ const P = aiPool(lv); return { avg:P.reduce((a, t) => a + t.avg, 0) / P.length, sPlus:P.reduce((a, t) => a + t.sPlus, 0) / P.length, legendPct:100 * P.filter(t => t.legend > 0).length / P.length }; }
 function mcPreview(lv){
@@ -5620,8 +5825,9 @@ function seasonTabHTML(T){
     <h3 class="sec-title disp">리그 난이도</h3>${levelChips(T)}
     <div class="lvinfo"><b>${LV_NAMES[lv]}</b><p>${LV_DESC[lv]}</p><div class="lvstats"><span>상대 선수 평균 Lv <b>${Math.round(A.avg)}</b></span><span>팀당 S급 이상 <b>${A.sPlus.toFixed(1)}</b>명</span><span>레전드급이 있는 팀 <b>${Math.round(A.legendPct)}%</b></span></div>
       ${devUnlimited() ? '<small>개발자 모드: 모든 난이도를 선택할 수 있어요 (해금 기록에는 영향이 없어요)</small>' : (T.lvl || 0) < LV_NAMES.length - 1 ? `<small>다음 난이도 해금: ${LV_NAMES[T.lvl || 0]} 난이도에서 한국시리즈 우승</small>` : '<small>모든 난이도를 해금했어요!</small>'}</div>
+    ${clubNoteHTML()}
     <div class="mcg"><div><small>내 로스터 예상</small><b class="disp">${mc.avg.toFixed(0)}승</b></div><div><small>우승 확률</small><b class="disp">${(100 * mc.champ / mc.N).toFixed(0)}%</b></div><div><small>가을야구</small><b class="disp">${(100 * mc.ps / mc.N).toFixed(0)}%</b></div><div><small>정규시즌 1위</small><b class="disp">${(100 * mc.first / mc.N).toFixed(0)}%</b></div></div>
-    <div class="tactions"><button class="btn ghost" data-act="sim-run">시뮬레이터 (1,000번)</button><button class="btn amber" data-act="season-start">${practice ? '연습 시즌 시작' : '시즌 시작'} ▶</button></div>
+    <div class="tactions"><button class="btn ghost" data-act="sim-run">시뮬레이터 (1,000번)</button><button class="btn amber" data-act="season-start" ${clubMatching ? 'disabled' : ''}>${clubMatching ? '상대 구단을 찾는 중…' : (practice ? '연습 시즌 시작' : '시즌 시작') + ' ▶'}</button></div>
     ${lastMC && lastMC.level === lv ? simResultHTML(lastMC) : ''}</div>`;
 }
 function standingsHTML(list){
@@ -5905,7 +6111,7 @@ function psHTML(SS){
   return `${psMineHTML(SS)}${psBracketHTML(SS)}<div class="rv-nav"><button class="btn ghost" data-act="ps-auto">남은 포스트시즌 자동 진행</button></div>`;
 }
 function leagueIntroHTML(SS){
-  return `<h3 class="sec-title disp">올해의 리그 <span class="car-yrs">${LV_NAMES[SS.level]}</span></h3><div class="lgl">${SS.ai.map(a => `<div class="lgr"><b>${esc(a.name)}</b><span class="lgs">${a.stars.slice(0, 2).map(s => `${esc(s.name)} ${gradeTag(s.v)}`).join(' ')}</span><small>평균 Lv ${Math.round(a.avg)}</small></div>`).join('')}</div>`;
+  return `<h3 class="sec-title disp">올해의 리그 <span class="car-yrs">${LV_NAMES[SS.level]}</span></h3><div class="lgl">${SS.ai.map(a => `<div class="lgr ${a.real ? 'real' : ''}"><b>${esc(a.name)}${a.real ? ` <i class="ur">유저 #${esc(a.tag)}</i>` : ''}</b><span class="lgs">${a.stars.slice(0, 2).map(s => `${esc(s.name)} ${gradeTag(s.v)}`).join(' ')}</span><small>${a.real ? `레이팅 ${fmt(a.rating)}` : `평균 Lv ${Math.round(a.avg)}`}</small></div>`).join('')}</div>`;
 }
 function breakScreenHTML(SS){
   const mo = SS.months[2]; if(!SS.brk) SS.brk = { opts:drawBoosts(4), picked:[], rr:1 };
@@ -5953,19 +6159,24 @@ function seasonHTML(){
       ${r.topBat ? `<div><small>팀 타격왕</small><b>${esc(r.topBat.name)}</b><span>OPS ${r.topBat.ops.toFixed(3).replace(/^0/, '')} · 홈런 ${r.topBat.hr}</span></div>` : ''}
       ${r.ace ? `<div><small>에이스</small><b>${esc(r.ace.name)}</b><span>${r.ace.w}승 · ERA ${r.ace.era.toFixed(2)}</span></div>` : ''}</div>
       ${r.unlock ? `<p class="rv-fame">🔓 새 난이도 해금: ${LV_NAMES[r.unlock]}</p>` : ''}
+      ${r.club ? clubResultHTML(r.club) : ''}
       ${r.practice ? '<p class="muted-s">연습 시즌이라 통산 기록과 구단 명성, 난이도 해금에는 반영되지 않아요.</p>' : ''}${r.champion && !r.practice ? `<p class="rv-fame">구단 명성 상승! 통산 우승 ${TEAM().titles}회 · 다음 육성 챌린지 +${fameShields()}</p>` : ''}</div>`;
   }
   if(last) nav = `<button class="btn amber" data-act="team-done">확인</button>`;
   return `<div class="trev">${body}<div class="rv-nav">${nav}</div></div>`;
 }
 /* ---- 동작 ---- */
-function startSeason(){
-  if(teamLocked() || (draft && draft.phase !== 'done')) return;
+let clubMatching = false;
+async function startSeason(){
+  if(clubMatching || teamLocked() || (draft && draft.phase !== 'done')) return;
   if(!Object.keys(rosterMap()).length){ modal = { title:'선수가 없어요', body:'<p>로스터에 선수를 한 명 이상 배치해야 시즌을 시작할 수 있어요. 육성을 마친 선수를 기록에 등록하고, 로스터 탭에서 배치해 보세요.</p>' }; render(); return; }
+  let real = [];
+  if(clubOn() && !clubState().hide){ clubMatching = true; render(); try{ await publishClub(false); real = await findOpponents(); }catch(e){ real = []; } clubMatching = false; }
+  if(draft && draft.phase !== 'done'){ render(); return; }                       // 기다리는 사이에 이미 시작된 경우
   const T = TEAM(), n = playsToday(), practice = n >= DAILY_MAX;           // 하루 3번까지는 정식 시즌, 그 이후(개발자 모드)는 연습 시즌
   if(!practice){ T.plays = { day:todayStr(), n:n + 1 }; T.lastDay = todayStr(); hall.team = T; saveHall(); }
   const level = selLevel();
-  draft = { day:todayStr(), phase:'season', level, ss:seasonInit(level), si:0, closed:false, practice };
+  draft = { day:todayStr(), phase:'season', level, ss:seasonInit(level, real), si:0, closed:false, practice };
   teamTab = 'season'; saveDraft(); SFX.play('hiloIn'); render(); window.scrollTo(0, 0);
 }
 function seasonAdvance(){
